@@ -16,7 +16,6 @@ A casino news and review website built for the Indian community worldwide. Half 
 ## Quick Start
 
 ```bash
-# Install Node.js 18+ first, then:
 npm install
 cp .env.example .env
 # Edit .env with your referral links
@@ -72,11 +71,3 @@ npm start
 ```
 
 Works on Vercel, Netlify, or any Node.js host. Set environment variables in your hosting dashboard.
-
-## Push to GitHub
-
-```bash
-git add .
-git commit -m "Initial casino news blog site"
-git push -u origin main
-```
