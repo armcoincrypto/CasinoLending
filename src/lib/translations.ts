@@ -25,7 +25,7 @@ export const translations = {
     casinosTitle: "Top 40 Online Casino Reviews",
     casinosSubtitle:
       "Browse all 40 ranked online casinos for Indian players. Filter to see the 20 best casinos or 20 sites to research carefully before you play.",
-    listHeadingAll: "All 40 Online Casinos — Reviews & Rankings",
+    listHeadingAll: "All Online Casinos — Reviews & Rankings",
     listHeadingBest: "20 Best Online Casinos for Indian Players",
     listHeadingBad: "20 Casinos to Research Before Playing",
     viewAllCasinos: "View all 40 casinos",
@@ -129,7 +129,7 @@ export const translations = {
     casinosTitle: "शीर्ष 40 ऑनलाइन कैसीनो समीक्षाएं",
     casinosSubtitle:
       "भारतीय खिलाड़ियों के लिए सभी 40 कैसीनो देखें। 20 सर्वश्रेष्ठ या 20 सावधानी वाली साइटें फ़िल्टर करें।",
-    listHeadingAll: "सभी 40 ऑनलाइन कैसीनो — समीक्षा और रैंकिंग",
+    listHeadingAll: "सभी ऑनलाइन कैसीनो — समीक्षा और रैंकिंग",
     listHeadingBest: "भारतीय खिलाड़ियों के लिए 20 सर्वश्रेष्ठ कैसीनो",
     listHeadingBad: "खेलने से पहले जांचें — 20 कैसीनो",
     viewAllCasinos: "सभी 40 कैसीनो देखें",
