@@ -23,7 +23,7 @@ export default function HomeCasinoPreview() {
             {t("heroCta")}
           </Link>
         </div>
-        <div className="mt-8 space-y-3">
+        <div className="mt-8 space-y-5">
           {preview.map((casino) => (
             <CasinoCard key={casino.id} casino={casino} variant="list" />
           ))}

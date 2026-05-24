@@ -18,7 +18,7 @@ export default function CasinoCard({ casino, variant = "list" }: CasinoCardProps
 
   if (variant === "list") {
     return (
-      <article className="flex flex-col gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:flex-row sm:items-center dark:border-gray-700 dark:bg-gray-800/80">
+      <article className="flex flex-col gap-5 rounded-2xl border border-gray-100 bg-white p-6 shadow-md transition-shadow hover:shadow-lg sm:flex-row sm:items-center sm:gap-6 sm:p-7 dark:border-gray-700 dark:bg-gray-800/80">
         <Link
           href={`/go/${casino.slug}`}
           className="flex-shrink-0 transition-transform hover:scale-[1.02]"
@@ -33,20 +33,20 @@ export default function CasinoCard({ casino, variant = "list" }: CasinoCardProps
           />
         </Link>
 
-        <div className="min-w-0 flex-1">
+        <div className="min-w-0 flex-1 py-0.5">
           <Link href={`/blogs/${casino.blogSlug}`}>
-            <h3 className="text-lg font-bold text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300">
+            <h3 className="text-xl font-bold text-brand-600 hover:text-brand-700 sm:text-2xl dark:text-brand-400 dark:hover:text-brand-300">
               {casino.name}
             </h3>
           </Link>
-          <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+          <p className="mt-2 line-clamp-3 text-base leading-relaxed text-gray-600 sm:text-[1.05rem] dark:text-gray-400">
             {getLocalizedText(casino.summary, locale)}
           </p>
         </div>
 
         <Link
           href={`/blogs/${casino.blogSlug}`}
-          className="inline-flex flex-shrink-0 items-center justify-center rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 sm:min-w-[8.5rem]"
+          className="inline-flex w-full flex-shrink-0 items-center justify-center rounded-xl bg-brand-600 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 sm:w-auto sm:min-w-[10.5rem]"
         >
           {t("readMore")} →
         </Link>

@@ -48,16 +48,18 @@ export default function CasinoLogo({
   const style = getBrandStyle(slug, name);
   const sizeClass =
     variant === "wide"
-      ? "h-14 w-[7.5rem] rounded-xl"
-      : "h-12 w-12 rounded-xl";
+      ? "h-20 w-[10.5rem] rounded-2xl sm:h-24 sm:w-[12rem]"
+      : "h-14 w-14 rounded-xl";
+
+  const textClass = variant === "wide" ? "text-sm font-bold sm:text-base" : "text-xs font-bold";
 
   return (
     <div
-      className={`relative flex flex-shrink-0 items-center justify-center overflow-hidden border border-gray-100 shadow-sm ${sizeClass} ${style.bg}`}
+      className={`relative flex flex-shrink-0 items-center justify-center overflow-hidden border border-gray-200 shadow-md ${sizeClass} ${style.bg}`}
       aria-label={`${name} logo`}
     >
-      <span className={`truncate px-2 text-center text-xs font-bold leading-tight ${style.text}`}>
-        {style.label ?? name.slice(0, 8)}
+      <span className={`truncate px-3 text-center leading-tight ${textClass} ${style.text}`}>
+        {style.label ?? name.slice(0, 12)}
       </span>
       {rank != null && type !== "ranking" && variant === "square" && (
         <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-gray-900 text-[10px] font-bold text-white">

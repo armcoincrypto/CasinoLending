@@ -68,7 +68,7 @@ function CasinosContent() {
           </div>
         )}
 
-        <div className="space-y-4">
+        <div className="space-y-5">
           {casinos.map((casino) => (
             <CasinoCard key={casino.id} casino={casino} variant="list" />
           ))}
