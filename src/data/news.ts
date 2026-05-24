@@ -115,6 +115,60 @@ export const sampleNews: NewsArticle[] = [
     category: "Regulation",
     image: "/news/regulation.svg",
   },
+  {
+    id: "news-7",
+    title: {
+      en: "UPI Withdrawals Now Processed Under 30 Minutes at Leading Casinos",
+      hi: "अग्रणी कैसीनो पर UPI निकासी अब 30 मिनट में",
+    },
+    excerpt: {
+      en: "Indian players report faster cashouts as operators upgrade payment rails for UPI and IMPS.",
+      hi: "भारतीय खिलाड़ी तेज़ निकासी की रिपोर्ट करते हैं क्योंकि ऑपरेटर UPI अपग्रेड करते हैं।",
+    },
+    content: {
+      en: "Payment speed remains a top priority for Indian casino players abroad. Several platforms now advertise sub-30-minute UPI withdrawals after KYC verification...",
+      hi: "भुगतान गति भारतीय कैसीनो खिलाड़ियों की प्राथमिकता बनी हुई है...",
+    },
+    source: "CasinoPulse Wire",
+    publishedAt: new Date(2026, 4, 24, 6, 0).toISOString(),
+    category: "Payments",
+  },
+  {
+    id: "news-8",
+    title: {
+      en: "Teen Patti Live Tables Hit All-Time Peak Concurrent Players",
+      hi: "तीन पत्ती लाइव टेबल पर सर्वकालिक चरम खिलाड़ी",
+    },
+    excerpt: {
+      en: "Live dealer studios add Hindi-speaking hosts as demand from Indian players hits new records.",
+      hi: "भारतीय खिलाड़ियों की मांग पर हिंदी होस्ट के साथ नई लाइव टेबल।",
+    },
+    content: {
+      en: "Live casino providers are expanding Teen Patti and Andar Bahar streams to meet demand from the global Indian community...",
+      hi: "लाइव कैसीनो प्रदाता भारतीय खिलाड़ियों की मांग पूरी करने के लिए विस्तार कर रहे हैं...",
+    },
+    source: "CasinoPulse Wire",
+    publishedAt: new Date(2026, 4, 23, 18, 0).toISOString(),
+    category: "Live Casino",
+  },
+  {
+    id: "news-9",
+    title: {
+      en: "Bitcoin Casino Bonuses Rise Ahead of Summer 2026 Season",
+      hi: "ग्रीष्म 2026 से पहले बिटकॉइन कैसीनो बोनस बढ़े",
+    },
+    excerpt: {
+      en: "Crypto-friendly sites increase matched deposit offers for BTC and USDT users in India and abroad.",
+      hi: "क्रिप्टो-फ्रेंडली साइटें BTC और USDT उपयोगकर्ताओं के लिए बोनस बढ़ाती हैं।",
+    },
+    content: {
+      en: "Cryptocurrency casino bonuses are trending higher as platforms compete for Indian players who prefer borderless payments...",
+      hi: "क्रिप्टोकरेंसी कैसीनो बोनस बढ़ रहे हैं...",
+    },
+    source: "CasinoPulse Wire",
+    publishedAt: new Date(2026, 4, 22, 20, 0).toISOString(),
+    category: "Crypto",
+  },
 ];
 
 export function getNewsById(id: string): NewsArticle | undefined {

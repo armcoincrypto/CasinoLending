@@ -1,17 +1,22 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocale } from "@/context/LocaleContext";
-import { getLocalizedText } from "@/lib/i18n";
 import { useTranslation } from "@/lib/useTranslation";
+import type { NewsCategory } from "@/lib/news-utils";
 import { NewsArticle } from "@/types";
+import NewsHero from "@/components/news/NewsHero";
+import NewsCategoryFilter from "@/components/news/NewsCategoryFilter";
+import NewsCard from "@/components/news/NewsCard";
+import NewsSidebar from "@/components/news/NewsSidebar";
+import NewsTrustBar from "@/components/news/NewsTrustBar";
 
 export default function NewsPage() {
   const { locale } = useLocale();
   const { t } = useTranslation(locale);
   const [articles, setArticles] = useState<NewsArticle[]>([]);
   const [loading, setLoading] = useState(true);
+  const [category, setCategory] = useState<NewsCategory>("All News");
 
   useEffect(() => {
     fetch("/api/news")
@@ -23,45 +28,37 @@ export default function NewsPage() {
       .catch(() => setLoading(false));
   }, []);
 
-  return (
-    <div className="bg-gray-50 dark:bg-surface-dark">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h1 className="section-title">{t("newsTitle")}</h1>
-          <p className="section-subtitle mx-auto">{t("newsSubtitle")}</p>
-          <p className="mt-2 text-xs text-gray-500">{t("autoNews")}</p>
-        </div>
+  const filtered = useMemo(() => {
+    if (category === "All News") return articles;
+    return articles.filter((a) => a.category === category);
+  }, [articles, category]);
 
-        {loading ? (
-          <div className="mt-12 text-center text-gray-500">Loading news...</div>
-        ) : (
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {articles.map((article) => (
-              <Link
-                key={article.id}
-                href={`/news/${article.id}`}
-                className="card group hover:border-brand-300 dark:hover:border-brand-700"
-              >
-                <span className="inline-block rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-medium text-brand-700 dark:bg-brand-900/30 dark:text-brand-400">
-                  {article.category}
-                </span>
-                <h2 className="mt-3 font-semibold text-gray-900 group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-400">
-                  {getLocalizedText(article.title, locale)}
-                </h2>
-                <p className="mt-2 line-clamp-3 text-sm text-gray-600 dark:text-gray-400">
-                  {getLocalizedText(article.excerpt, locale)}
-                </p>
-                <div className="mt-4 flex items-center justify-between text-xs text-gray-500">
-                  <span>{article.source}</span>
-                  <time>
-                    {new Date(article.publishedAt).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN")}
-                  </time>
-                </div>
-              </Link>
-            ))}
+  return (
+    <div className="bg-white dark:bg-surface-dark">
+      <NewsHero />
+      <NewsCategoryFilter active={category} onChange={setCategory} />
+
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
+          <div>
+            {loading ? (
+              <div className="py-20 text-center text-gray-500">{t("loadingNews")}</div>
+            ) : filtered.length === 0 ? (
+              <div className="py-20 text-center text-gray-500">{t("noNewsInCategory")}</div>
+            ) : (
+              <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                {filtered.map((article) => (
+                  <NewsCard key={article.id} article={article} />
+                ))}
+              </div>
+            )}
           </div>
-        )}
+
+          <NewsSidebar articles={articles} />
+        </div>
       </div>
+
+      <NewsTrustBar />
     </div>
   );
 }
