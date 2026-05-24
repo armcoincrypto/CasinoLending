@@ -15,14 +15,23 @@ export default function CasinoCard({ casino }: CasinoCardProps) {
   const { locale } = useLocale();
   const { t } = useTranslation(locale);
   const isGood = casino.type === "good";
+  const isBad = casino.type === "bad";
+
+  const borderClass = isGood
+    ? "border-green-200 bg-white hover:border-green-300 dark:border-green-900/50 dark:bg-gray-800/50 dark:hover:border-green-800"
+    : isBad
+      ? "border-amber-200 bg-white hover:border-amber-300 dark:border-amber-900/50 dark:bg-gray-800/50 dark:hover:border-amber-800"
+      : "border-gray-200 bg-white hover:border-gray-300 dark:border-gray-700 dark:bg-gray-800/50";
+
+  const badgeClass = isGood
+    ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
+    : isBad
+      ? "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400"
+      : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300";
 
   return (
     <article
-      className={`group flex items-center gap-4 rounded-xl border p-4 transition-all hover:shadow-md ${
-        isGood
-          ? "border-green-200 bg-white hover:border-green-300 dark:border-green-900/50 dark:bg-gray-800/50 dark:hover:border-green-800"
-          : "border-red-200 bg-white hover:border-red-300 dark:border-red-900/50 dark:bg-gray-800/50 dark:hover:border-red-800"
-      }`}
+      className={`group flex items-center gap-4 rounded-xl border p-4 transition-all hover:shadow-md ${borderClass}`}
     >
       <Link
         href={`/go/${casino.slug}`}
@@ -35,14 +44,11 @@ export default function CasinoCard({ casino }: CasinoCardProps) {
       <div className="min-w-0 flex-1">
         <Link href={`/go/${casino.slug}`} className="block">
           <div className="flex items-center gap-2">
+            <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+              #{casino.rank}
+            </span>
             <h3 className="truncate font-semibold text-gray-900 dark:text-white">{casino.name}</h3>
-            <span
-              className={`rounded-full px-2 py-0.5 text-xs font-medium ${
-                isGood
-                  ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
-                  : "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
-              }`}
-            >
+            <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${badgeClass}`}>
               {casino.rating}/5
             </span>
           </div>

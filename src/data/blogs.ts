@@ -8,10 +8,10 @@ function generateCasinoBlog(casino: typeof goodCasinos[0], type: "good-casino" |
     title: {
       en: isGood
         ? `${casino.name} Review 2026 — Is It Safe for Indian Players?`
-        : `Why You Should Avoid ${casino.name} — Full Investigation`,
+        : `${casino.name} — Mixed Reviews & Common Player Complaints`,
       hi: isGood
         ? `${casino.name} समीक्षा 2026 — क्या यह भारतीय खिलाड़ियों के लिए सुरक्षित है?`
-        : `${casino.name} से क्यों बचें — पूरी जांच`,
+        : `${casino.name} — मिश्रित समीक्षाएं और सामान्य शिकायतें`,
     },
     excerpt: casino.summary,
     content: {
@@ -38,7 +38,7 @@ Indian players can deposit using UPI, Paytm, PhonePe, NetBanking, and cryptocurr
 
 ## Final Verdict
 ${casino.name} earns our **Top Rated** badge with a ${casino.rating}/5 rating. Indian players worldwide can sign up with confidence using our exclusive referral link for enhanced welcome bonuses.`
-        : `# Why ${casino.name} Is on Our Blacklist
+        : `# ${casino.name} — Mixed Reviews & Player Feedback
 
 ## Red Flags Identified
 Our investigation into ${casino.name} revealed multiple serious concerns that every Indian player should be aware of before depositing any funds.

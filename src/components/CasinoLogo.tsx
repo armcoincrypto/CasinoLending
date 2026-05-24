@@ -1,7 +1,7 @@
 interface CasinoLogoProps {
   name: string;
   rank: number;
-  type: "good" | "bad";
+  type: "good" | "bad" | "ranking";
 }
 
 export default function CasinoLogo({ name, rank, type }: CasinoLogoProps) {
@@ -15,7 +15,9 @@ export default function CasinoLogo({ name, rank, type }: CasinoLogoProps) {
   const gradient =
     type === "good"
       ? "from-emerald-500 to-teal-600"
-      : "from-red-500 to-rose-600";
+      : type === "bad"
+        ? "from-amber-500 to-orange-600"
+        : "from-slate-500 to-slate-700";
 
   return (
     <div
@@ -23,9 +25,11 @@ export default function CasinoLogo({ name, rank, type }: CasinoLogoProps) {
       aria-label={`${name} logo`}
     >
       {initials}
-      <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-gray-900 text-[10px] font-bold text-white dark:bg-white dark:text-gray-900">
-        {rank}
-      </span>
+      {type !== "ranking" && (
+        <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-gray-900 text-[10px] font-bold text-white dark:bg-white dark:text-gray-900">
+          {rank}
+        </span>
+      )}
     </div>
   );
 }

@@ -1,49 +1,101 @@
-import { Casino } from "@/types";
+import { Casino, CasinoType } from "@/types";
 
-const goodCasinoNames = [
-  "Parimatch",
-  "1xBet",
-  "Betway",
-  "LeoVegas",
-  "Royal Panda",
-  "10Cric",
-  "Pure Win",
-  "ComeOn",
-  "Casumo",
-  "Dafabet",
-  "Melbet",
-  "22Bet",
+export const top40CasinoNames = [
+  "Stake",
   "Bet365",
-  "Spin Casino",
-  "Genesis Casino",
-  "Rabona",
-  "Wildz",
-  "PlayOJO",
-  "Betwinner",
+  "Roobet",
+  "BC.Game",
+  "Rollbit",
+  "LeoVegas",
+  "Betway",
+  "PokerStars Casino",
+  "888 Casino",
+  "DraftKings Casino",
+  "FanDuel Casino",
+  "Cloudbet",
+  "Bitcasino",
+  "Bovada",
+  "1xBet",
+  "Parimatch",
+  "22Bet",
+  "Wild Casino",
   "Mostbet",
+  "Pin-Up Casino",
+  "Melbet",
+  "Betwinner",
+  "Vave",
+  "Thunderpick",
+  "Fairspin",
+  "Megapari",
+  "7Bit Casino",
+  "Casino Extreme",
+  "Jackbit",
+  "Duelbits",
+  "Sportsbet.io",
+  "Ignition Casino",
+  "Mystake",
+  "BetUS",
+  "TG Casino",
+  "Shuffle",
+  "FortuneJack",
+  "Gamdom",
+  "Rabona",
+  "NitroBetting",
 ];
 
-const badCasinoNames = [
-  "LuckySpin Casino",
-  "GoldenBet Pro",
-  "WinMax Palace",
-  "RoyalFlush 777",
-  "MegaJackpot Hub",
-  "DiamondBet Zone",
-  "FortuneWheel Casino",
-  "CashOut Kings",
-  "BetBlitz Arena",
-  "SpinMaster Pro",
-  "JackpotJungle",
-  "QuickWin Casino",
-  "EliteBet Lounge",
-  "TurboSpin Palace",
-  "CashRush Casino",
-  "BetStorm Arena",
-  "LuckyDice Hub",
-  "WinVault Pro",
-  "SpinCity Casino",
-  "GoldRush Bet",
+export const goodCasinoNames = [
+  "Stake",
+  "Bet365",
+  "Roobet",
+  "LeoVegas",
+  "BC.Game",
+  "Rollbit",
+  "PokerStars Casino",
+  "Betway",
+  "888 Casino",
+  "DraftKings Casino",
+  "FanDuel Casino",
+  "Cloudbet",
+  "Bitcasino",
+  "Sportsbet.io",
+  "Duelbits",
+  "Shuffle",
+  "Gamdom",
+  "TG Casino",
+  "FortuneJack",
+  "Ignition Casino",
+];
+
+export const badCasinoNames = [
+  "1xBet",
+  "Mostbet",
+  "Melbet",
+  "22Bet",
+  "Parimatch",
+  "Betwinner",
+  "Megapari",
+  "Vave",
+  "Fairspin",
+  "Wild Casino",
+  "Casino Extreme",
+  "7Bit Casino",
+  "NitroBetting",
+  "Rabona",
+  "Mystake",
+  "BC.Game",
+  "Rollbit",
+  "Roobet",
+  "Stake",
+  "Bovada",
+];
+
+const BAD_COMPLAINT_TOPICS = [
+  "KYC verification delays and repeated document requests.",
+  "Slow withdrawal processing reported by multiple players.",
+  "Strict bonus terms and wagering restrictions.",
+  "Account restrictions or blocks without clear explanation.",
+  "Inconsistent customer support response times.",
+  "Regional access limitations for certain markets.",
 ];
 
 function slugify(name: string): string {
@@ -54,80 +106,120 @@ function envKeyFromName(name: string): string {
   return name.toUpperCase().replace(/[^A-Z0-9]/g, "_");
 }
 
-function createGoodCasino(name: string, rank: number): Casino {
+function createCasino(name: string, rank: number, type: CasinoType): Casino {
   const slug = slugify(name);
+  const isGood = type === "good";
+  const isBad = type === "bad";
+  const complaintIdx = (rank - 1) % BAD_COMPLAINT_TOPICS.length;
+
   return {
-    id: `good-${rank}`,
+    id: `${type}-${rank}-${slug}`,
     slug,
     name,
     rank,
     logo: `/casinos/${slug}.svg`,
-    summary: {
-      en: `${name} offers Indian players UPI deposits, fast withdrawals within 24h, and a generous welcome bonus with fair wagering terms.`,
-      hi: `${name} भारतीय खिलाड़ियों को UPI जमा, 24 घंटे में तेज़ निकासी, और उचित wagering शर्तों के साथ स्वागत बोनस प्रदान करता है।`,
-    },
-    bonus: {
-      en: "100% up to ₹10,000 + 50 Free Spins",
-      hi: "100% ₹10,000 तक + 50 फ्री स्पिन",
-    },
-    withdrawal: {
-      en: "UPI, Paytm, Bank Transfer — 2-24 hours",
-      hi: "UPI, Paytm, बैंक ट्रांसफर — 2-24 घंटे",
-    },
-    rating: Math.round((4.5 + Math.random() * 0.5) * 10) / 10,
-    type: "good",
-    blogSlug: `review-${slug}`,
+    summary: isGood
+      ? {
+          en: `${name} ranks among the most popular global brands for reputation, player volume, and overall platform stability.`,
+          hi: `${name} प्रतिष्ठा, खिलाड़ी संख्या और प्लेटफॉर्म स्थिरता के लिए सबसे लोकप्रिय वैश्विक ब्रांडों में है।`,
+        }
+      : isBad
+        ? {
+            en: `${name} frequently appears in player discussions regarding ${BAD_COMPLAINT_TOPICS[complaintIdx].toLowerCase()} Research before depositing.`,
+            hi: `${name} अक्सर ${BAD_COMPLAINT_TOPICS[complaintIdx]} पर चर्चा में रहता है। जमा करने से पहले शोध करें।`,
+          }
+        : {
+            en: `${name} is listed in our global Top 40 casino rankings based on popularity and industry presence.`,
+            hi: `${name} लोकप्रियता और उद्योग उपस्थिति के आधार पर हमारी वैश्विक शीर्ष 40 सूची में है।`,
+          },
+    bonus: isGood
+      ? {
+          en: "Competitive welcome offers — terms vary by region",
+          hi: "प्रतिस्पर्धी स्वागत ऑफर — शर्तें क्षेत्र के अनुसार भिन्न",
+        }
+      : isBad
+        ? {
+            en: "Promotional offers with strict wagering — read terms carefully",
+            hi: "कड़ी wagering के साथ प्रचार ऑफर — शर्तें ध्यान से पढ़ें",
+          }
+        : {
+            en: "Offers vary — check official site for your region",
+            hi: "ऑफर भिन्न — अपने क्षेत्र के लिए आधिकारिक साइट देखें",
+          },
+    withdrawal: isGood
+      ? {
+          en: "Generally reported as reliable — speed varies by method",
+          hi: "आम तौर पर विश्वसनीय — गति विधि के अनुसार भिन्न",
+        }
+      : isBad
+        ? {
+            en: "Withdrawal timelines vary — some players report delays",
+            hi: "निकासी समय भिन्न — कुछ खिलाड़ी देरी की रिपोर्ट करते हैं",
+          }
+        : {
+            en: "Processing times depend on payment method and verification",
+            hi: "प्रसंस्करण समय भुगतान विधि और सत्यापन पर निर्भर",
+          },
+    rating: isGood
+      ? Math.round((4.3 + ((rank % 5) * 0.1)) * 10) / 10
+      : isBad
+        ? Math.round((2.5 + ((rank % 4) * 0.2)) * 10) / 10
+        : Math.round((3.8 + ((rank % 6) * 0.05)) * 10) / 10,
+    type,
+    blogSlug: isBad ? `avoid-${slug}` : `review-${slug}`,
     envKey: envKeyFromName(name),
   };
 }
 
-function createBadCasino(name: string, rank: number): Casino {
-  const slug = slugify(name);
-  const reasons = [
-    "Delayed withdrawals exceeding 30 days with no support response.",
-    "Hidden wagering requirements and unfair bonus terms.",
-    "Multiple unresolved player complaints on forums.",
-    "No valid gaming license or unverifiable licensing claims.",
-    "Account closures without explanation after winning.",
-  ];
-  const reasonIdx = (rank - 1) % reasons.length;
-  return {
-    id: `bad-${rank}`,
-    slug,
-    name,
-    rank,
-    logo: `/casinos/${slug}.svg`,
-    summary: {
-      en: `${name}: ${reasons[reasonIdx]} Avoid this platform to protect your funds.`,
-      hi: `${name}: ${reasons[reasonIdx]} अपने धन की सुरक्षा के लिए इस प्लेटफॉर्म से बचें।`,
-    },
-    bonus: {
-      en: "Misleading 500% bonus with 80x wagering",
-      hi: "80x wagering के साथ भ्रामक 500% बोनस",
-    },
-    withdrawal: {
-      en: "Delayed 15-45 days, frequent rejections",
-      hi: "15-45 दिन की देरी, बार-बार अस्वीकृति",
-    },
-    rating: Math.round((1.0 + Math.random() * 1.5) * 10) / 10,
-    type: "bad",
-    blogSlug: `avoid-${slug}`,
-    envKey: envKeyFromName(name),
-  };
-}
+export const top40Casinos: Casino[] = top40CasinoNames.map((name, i) =>
+  createCasino(name, i + 1, "ranking")
+);
 
 export const goodCasinos: Casino[] = goodCasinoNames.map((name, i) =>
-  createGoodCasino(name, i + 1)
+  createCasino(name, i + 1, "good")
 );
 
 export const badCasinos: Casino[] = badCasinoNames.map((name, i) =>
-  createBadCasino(name, i + 1)
+  createCasino(name, i + 1, "bad")
 );
 
-export const allCasinos: Casino[] = [...goodCasinos, ...badCasinos];
+function mergeUniqueCasinos(lists: Casino[][]): Casino[] {
+  const bySlug = new Map<string, Casino>();
+  const priority: CasinoType[] = ["good", "bad", "ranking"];
+
+  for (const type of priority) {
+    for (const list of lists) {
+      for (const casino of list) {
+        if (casino.type === type && !bySlug.has(casino.slug)) {
+          bySlug.set(casino.slug, casino);
+        }
+      }
+    }
+  }
+
+  for (const list of lists) {
+    for (const casino of list) {
+      if (!bySlug.has(casino.slug)) {
+        bySlug.set(casino.slug, casino);
+      }
+    }
+  }
+
+  return Array.from(bySlug.values());
+}
+
+export const allCasinos: Casino[] = mergeUniqueCasinos([
+  goodCasinos,
+  badCasinos,
+  top40Casinos,
+]);
 
 export function getCasinoBySlug(slug: string): Casino | undefined {
-  return allCasinos.find((c) => c.slug === slug);
+  return (
+    goodCasinos.find((c) => c.slug === slug) ||
+    badCasinos.find((c) => c.slug === slug) ||
+    top40Casinos.find((c) => c.slug === slug)
+  );
 }
 
 export function getCasinoByBlogSlug(blogSlug: string): Casino | undefined {

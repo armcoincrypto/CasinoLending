@@ -1,6 +1,6 @@
 export type Locale = "en" | "hi";
 
-export type CasinoType = "good" | "bad";
+export type CasinoType = "good" | "bad" | "ranking";
 
 export interface Casino {
   id: string;
