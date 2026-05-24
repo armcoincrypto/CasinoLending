@@ -37,13 +37,13 @@ export default function BlogsPage() {
   };
 
   return (
-    <div className="bg-[#050A12]">
+    <div className="bg-gray-50 dark:bg-[#050A12]">
       <BlogHero />
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">{t("blogsTitle")}</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-gray-400">{t("blogsSubtitle")}</p>
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl dark:text-white">{t("blogsTitle")}</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-gray-600 dark:text-gray-400">{t("blogsSubtitle")}</p>
         </div>
 
         <div className="mt-10">
