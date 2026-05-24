@@ -12,9 +12,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "CasinoPulse India — Trusted Casino Reviews for Indian Players",
+  title: "CasinoPulse India — Best Online Casino Reviews for Indian Players",
   description:
-    "Expert casino reviews, news, and exclusive bonuses for the Indian community worldwide.",
+    "Top 40 online casino reviews for Indian players. Compare bonuses, safe real-money sites, best casinos, and sites to avoid. Expert guides in English & Hindi.",
+  keywords: [
+    "online casino India",
+    "casino reviews Indian players",
+    "best online casino",
+    "real money casino",
+    "casino bonus",
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

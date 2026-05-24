@@ -1,16 +1,17 @@
 "use client";
 
+import type { CasinoFilter } from "@/lib/casino-filter";
 import { useLocale } from "@/context/LocaleContext";
 import { useTranslation } from "@/lib/useTranslation";
 
 interface CasinoCategoryBannersProps {
-  activeTab: "good" | "bad";
-  onSelectTab: (tab: "good" | "bad") => void;
+  activeFilter: CasinoFilter;
+  onSelectFilter: (filter: "good" | "bad") => void;
 }
 
 export default function CasinoCategoryBanners({
-  activeTab,
-  onSelectTab,
+  activeFilter,
+  onSelectFilter,
 }: CasinoCategoryBannersProps) {
   const { locale } = useLocale();
   const { t } = useTranslation(locale);
@@ -19,9 +20,11 @@ export default function CasinoCategoryBanners({
     <div className="grid gap-4 sm:grid-cols-2">
       <button
         type="button"
-        onClick={() => onSelectTab("good")}
+        onClick={() => onSelectFilter("good")}
         className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 to-green-700 p-6 text-left shadow-lg transition-all hover:shadow-xl ${
-          activeTab === "good" ? "ring-4 ring-emerald-300 ring-offset-2 dark:ring-offset-gray-900" : ""
+          activeFilter === "good"
+            ? "ring-4 ring-emerald-300 ring-offset-2 dark:ring-offset-gray-900"
+            : ""
         }`}
       >
         <div className="flex items-start gap-3">
@@ -40,9 +43,11 @@ export default function CasinoCategoryBanners({
 
       <button
         type="button"
-        onClick={() => onSelectTab("bad")}
+        onClick={() => onSelectFilter("bad")}
         className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-red-500 to-rose-700 p-6 text-left shadow-lg transition-all hover:shadow-xl ${
-          activeTab === "bad" ? "ring-4 ring-red-300 ring-offset-2 dark:ring-offset-gray-900" : ""
+          activeFilter === "bad"
+            ? "ring-4 ring-red-300 ring-offset-2 dark:ring-offset-gray-900"
+            : ""
         }`}
       >
         <div className="flex items-start gap-3">

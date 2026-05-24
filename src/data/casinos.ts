@@ -1,4 +1,5 @@
 import { Casino, CasinoType } from "@/types";
+import { buildCasinoSummary } from "./casino-seo";
 
 export const top40CasinoNames = [
   "Stake",
@@ -118,20 +119,12 @@ function createCasino(name: string, rank: number, type: CasinoType): Casino {
     name,
     rank,
     logo: `/casinos/${slug}.svg`,
-    summary: isGood
-      ? {
-          en: `${name} ranks among the most popular global brands for reputation, player volume, and overall platform stability.`,
-          hi: `${name} प्रतिष्ठा, खिलाड़ी संख्या और प्लेटफॉर्म स्थिरता के लिए सबसे लोकप्रिय वैश्विक ब्रांडों में है।`,
-        }
-      : isBad
-        ? {
-            en: `${name} frequently appears in player discussions regarding ${BAD_COMPLAINT_TOPICS[complaintIdx].toLowerCase()} Research before depositing.`,
-            hi: `${name} अक्सर ${BAD_COMPLAINT_TOPICS[complaintIdx]} पर चर्चा में रहता है। जमा करने से पहले शोध करें।`,
-          }
-        : {
-            en: `${name} is listed in our global Top 40 casino rankings based on popularity and industry presence.`,
-            hi: `${name} लोकप्रियता और उद्योग उपस्थिति के आधार पर हमारी वैश्विक शीर्ष 40 सूची में है।`,
-          },
+    summary: buildCasinoSummary(
+      name,
+      rank,
+      type,
+      isBad ? BAD_COMPLAINT_TOPICS[complaintIdx] : undefined
+    ),
     bonus: isGood
       ? {
           en: "Competitive welcome offers — terms vary by region",
