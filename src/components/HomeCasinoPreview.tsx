@@ -25,7 +25,7 @@ export default function HomeCasinoPreview() {
         </div>
         <div className="mt-8 space-y-3">
           {preview.map((casino) => (
-            <CasinoCard key={casino.id} casino={casino} />
+            <CasinoCard key={casino.id} casino={casino} variant="list" />
           ))}
         </div>
         <div className="mt-6 text-center sm:hidden">
