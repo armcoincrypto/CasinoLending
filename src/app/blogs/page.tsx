@@ -1,95 +1,69 @@
 "use client";
 
-import Link from "next/link";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useLocale } from "@/context/LocaleContext";
-import { getLocalizedText } from "@/lib/i18n";
 import { useTranslation } from "@/lib/useTranslation";
+import type { BlogFilter } from "@/lib/blog-utils";
 import { blogPosts } from "@/data/blogs";
-import { BlogPost } from "@/types";
+import BlogHero from "@/components/blogs/BlogHero";
+import BlogCategoryFilter from "@/components/blogs/BlogCategoryFilter";
+import BlogCard from "@/components/blogs/BlogCard";
+import BlogsTrustBar from "@/components/blogs/BlogsTrustBar";
+import BlogNewsletter from "@/components/blogs/BlogNewsletter";
 
-type Filter = "all" | BlogPost["category"];
+const FEATURED_SLUG = "review-bet365";
 
 export default function BlogsPage() {
   const { locale } = useLocale();
   const { t } = useTranslation(locale);
-  const [filter, setFilter] = useState<Filter>("all");
+  const [filter, setFilter] = useState<BlogFilter>("all");
 
-  const filtered =
-    filter === "all" ? blogPosts : blogPosts.filter((b) => b.category === filter);
-
-  const filters: { key: Filter; label: string }[] = [
+  const filters: { key: BlogFilter; label: string }[] = [
     { key: "all", label: t("filterAll") },
     { key: "good-casino", label: t("filterGood") },
     { key: "bad-casino", label: t("filterBad") },
     { key: "daily", label: t("filterDaily") },
   ];
 
+  const filtered = useMemo(
+    () => (filter === "all" ? blogPosts : blogPosts.filter((b) => b.category === filter)),
+    [filter]
+  );
+
+  const getCategoryLabel = (category: (typeof blogPosts)[0]["category"]) => {
+    if (category === "good-casino") return t("filterGood");
+    if (category === "bad-casino") return t("filterBad");
+    return t("filterDaily");
+  };
+
   return (
-    <div className="bg-gray-50 dark:bg-surface-dark">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="bg-[#050A12]">
+      <BlogHero />
+
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="section-title">{t("blogsTitle")}</h1>
-          <p className="section-subtitle mx-auto">{t("blogsSubtitle")}</p>
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">{t("blogsTitle")}</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-gray-400">{t("blogsSubtitle")}</p>
         </div>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-2">
-          {filters.map((f) => (
-            <button
-              key={f.key}
-              type="button"
-              onClick={() => setFilter(f.key)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
-                filter === f.key
-                  ? "bg-brand-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
-              }`}
-            >
-              {f.label}
-            </button>
-          ))}
+        <div className="mt-10">
+          <BlogCategoryFilter active={filter} onChange={setFilter} labels={filters} />
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((post) => (
-            <Link
+            <BlogCard
               key={post.slug}
-              href={`/blogs/${post.slug}`}
-              className="card group hover:border-brand-300 dark:hover:border-brand-700"
-            >
-              <span
-                className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                  post.category === "good-casino"
-                    ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
-                    : post.category === "bad-casino"
-                      ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
-                      : "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
-                }`}
-              >
-                {post.category === "good-casino"
-                  ? t("filterGood")
-                  : post.category === "bad-casino"
-                    ? t("filterBad")
-                    : t("filterDaily")}
-              </span>
-              <h2 className="mt-3 font-semibold text-gray-900 group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-400">
-                {getLocalizedText(post.title, locale)}
-              </h2>
-              <p className="mt-2 line-clamp-3 text-sm text-gray-600 dark:text-gray-400">
-                {getLocalizedText(post.excerpt, locale)}
-              </p>
-              <div className="mt-4 flex items-center justify-between text-xs text-gray-500">
-                <span>
-                  {post.readTime} {t("minRead")}
-                </span>
-                <time>
-                  {new Date(post.publishedAt).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN")}
-                </time>
-              </div>
-            </Link>
+              post={post}
+              categoryLabel={getCategoryLabel(post.category)}
+              featured={post.slug === FEATURED_SLUG}
+            />
           ))}
         </div>
-      </div>
+      </section>
+
+      <BlogsTrustBar />
+      <BlogNewsletter />
     </div>
   );
 }
