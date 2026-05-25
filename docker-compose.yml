@@ -1,0 +1,40 @@
+# Phase 2+ scaffold — enable services as backend is implemented
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://cjb:cjb@postgres:5432/casino_journal
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - postgres
+      - redis
+    profiles:
+      - full
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: cjb
+      POSTGRES_PASSWORD: cjb
+      POSTGRES_DB: casino_journal
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    profiles:
+      - full
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    profiles:
+      - full
+
+volumes:
+  pgdata:

@@ -1,0 +1,75 @@
+import { siteConfig } from "@/config/site";
+
+export function organizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "NewsMediaOrganization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    sameAs: [siteConfig.social.telegram],
+  };
+}
+
+export function breadcrumbSchema(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function articleSchema(input: {
+  title: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  author?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: input.title,
+    description: input.description,
+    url: input.url,
+    datePublished: input.datePublished,
+    author: {
+      "@type": "Organization",
+      name: input.author ?? siteConfig.name,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+}
+
+export function reviewSchema(input: {
+  name: string;
+  rating: number;
+  description: string;
+  url: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": "Organization",
+      name: input.name,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: input.rating,
+      bestRating: 5,
+    },
+    author: { "@type": "Organization", name: siteConfig.name },
+    reviewBody: input.description,
+    url: input.url,
+  };
+}

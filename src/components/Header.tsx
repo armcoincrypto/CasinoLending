@@ -12,6 +12,8 @@ const navItems = [
   { href: "/casinos", key: "navCasinos" as const },
   { href: "/news", key: "navNews" as const },
   { href: "/blogs", key: "navBlogs" as const },
+  { href: "/#bonus-tracker", key: "navBonuses" as const },
+  { href: "/#blacklist", key: "navSafety" as const },
   { href: "/contact", key: "navContact" as const },
 ];
 
@@ -22,27 +24,27 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200/80 bg-white/90 backdrop-blur-md dark:border-gray-800 dark:bg-surface-dark/90">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-navy-950/90 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 text-sm font-bold text-white">
-            CP
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-gold-500 to-gold-400 font-display text-sm font-bold text-navy-950 shadow-glow-gold">
+            CJ
           </div>
           <div className="hidden sm:block">
-            <span className="text-lg font-bold text-gray-900 dark:text-white">{t("siteName")}</span>
-            <p className="text-xs leading-tight text-gray-500 dark:text-gray-400">{t("tagline")}</p>
+            <span className="font-display text-lg font-bold text-white">{t("siteName")}</span>
+            <p className="text-xs leading-tight text-slate-500">{t("tagline")}</p>
           </div>
         </Link>
 
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-5 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`text-sm font-medium transition-colors hover:text-brand-600 dark:hover:text-brand-400 ${
-                pathname.startsWith(item.href)
-                  ? "text-brand-600 dark:text-brand-400"
-                  : "text-gray-600 dark:text-gray-300"
+              className={`text-sm font-medium transition-colors hover:text-gold-400 ${
+                pathname.startsWith(item.href.replace(/#.*$/, ""))
+                  ? "text-gold-400"
+                  : "text-slate-400"
               }`}
             >
               {t(item.key)}
@@ -55,11 +57,11 @@ export default function Header() {
           <ThemeToggle />
           <button
             type="button"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 md:hidden dark:border-gray-700"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 lg:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-5 w-5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {mobileOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -71,16 +73,16 @@ export default function Header() {
       </nav>
 
       {mobileOpen && (
-        <div className="border-t border-gray-200 bg-white px-4 py-4 md:hidden dark:border-gray-800 dark:bg-surface-dark">
+        <div className="border-t border-white/10 bg-navy-950 px-4 py-4 lg:hidden">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setMobileOpen(false)}
               className={`block py-2 text-sm font-medium ${
-                pathname.startsWith(item.href)
-                  ? "text-brand-600"
-                  : "text-gray-600 dark:text-gray-300"
+                pathname.startsWith(item.href.replace(/#.*$/, ""))
+                  ? "text-gold-400"
+                  : "text-slate-400"
               }`}
             >
               {t(item.key)}

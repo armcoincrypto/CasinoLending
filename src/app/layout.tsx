@@ -1,33 +1,42 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
+import { siteConfig } from "@/config/site";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { organizationSchema } from "@/lib/seo/schema";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
 
-export const metadata: Metadata = {
-  title: "CasinoPulse India — Best Online Casino Reviews for Indian Players",
-  description:
-    "Top 40 online casino reviews for Indian players. Compare bonuses, safe real-money sites, best casinos, and sites to avoid. Expert guides in English & Hindi.",
-  keywords: [
-    "online casino India",
-    "casino reviews Indian players",
-    "best online casino",
-    "real money casino",
-    "casino bonus",
-  ],
-};
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
+export const metadata: Metadata = buildPageMetadata({
+  title: siteConfig.name,
+  description: siteConfig.description,
+  path: "/",
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const schema = organizationSchema();
+
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
+    <html lang="en" suppressHydrationWarning className="dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      </head>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
         <Providers>
           <div className="flex min-h-screen flex-col">
             <Header />

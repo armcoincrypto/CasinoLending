@@ -1,0 +1,90 @@
+import type { NewsArticleMeta, NewsCategory } from "@/types/domain";
+
+const categoryMap: Record<string, NewsCategory> = {
+  Jackpots: "jackpots",
+  Payments: "regulations",
+  Industry: "regulations",
+  Crypto: "crypto-casinos",
+  Regulation: "regulations",
+  Scandal: "scandals",
+  Bonus: "bonus-campaigns",
+};
+
+export const trendingNews: NewsArticleMeta[] = [
+  {
+    id: "tn-1",
+    slug: "record-jackpot-mega-moolah-2026",
+    title: "Record $3.1M Jackpot Hits on Progressive Slot — Biggest Win of 2026",
+    excerpt: "A UK player triggers the largest progressive payout recorded this year on a major platform.",
+    category: "jackpots",
+    readTime: 4,
+    views: 48200,
+    trendingScore: 98,
+    publishedAt: new Date(2026, 4, 26, 9, 0).toISOString(),
+    tags: ["jackpot", "mega-moolah", "record"],
+  },
+  {
+    id: "tn-2",
+    slug: "bangladesh-crypto-casino-regulation",
+    title: "South Asia Crypto Casino Adoption Surges Despite Regulatory Gray Zones",
+    excerpt: "Operators expand USDT and BTC rails as cross-border players seek faster payouts.",
+    category: "crypto-casinos",
+    readTime: 6,
+    views: 31500,
+    trendingScore: 91,
+    publishedAt: new Date(2026, 4, 25, 16, 0).toISOString(),
+    tags: ["crypto", "bangladesh", "regulation"],
+  },
+  {
+    id: "tn-3",
+    slug: "casino-unpaid-jackpot-scandal",
+    title: "Player Alleges Unpaid $400K Jackpot — Operator Under Investigation",
+    excerpt: "Community watchdog flags delayed verification and frozen account claims.",
+    category: "scandals",
+    readTime: 5,
+    views: 67800,
+    trendingScore: 96,
+    publishedAt: new Date(2026, 4, 25, 11, 30).toISOString(),
+    tags: ["scandal", "unpaid", "investigation"],
+  },
+  {
+    id: "tn-4",
+    slug: "new-casino-launch-vip-program",
+    title: "Major Operator Launches VIP Tier With Instant Crypto Withdrawals",
+    excerpt: "New loyalty program targets high-volume players in Bangladesh and India markets.",
+    category: "casino-launches",
+    readTime: 3,
+    views: 22100,
+    trendingScore: 84,
+    publishedAt: new Date(2026, 4, 24, 14, 0).toISOString(),
+    tags: ["launch", "vip", "crypto"],
+  },
+  {
+    id: "tn-5",
+    slug: "welcome-bonus-campaign-may-2026",
+    title: "May 2026 Bonus Wars: Casinos Compete With 200%+ Welcome Offers",
+    excerpt: "Aggressive wagering terms hidden in fine print — our editorial team breaks down the real value.",
+    category: "bonus-campaigns",
+    readTime: 7,
+    views: 28900,
+    trendingScore: 88,
+    publishedAt: new Date(2026, 4, 24, 8, 0).toISOString(),
+    tags: ["bonus", "welcome", "wagering"],
+  },
+  {
+    id: "tn-6",
+    slug: "esports-betting-india-growth",
+    title: "Esports Betting Volume Up 40% Among South Asian Players",
+    excerpt: "CS2 and cricket-themed markets drive engagement on hybrid sportsbook-casino platforms.",
+    category: "esports-betting",
+    readTime: 5,
+    views: 19400,
+    trendingScore: 79,
+    publishedAt: new Date(2026, 4, 23, 12, 0).toISOString(),
+    tags: ["esports", "india", "betting"],
+  },
+];
+
+export function mapLegacyCategory(category: string): NewsCategory {
+  return categoryMap[category] ?? "regulations";
+}

@@ -11,13 +11,8 @@
     @apply bg-gray-50 text-gray-900 transition-colors duration-300;
   }
 
-  .dark body,
-  body.dark-context {
-    @apply bg-surface-dark text-gray-100;
-  }
-
   html.dark body {
-    @apply bg-surface-dark text-gray-100;
+    @apply bg-navy-950 text-slate-200;
   }
 }
 
@@ -34,8 +29,20 @@
     @apply inline-flex items-center justify-center rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800;
   }
 
+  .btn-premium-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-gold-500 to-gold-400 px-6 py-3 text-sm font-bold text-navy-950 shadow-glow-gold transition-all hover:brightness-110 active:scale-[0.98];
+  }
+
+  .btn-premium-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-slate-200 backdrop-blur-sm transition-all hover:border-gold-500/40 hover:bg-white/10 hover:text-gold-300;
+  }
+
   .card {
     @apply rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all dark:border-gray-700 dark:bg-gray-800/50;
+  }
+
+  .glass-card {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
   }
 
   .section-title {
@@ -50,12 +57,60 @@
     @apply bg-gradient-to-r from-brand-600 to-amber-500 bg-clip-text text-transparent;
   }
 
+  .gradient-text-premium {
+    @apply bg-gradient-to-r from-gold-400 via-amber-300 to-emerald-400 bg-clip-text text-transparent;
+  }
+
   .hero-gradient {
     background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fef3c7 100%);
   }
 
   .dark .hero-gradient {
     background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 50%, #1c1917 100%);
+  }
+
+  .bg-hero-premium {
+    background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(212, 175, 55, 0.12), transparent),
+      radial-gradient(ellipse 60% 50% at 100% 50%, rgba(16, 185, 129, 0.06), transparent),
+      linear-gradient(180deg, #060912 0%, #0a0e17 50%, #060912 100%);
+  }
+
+  .bg-grid-premium {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .hero-orb {
+    @apply pointer-events-none absolute rounded-full blur-3xl;
+  }
+
+  .hero-orb-gold {
+    top: -10%;
+    left: 20%;
+    width: 400px;
+    height: 400px;
+    background: rgba(212, 175, 55, 0.08);
+  }
+
+  .hero-orb-emerald {
+    bottom: 10%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(16, 185, 129, 0.06);
+  }
+
+  .floating-card {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-card:nth-child(2) {
+    animation-delay: -2s;
+  }
+
+  .floating-card:nth-child(3) {
+    animation-delay: -4s;
   }
 }
 
