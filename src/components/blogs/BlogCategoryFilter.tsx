@@ -24,8 +24,8 @@ export default function BlogCategoryFilter({
             onClick={() => onChange(f.key)}
             className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-all ${
               isActive
-                ? "bg-brand-600 text-white shadow-lg shadow-brand-600/25"
-                : "border border-gray-300 bg-white text-gray-700 hover:border-brand-300 hover:text-brand-700 dark:border-gray-700 dark:bg-[#0B121C] dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-white"
+                ? "bg-gold-500 text-navy-950 shadow-glow-gold"
+                : "border border-white/10 text-slate-400 hover:border-gold-500/40 hover:text-gold-300"
             }`}
           >
             {f.label}

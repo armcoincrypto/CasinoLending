@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useLocale } from "@/context/LocaleContext";
 import { useTranslation } from "@/lib/useTranslation";
-import ThemeToggle from "./ThemeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const navItems = [
@@ -54,7 +53,6 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <LanguageSwitcher />
-          <ThemeToggle />
           <button
             type="button"
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 lg:hidden"

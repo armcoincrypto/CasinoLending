@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
 import { useLocale } from "@/context/LocaleContext";
 import { useTranslation } from "@/lib/useTranslation";
 import type { NewsCategory } from "@/lib/news-utils";
 import { NewsArticle } from "@/types";
-import NewsHero from "@/components/news/NewsHero";
+import { NewsArenaHero } from "@/components/news/NewsArenaHero";
 import NewsCategoryFilter from "@/components/news/NewsCategoryFilter";
 import NewsCard from "@/components/news/NewsCard";
 import NewsSidebar from "@/components/news/NewsSidebar";
@@ -34,21 +35,28 @@ export default function NewsPage() {
   }, [articles, category]);
 
   return (
-    <div className="bg-white dark:bg-surface-dark">
-      <NewsHero />
+    <div className="min-h-screen bg-navy-950">
+      <NewsArenaHero />
       <NewsCategoryFilter active={category} onChange={setCategory} />
 
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
           <div>
             {loading ? (
-              <div className="py-20 text-center text-gray-500">{t("loadingNews")}</div>
+              <div className="py-20 text-center text-slate-500">{t("loadingNews")}</div>
             ) : filtered.length === 0 ? (
-              <div className="py-20 text-center text-gray-500">{t("noNewsInCategory")}</div>
+              <div className="py-20 text-center text-slate-500">{t("noNewsInCategory")}</div>
             ) : (
               <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                {filtered.map((article) => (
-                  <NewsCard key={article.id} article={article} />
+                {filtered.map((article, i) => (
+                  <motion.div
+                    key={article.id}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: Math.min(i * 0.05, 0.3) }}
+                  >
+                    <NewsCard article={article} />
+                  </motion.div>
                 ))}
               </div>
             )}

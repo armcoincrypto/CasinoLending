@@ -2,6 +2,7 @@ import PremiumHero from "@/components/home/PremiumHero";
 import TrustPillars from "@/components/home/TrustPillars";
 import JackpotWinnersFeed from "@/components/home/JackpotWinnersFeed";
 import TrendingNewsSection from "@/components/home/TrendingNewsSection";
+import HomeBlogPreview from "@/components/home/HomeBlogPreview";
 import TopCasinosWidget from "@/components/home/TopCasinosWidget";
 import BlacklistedCasinosSection from "@/components/home/BlacklistedCasinosSection";
 import BonusTracker from "@/components/home/BonusTracker";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <TrustPillars />
       <JackpotWinnersFeed />
       <TrendingNewsSection />
+      <HomeBlogPreview />
       <TopCasinosWidget />
       <BlacklistedCasinosSection />
       <BonusTracker />

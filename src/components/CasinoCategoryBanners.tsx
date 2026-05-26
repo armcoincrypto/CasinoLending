@@ -21,9 +21,9 @@ export default function CasinoCategoryBanners({
       <button
         type="button"
         onClick={() => onSelectFilter("good")}
-        className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 to-green-700 p-6 text-left shadow-lg transition-all hover:shadow-xl ${
+        className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 to-green-700 p-6 text-left shadow-lg transition-all hover:shadow-xl hover:shadow-emerald-500/20 ${
           activeFilter === "good"
-            ? "ring-4 ring-emerald-300 ring-offset-2 dark:ring-offset-gray-900"
+            ? "ring-4 ring-emerald-300 ring-offset-2 ring-offset-navy-950"
             : ""
         }`}
       >
@@ -44,9 +44,9 @@ export default function CasinoCategoryBanners({
       <button
         type="button"
         onClick={() => onSelectFilter("bad")}
-        className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-red-500 to-rose-700 p-6 text-left shadow-lg transition-all hover:shadow-xl ${
+        className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-red-500 to-rose-700 p-6 text-left shadow-lg transition-all hover:shadow-xl hover:shadow-red-500/20 ${
           activeFilter === "bad"
-            ? "ring-4 ring-red-300 ring-offset-2 dark:ring-offset-gray-900"
+            ? "ring-4 ring-red-300 ring-offset-2 ring-offset-navy-950"
             : ""
         }`}
       >

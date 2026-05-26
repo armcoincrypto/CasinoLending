@@ -55,7 +55,7 @@ export default function CasinoLogo({
 
   return (
     <div
-      className={`relative flex flex-shrink-0 items-center justify-center overflow-hidden border border-gray-200 shadow-md ${sizeClass} ${style.bg}`}
+      className={`relative flex flex-shrink-0 items-center justify-center overflow-hidden border border-white/15 shadow-md ${sizeClass} ${style.bg}`}
       aria-label={`${name} logo`}
     >
       <span className={`truncate px-3 text-center leading-tight ${textClass} ${style.text}`}>

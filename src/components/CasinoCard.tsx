@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { useLocale } from "@/context/LocaleContext";
 import { getLocalizedText } from "@/lib/i18n";
 import { useTranslation } from "@/lib/useTranslation";
@@ -16,12 +17,32 @@ export default function CasinoCard({ casino, variant = "list" }: CasinoCardProps
   const { locale } = useLocale();
   const { t } = useTranslation(locale);
 
+  const isGood = casino.type === "good";
+  const isBad = casino.type === "bad";
+
+  const glowClass = isGood
+    ? "hover:border-emerald-500/40 hover:shadow-glow-emerald"
+    : isBad
+      ? "hover:border-danger-500/40 hover:shadow-glow-danger"
+      : "hover:border-gold-500/40 hover:shadow-glow-gold";
+
+  const rankBadge = isGood
+    ? "bg-emerald-500/20 text-emerald-300"
+    : isBad
+      ? "bg-danger-500/20 text-danger-300"
+      : "bg-gold-500/20 text-gold-300";
+
   if (variant === "list") {
     return (
-      <article className="flex flex-col gap-5 rounded-2xl border border-gray-100 bg-white p-6 shadow-md transition-shadow hover:shadow-lg sm:flex-row sm:items-center sm:gap-6 sm:p-7 dark:border-gray-700 dark:bg-gray-800/80">
+      <motion.article
+        whileHover={{ scale: 1.01 }}
+        className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition-all sm:flex sm:items-center sm:gap-6 sm:p-7 ${glowClass}`}
+      >
+        <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gold-500/5 blur-2xl transition-opacity group-hover:opacity-100" />
+
         <Link
           href={`/go/${casino.slug}`}
-          className="flex-shrink-0 transition-transform hover:scale-[1.02]"
+          className="relative flex-shrink-0 transition-transform group-hover:scale-[1.03]"
           title={t("playNow")}
         >
           <CasinoLogo
@@ -33,45 +54,45 @@ export default function CasinoCard({ casino, variant = "list" }: CasinoCardProps
           />
         </Link>
 
-        <div className="min-w-0 flex-1 py-0.5">
+        <div className="relative min-w-0 flex-1 py-2 sm:py-0">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className={`rounded-full px-2.5 py-0.5 text-xs font-bold ${rankBadge}`}>
+              #{casino.rank}
+            </span>
+            <span className="text-xs text-slate-500">★ {casino.rating}/5</span>
+          </div>
           <Link href={`/blogs/${casino.blogSlug}`}>
-            <h3 className="text-xl font-bold text-brand-600 hover:text-brand-700 sm:text-2xl dark:text-brand-400 dark:hover:text-brand-300">
+            <h3 className="mt-2 text-xl font-bold text-white transition-colors group-hover:text-gold-300 sm:text-2xl">
               {casino.name}
             </h3>
           </Link>
-          <p className="mt-2 line-clamp-3 text-base leading-relaxed text-gray-600 sm:text-[1.05rem] dark:text-gray-400">
+          <p className="mt-2 line-clamp-3 text-base leading-relaxed text-slate-400">
             {getLocalizedText(casino.summary, locale)}
+          </p>
+          <p className="mt-3 text-sm text-slate-500">
+            <span className="font-medium text-emerald-400/90">{t("bonus")}:</span>{" "}
+            {getLocalizedText(casino.bonus, locale)}
           </p>
         </div>
 
-        <Link
-          href={`/blogs/${casino.blogSlug}`}
-          className="inline-flex w-full flex-shrink-0 items-center justify-center rounded-xl bg-brand-600 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 sm:w-auto sm:min-w-[10.5rem]"
-        >
-          {t("readMore")} →
-        </Link>
-      </article>
+        <div className="relative mt-4 flex flex-col gap-2 sm:mt-0 sm:flex-shrink-0">
+          <Link href={`/go/${casino.slug}`} className="btn-premium-primary text-center sm:min-w-[10rem]">
+            {t("playNow")}
+          </Link>
+          <Link
+            href={`/blogs/${casino.blogSlug}`}
+            className="rounded-xl border border-white/10 px-6 py-2.5 text-center text-sm font-semibold text-slate-300 transition-colors hover:border-gold-500/40 hover:text-gold-300"
+          >
+            {t("readMore")} →
+          </Link>
+        </div>
+      </motion.article>
     );
   }
 
-  const isGood = casino.type === "good";
-  const isBad = casino.type === "bad";
-
-  const borderClass = isGood
-    ? "border-green-200 bg-white hover:border-green-300 dark:border-green-900/50 dark:bg-gray-800/50"
-    : isBad
-      ? "border-amber-200 bg-white hover:border-amber-300 dark:border-amber-900/50 dark:bg-gray-800/50"
-      : "border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800/50";
-
-  const badgeClass = isGood
-    ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
-    : isBad
-      ? "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400"
-      : "bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300";
-
   return (
     <article
-      className={`group flex items-center gap-4 rounded-xl border p-4 transition-all hover:shadow-md ${borderClass}`}
+      className={`group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition-all ${glowClass}`}
     >
       <Link href={`/go/${casino.slug}`} className="flex-shrink-0" title={t("playNow")}>
         <CasinoLogo
@@ -86,27 +107,21 @@ export default function CasinoCard({ casino, variant = "list" }: CasinoCardProps
       <div className="min-w-0 flex-1">
         <Link href={`/go/${casino.slug}`} className="block">
           <div className="flex items-center gap-2">
-            <span className="text-sm font-medium text-gray-500">#{casino.rank}</span>
-            <h3 className="truncate font-semibold text-gray-900 dark:text-white">{casino.name}</h3>
-            <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${badgeClass}`}>
+            <span className="text-sm font-medium text-slate-500">#{casino.rank}</span>
+            <h3 className="truncate font-semibold text-white">{casino.name}</h3>
+            <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${rankBadge}`}>
               {casino.rating}/5
             </span>
           </div>
         </Link>
-        <p className="mt-1 line-clamp-2 text-sm text-gray-600 dark:text-gray-400">
+        <p className="mt-1 line-clamp-2 text-sm text-slate-400">
           {getLocalizedText(casino.summary, locale)}
         </p>
-        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
-          <span>
-            <strong className="text-gray-700 dark:text-gray-300">{t("bonus")}:</strong>{" "}
-            {getLocalizedText(casino.bonus, locale)}
-          </span>
-        </div>
       </div>
 
       <Link
         href={`/blogs/${casino.blogSlug}`}
-        className="flex-shrink-0 rounded-lg bg-brand-50 px-4 py-2 text-sm font-medium text-brand-700 dark:bg-brand-900/30 dark:text-brand-400"
+        className="flex-shrink-0 rounded-lg border border-gold-500/30 bg-gold-500/10 px-4 py-2 text-sm font-medium text-gold-300"
       >
         {t("readMore")}
       </Link>

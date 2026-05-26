@@ -1,11 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { motion } from "framer-motion";
 import { useLocale } from "@/context/LocaleContext";
 import { useTranslation } from "@/lib/useTranslation";
 import type { BlogFilter } from "@/lib/blog-utils";
 import { blogPosts } from "@/data/blogs";
-import BlogHero from "@/components/blogs/BlogHero";
+import BlogArenaHero from "@/components/blogs/BlogArenaHero";
 import BlogCategoryFilter from "@/components/blogs/BlogCategoryFilter";
 import BlogCard from "@/components/blogs/BlogCard";
 import BlogsTrustBar from "@/components/blogs/BlogsTrustBar";
@@ -37,13 +38,13 @@ export default function BlogsPage() {
   };
 
   return (
-    <div className="bg-gray-50 dark:bg-[#050A12]">
-      <BlogHero />
+    <div className="min-h-screen bg-navy-950">
+      <BlogArenaHero />
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl dark:text-white">{t("blogsTitle")}</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-gray-600 dark:text-gray-400">{t("blogsSubtitle")}</p>
+          <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">{t("blogsTitle")}</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-slate-400">{t("blogsSubtitle")}</p>
         </div>
 
         <div className="mt-10">
@@ -51,13 +52,20 @@ export default function BlogsPage() {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((post) => (
-            <BlogCard
+          {filtered.map((post, i) => (
+            <motion.div
               key={post.slug}
-              post={post}
-              categoryLabel={getCategoryLabel(post.category)}
-              featured={post.slug === FEATURED_SLUG}
-            />
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: Math.min(i * 0.04, 0.35) }}
+            >
+              <BlogCard
+                post={post}
+                categoryLabel={getCategoryLabel(post.category)}
+                featured={post.slug === FEATURED_SLUG}
+              />
+            </motion.div>
           ))}
         </div>
       </section>

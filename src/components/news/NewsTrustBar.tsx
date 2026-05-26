@@ -2,6 +2,7 @@
 
 import { useLocale } from "@/context/LocaleContext";
 import { useTranslation } from "@/lib/useTranslation";
+import GlassCard from "@/components/ui/GlassCard";
 
 const TRUST_ITEMS = [
   { icon: "🛡️", key: "trustReliable" as const },
@@ -21,32 +22,29 @@ export default function NewsTrustBar() {
   const { t } = useTranslation(locale);
 
   return (
-    <section className="border-t border-gray-200 bg-gray-50 py-12 dark:border-gray-800 dark:bg-gray-900/50">
+    <section className="border-t border-white/10 bg-navy-900 py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {TRUST_ITEMS.map((item) => (
-            <div
-              key={item.key}
-              className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-sm dark:bg-gray-800/50"
-            >
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-2xl dark:bg-brand-900/30">
+            <GlassCard key={item.key} className="flex items-center gap-4 p-5">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/20 text-2xl">
                 {item.icon}
               </span>
-              <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">{t(item.key)}</p>
-            </div>
+              <p className="text-sm font-semibold text-slate-200">{t(item.key)}</p>
+            </GlassCard>
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           {BADGES.map((badge) => (
             <div
               key={badge.label}
-              className="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-5 py-2.5 dark:border-gray-700 dark:bg-gray-800"
+              className="flex items-center gap-2 rounded-full border border-white/10 bg-navy-950 px-5 py-2.5"
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-xs font-bold text-green-700">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20 text-xs font-bold text-emerald-300">
                 {badge.icon}
               </span>
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{badge.label}</span>
+              <span className="text-sm font-medium text-slate-300">{badge.label}</span>
             </div>
           ))}
         </div>
