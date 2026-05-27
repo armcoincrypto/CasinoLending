@@ -21,12 +21,14 @@ export default function CasinoCategoryBanners({
       <button
         type="button"
         onClick={() => onSelectFilter("good")}
-        className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 to-green-700 p-6 text-left shadow-lg transition-all hover:shadow-xl hover:shadow-emerald-500/20 ${
+        className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 via-emerald-400 to-green-600 p-6 text-left shadow-lg transition-all hover:shadow-xl hover:shadow-emerald-500/25 ${
           activeFilter === "good"
             ? "ring-4 ring-emerald-300 ring-offset-2 ring-offset-navy-950"
             : ""
         }`}
       >
+        <div className="pointer-events-none absolute inset-0 opacity-70 bg-[radial-gradient(ellipse_at_30%_30%,rgba(255,255,255,0.25),transparent_50%)]" />
+        <div className="pointer-events-none absolute -inset-8 bg-[conic-gradient(from_90deg,rgba(16,185,129,0.0),rgba(16,185,129,0.35),rgba(16,185,129,0.0))] animate-spin-slow" />
         <div className="flex items-start gap-3">
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 text-xl">
             🏆
@@ -44,12 +46,14 @@ export default function CasinoCategoryBanners({
       <button
         type="button"
         onClick={() => onSelectFilter("bad")}
-        className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-red-500 to-rose-700 p-6 text-left shadow-lg transition-all hover:shadow-xl hover:shadow-red-500/20 ${
+        className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-danger-500 via-rose-500 to-red-700 p-6 text-left shadow-lg transition-all hover:shadow-xl hover:shadow-danger-500/25 ${
           activeFilter === "bad"
             ? "ring-4 ring-red-300 ring-offset-2 ring-offset-navy-950"
             : ""
         }`}
       >
+        <div className="pointer-events-none absolute inset-0 opacity-70 bg-[radial-gradient(ellipse_at_30%_30%,rgba(255,255,255,0.22),transparent_55%)]" />
+        <div className="pointer-events-none absolute -inset-8 bg-[conic-gradient(from_90deg,rgba(239,68,68,0.0),rgba(239,68,68,0.35),rgba(239,68,68,0.0))] animate-spin-slow" />
         <div className="flex items-start gap-3">
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 text-xl">
             ⚠️

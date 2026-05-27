@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface CasinoLogoProps {
   name: string;
   slug: string;
@@ -41,6 +43,7 @@ function getBrandStyle(slug: string, name: string) {
 export default function CasinoLogo({
   name,
   slug,
+  logo,
   rank,
   type = "good",
   variant = "square",
@@ -52,15 +55,29 @@ export default function CasinoLogo({
       : "h-14 w-14 rounded-xl";
 
   const textClass = variant === "wide" ? "text-sm font-bold sm:text-base" : "text-xs font-bold";
+  const numericLogoSrc = rank != null ? `/casinos/rank/${rank}.png` : undefined;
+  const explicitLogoSrc = logo && !logo.endsWith(".svg") ? logo : undefined;
+  const showImage = Boolean(numericLogoSrc || explicitLogoSrc);
 
   return (
     <div
       className={`relative flex flex-shrink-0 items-center justify-center overflow-hidden border border-white/15 shadow-md ${sizeClass} ${style.bg}`}
       aria-label={`${name} logo`}
     >
-      <span className={`truncate px-3 text-center leading-tight ${textClass} ${style.text}`}>
-        {style.label ?? name.slice(0, 12)}
-      </span>
+      {showImage ? (
+        <Image
+          src={(explicitLogoSrc ?? numericLogoSrc)!}
+          alt={`${name} logo`}
+          fill
+          sizes={variant === "wide" ? "192px" : "56px"}
+          className="object-contain p-3"
+          priority={rank != null && rank <= 6}
+        />
+      ) : (
+        <span className={`truncate px-3 text-center leading-tight ${textClass} ${style.text}`}>
+          {style.label ?? name.slice(0, 12)}
+        </span>
+      )}
       {rank != null && type !== "ranking" && variant === "square" && (
         <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-gray-900 text-[10px] font-bold text-white">
           {rank}

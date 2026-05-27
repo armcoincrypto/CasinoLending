@@ -19,22 +19,21 @@ export default function OrbitingCasinos() {
       >
         {ORBIT_CASINOS.map((casino, i) => {
           const angle = (360 / ORBIT_CASINOS.length) * i;
-          const radius = i % 2 === 0 ? 42 : 48;
-          const rad = (angle * Math.PI) / 180;
-          const x = 50 + radius * Math.cos(rad);
-          const y = 50 + radius * Math.sin(rad);
+          const radius = i % 2 === 0 ? 140 : 168;
 
           return (
             <motion.div
               key={casino.id}
-              className="absolute -translate-x-1/2 -translate-y-1/2"
-              style={{ left: `${x}%`, top: `${y}%` }}
+              className="absolute left-1/2 top-1/2"
+              style={{
+                transform: `rotate(${angle}deg) translateX(${radius}px) rotate(${-angle}deg)`,
+              }}
               animate={{ rotate: -360 }}
               transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
             >
               <Link
                 href={`/go/${casino.slug}`}
-                className="group flex items-center gap-1.5 whitespace-nowrap rounded-full border border-white/10 bg-navy-900/90 px-3 py-1.5 text-xs font-semibold text-slate-300 shadow-lg backdrop-blur-md transition-all hover:border-gold-500/50 hover:text-gold-300 hover:shadow-glow-gold sm:text-sm"
+                className="group flex w-[10.5rem] items-center justify-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-navy-900/85 px-3 py-1.5 text-xs font-semibold text-slate-300 shadow-lg backdrop-blur-md transition-all hover:border-gold-500/50 hover:bg-navy-900/95 hover:text-gold-300 hover:shadow-glow-gold sm:w-[11.5rem] sm:text-sm"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 opacity-80 group-hover:animate-pulse" />
                 {casino.name}
