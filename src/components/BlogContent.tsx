@@ -25,13 +25,17 @@ export default function BlogContent({ post, casino }: BlogContentProps) {
             ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
             : post.category === "bad-casino"
               ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
-              : "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
+              : post.category === "ranking-casino"
+                ? "bg-yellow-100 text-yellow-800 dark:bg-gold-500/15 dark:text-gold-300"
+                : "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
         }`}
       >
         {post.category === "good-casino"
           ? t("filterGood")
           : post.category === "bad-casino"
             ? t("filterBad")
+            : post.category === "ranking-casino"
+              ? t("filterRanked")
             : t("filterDaily")}
       </span>
 

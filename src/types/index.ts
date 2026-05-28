@@ -31,7 +31,7 @@ export interface BlogPost {
   title: { en: string; hi: string };
   excerpt: { en: string; hi: string };
   content: { en: string; hi: string };
-  category: "good-casino" | "bad-casino" | "daily";
+  category: "good-casino" | "bad-casino" | "ranking-casino" | "daily";
   casinoSlug?: string;
   publishedAt: string;
   author: string;

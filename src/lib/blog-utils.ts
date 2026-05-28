@@ -12,6 +12,10 @@ export function blogCategoryStyle(category: BlogPost["category"]) {
       return {
         pill: "bg-danger-500/20 text-danger-300 border border-danger-500/30",
       };
+    case "ranking-casino":
+      return {
+        pill: "bg-gold-500/20 text-gold-300 border border-gold-500/30",
+      };
     default:
       return {
         pill: "bg-gold-500/20 text-gold-300 border border-gold-500/30",

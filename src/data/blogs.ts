@@ -1,17 +1,26 @@
 import { BlogPost } from "@/types";
-import { goodCasinos, badCasinos } from "./casinos";
+import { allCasinos } from "./casinos";
 
-function generateCasinoBlog(casino: typeof goodCasinos[0], type: "good-casino" | "bad-casino"): BlogPost {
-  const isGood = type === "good-casino";
+function generateCasinoBlog(
+  casino: typeof allCasinos[number],
+  category: "good-casino" | "bad-casino" | "ranking-casino"
+): BlogPost {
+  const isGood = category === "good-casino";
+  const isBad = category === "bad-casino";
+
   return {
     slug: casino.blogSlug,
     title: {
       en: isGood
         ? `${casino.name} Review 2026 — Is It Safe for Indian Players?`
-        : `${casino.name} — Mixed Reviews & Common Player Complaints`,
+        : isBad
+          ? `${casino.name} — Mixed Reviews & Common Player Complaints`
+          : `${casino.name} Review 2026 — Games, Bonuses, Payments & Safety Notes`,
       hi: isGood
         ? `${casino.name} समीक्षा 2026 — क्या यह भारतीय खिलाड़ियों के लिए सुरक्षित है?`
-        : `${casino.name} — मिश्रित समीक्षाएं और सामान्य शिकायतें`,
+        : isBad
+          ? `${casino.name} — मिश्रित समीक्षाएं और सामान्य शिकायतें`
+          : `${casino.name} समीक्षा 2026 — गेम्स, बोनस, भुगतान और सुरक्षा`,
     },
     excerpt: casino.summary,
     content: {
@@ -19,26 +28,44 @@ function generateCasinoBlog(casino: typeof goodCasinos[0], type: "good-casino" |
         ? `# ${casino.name} — Complete Review for Indian Players
 
 ## Overview
-${casino.name} has established itself as one of the most reliable platforms for Indian players seeking a premium online casino experience. Our team conducted a thorough 30-day test covering deposits, gameplay, bonuses, and withdrawal speeds.
+This review focuses on what matters most to Indian players: game variety, payment methods, bonus terms, mobile experience, and safe-play practices. Offers and availability can vary by region, so always confirm details on the official site before depositing.
 
 ## Welcome Bonus
 ${casino.bonus.en}
 
-The bonus comes with reasonable wagering requirements compared to industry standards, making it genuinely achievable for regular players.
+Tip: always read wagering, max-bet, and withdrawal caps before claiming any promotion.
 
 ## Payment Methods for India
-Indian players can deposit using UPI, Paytm, PhonePe, NetBanking, and cryptocurrency. ${casino.withdrawal.en}
+Common options include UPI/NetBanking (where available) and cryptocurrency. ${casino.withdrawal.en}
+
+## Games & Providers
+Expect a mix of slots, table games, and live dealer. Look for:
+- Progressive jackpots and feature-buy slots
+- Live roulette/blackjack/baccarat
+- Quick “instant” games for short sessions
+
+## Mobile Experience
+We recommend testing:
+- Lobby speed on mobile data
+- Cashier flow (deposit/withdraw)
+- Live dealer stability
+
+## Safety & Responsible Play
+Before you deposit, check:
+- Clear KYC policy and verification steps
+- Transparent bonus terms
+- Limits (deposit/time-out/self-exclusion)
 
 ## Why We Recommend ${casino.name}
-- Licensed and regulated platform with proven track record
-- Dedicated Hindi customer support available 24/7
-- Fast UPI withdrawals processed within hours
-- Wide selection of cricket betting and live casino games
-- Mobile-optimized app for Android and iOS
+- Strong overall reputation compared to many alternatives
+- Solid game variety and modern interface
+- Clearer-than-average promo messaging (still read terms)
+- Suitable for players who value a smoother cashier + support experience
 
 ## Final Verdict
-${casino.name} earns our **Top Rated** badge with a ${casino.rating}/5 rating. Indian players worldwide can sign up with confidence using our exclusive referral link for enhanced welcome bonuses.`
-        : `# ${casino.name} — Mixed Reviews & Player Feedback
+${casino.name} scores **${casino.rating}/5** in our scoring model. If you value fast support and a clean mobile experience, it’s a strong option to consider — but always verify bonus terms and payment availability for your location.`
+        : isBad
+          ? `# ${casino.name} — Mixed Reviews & Player Feedback
 
 ## Red Flags Identified
 Our investigation into ${casino.name} revealed multiple serious concerns that every Indian player should be aware of before depositing any funds.
@@ -60,7 +87,41 @@ We found over 200 unresolved complaints on gambling forums regarding ${casino.na
 - KYC documents requested repeatedly without processing
 
 ## Our Recommendation
-**Do not deposit at ${casino.name}.** With a rating of ${casino.rating}/5, this platform fails our minimum safety standards. Choose from our Top Rated Casinos list instead.`,
+**Do not deposit at ${casino.name}.** With a rating of ${casino.rating}/5, this platform fails our minimum safety standards. Choose from our Top Rated Casinos list instead.`
+          : `# ${casino.name} — Ranked Casino Review (2026)
+
+## Overview
+${casino.name} appears in our Top 40 ranking based on overall market presence and player interest. This page gives a practical, player-first overview: what to check, what to try first, and how to avoid common bonus and withdrawal mistakes.
+
+## Bonus Snapshot
+${casino.bonus.en}
+
+## Payments (What to Look For)
+Payment availability depends on your country and verification status. ${casino.withdrawal.en}
+
+Before depositing, confirm:
+- Minimum deposit/withdrawal amounts
+- Fees (if any) for cards/crypto/bank
+- Verification requirements (KYC)
+
+## Games & Features
+Typical categories you’ll find:
+- Slots (including new releases and classics)
+- Table games (roulette/blackjack/baccarat)
+- Live dealer titles
+- Tournaments, missions, or loyalty offers (varies)
+
+## Mobile & UX Checklist
+- Site speed on mobile data
+- Lobby search and filters
+- Smooth cashier flow
+- Live dealer stability
+
+## Responsible Gambling
+We recommend choosing platforms that offer limits and self-exclusion tools, and setting your own budget before playing.
+
+## Bottom Line
+${casino.name} is a **ranked** pick with a **${casino.rating}/5** rating. Use this review as a checklist, then confirm region-specific details on the official site.`,
       hi: isGood
         ? `# ${casino.name} — भारतीय खिलाड़ियों के लिए पूर्ण समीक्षा
 
@@ -82,7 +143,8 @@ UPI, Paytm, PhonePe, NetBanking। ${casino.withdrawal.hi}
 
 ## अंतिम निर्णय
 ${casino.name} को ${casino.rating}/5 रेटिंग के साथ **शीर्ष रेटेड** बैज मिला।`
-        : `# ${casino.name} हमारी ब्लैकलिस्ट पर क्यों है
+        : isBad
+          ? `# ${casino.name} हमारी ब्लैकलिस्ट पर क्यों है
 
 ## पहचाने गए खतरे
 ${casino.summary.hi}
@@ -94,13 +156,43 @@ ${casino.bonus.hi}
 ${casino.withdrawal.hi}
 
 ## हमारी सिफारिश
-**${casino.name} पर जमा न करें।** ${casino.rating}/5 रेटिंग — यह प्लेटफॉर्म हमारे न्यूनतम सुरक्षा मानकों पर खरा नहीं उतरता।`,
+**${casino.name} पर जमा न करें।** ${casino.rating}/5 रेटिंग — यह प्लेटफॉर्म हमारे न्यूनतम सुरक्षा मानकों पर खरा नहीं उतरता।`
+          : `# ${casino.name} — रैंक्ड कैसीनो समीक्षा (2026)
+
+## अवलोकन
+${casino.name} हमारी टॉप 40 सूची में शामिल है। यहाँ हम व्यावहारिक तरीके से बताते हैं कि बोनस/भुगतान/UX में क्या देखना चाहिए ताकि आप गलतियाँ न करें।
+
+## बोनस
+${casino.bonus.hi}
+
+## भुगतान और निकासी
+क्षेत्र और KYC के अनुसार विकल्प बदल सकते हैं। ${casino.withdrawal.hi}
+
+जमा करने से पहले देखें:
+- न्यूनतम जमा/निकासी
+- शुल्क (यदि लागू)
+- सत्यापन (KYC) नियम
+
+## गेम्स
+आमतौर पर मिलते हैं:
+- स्लॉट्स
+- टेबल गेम्स
+- लाइव डीलर
+
+## मोबाइल अनुभव
+मोबाइल डेटा पर स्पीड, कैशियर फ्लो, और लाइव गेम स्थिरता ज़रूर जांचें।
+
+## जिम्मेदार जुआ
+सीमाएं/सेल्फ-एक्सक्लूजन टूल्स वाले प्लेटफॉर्म चुनें और बजट सेट करें।
+
+## निष्कर्ष
+${casino.name} की हमारी रेटिंग **${casino.rating}/5** है। क्षेत्र-विशिष्ट विवरण आधिकारिक साइट पर पुष्टि करें।`,
     },
-    category: type,
+    category,
     casinoSlug: casino.slug,
     publishedAt: new Date(2026, 0, casino.rank).toISOString(),
     author: "CasinoPulse Editorial",
-    readTime: isGood ? 8 : 6,
+    readTime: isGood ? 9 : isBad ? 6 : 7,
   };
 }
 
@@ -165,8 +257,12 @@ const dailyBlogs: BlogPost[] = [
 ];
 
 export const blogPosts: BlogPost[] = [
-  ...goodCasinos.map((c) => generateCasinoBlog(c, "good-casino")),
-  ...badCasinos.map((c) => generateCasinoBlog(c, "bad-casino")),
+  ...allCasinos.map((c) =>
+    generateCasinoBlog(
+      c,
+      c.type === "good" ? "good-casino" : c.type === "bad" ? "bad-casino" : "ranking-casino"
+    )
+  ),
   ...dailyBlogs,
 ];
 

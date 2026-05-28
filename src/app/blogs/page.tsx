@@ -23,6 +23,7 @@ export default function BlogsPage() {
     { key: "all", label: t("filterAll") },
     { key: "good-casino", label: t("filterGood") },
     { key: "bad-casino", label: t("filterBad") },
+    { key: "ranking-casino", label: t("filterRanked") },
     { key: "daily", label: t("filterDaily") },
   ];
 
@@ -34,6 +35,7 @@ export default function BlogsPage() {
   const getCategoryLabel = (category: (typeof blogPosts)[0]["category"]) => {
     if (category === "good-casino") return t("filterGood");
     if (category === "bad-casino") return t("filterBad");
+    if (category === "ranking-casino") return t("filterRanked");
     return t("filterDaily");
   };
 
