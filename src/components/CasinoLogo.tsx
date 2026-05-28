@@ -46,23 +46,25 @@ export default function CasinoLogo({
   }, [rank, slug]);
 
   const style = getBrandStyle(slug, name);
-  const sizeClass =
-    variant === "wide"
-      ? "h-20 w-[10.5rem] rounded-2xl sm:h-24 sm:w-[12rem]"
-      : "h-14 w-14 rounded-xl";
-
-  const textClass = variant === "wide" ? "text-sm font-bold sm:text-base" : "text-xs font-bold";
-
   const rankLogoSrc = rank != null ? getRankLogoPath(rank) : undefined;
   const explicitLogoSrc = logo && !logo.endsWith(".svg") ? logo : undefined;
   const imageSrc = rankLogoSrc ?? explicitLogoSrc;
   const showImage = Boolean(imageSrc) && !imgError;
 
+  const isWide = variant === "wide";
+  const containerClass = showImage
+    ? isWide
+      ? "aspect-[780/470] w-28 rounded-xl border border-white/10 shadow-md ring-1 ring-white/5 sm:w-32"
+      : "h-12 w-12 rounded-lg border border-white/10 shadow-md ring-1 ring-white/5 sm:h-14 sm:w-14"
+    : isWide
+      ? "flex h-16 w-28 items-center justify-center rounded-xl border border-white/15 sm:h-[4.5rem] sm:w-32"
+      : "flex h-14 w-14 items-center justify-center rounded-xl border border-white/15";
+
+  const textClass = isWide ? "text-sm font-bold" : "text-xs font-bold";
+
   return (
     <div
-      className={`relative flex flex-shrink-0 items-center justify-center overflow-hidden border border-white/15 shadow-md ${sizeClass} ${
-        showImage ? "bg-white" : style.bg
-      }`}
+      className={`relative flex-shrink-0 overflow-hidden ${containerClass} ${showImage ? "" : style.bg}`}
       aria-label={`${name} logo`}
     >
       {showImage ? (
@@ -71,8 +73,8 @@ export default function CasinoLogo({
           alt={`${name} logo`}
           fill
           unoptimized
-          sizes={variant === "wide" ? "192px" : "56px"}
-          className="object-contain p-2 sm:p-3"
+          sizes={isWide ? "128px" : "56px"}
+          className="object-cover"
           priority={rank != null && rank <= 6}
           onError={() => setImgError(true)}
         />
