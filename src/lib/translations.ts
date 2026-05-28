@@ -63,9 +63,11 @@ export const translations = {
     bestCasinosBannerTitle: "Best Casinos",
     bestCasinosBannerDesc: "Top-rated trusted online casinos — show 20 only",
     viewBestCasinos: "20 Best Casinos",
+    viewBestCasinosCta: "🎰 View 20 Best Casinos Now",
     badCasinosBannerTitle: "Casinos to Avoid",
     badCasinosBannerDesc: "Sites with mixed reviews — show 20 only",
     viewBadCasinos: "20 Casinos to Avoid",
+    viewBadCasinosCta: "⚠️ See 20 Casinos to Avoid",
     goodCasinosHeading: "Best Online Casinos for Indian Players",
     goodCasinosDesc:
       "Our top 20 real-money casino sites with strong bonuses, games, and reputation among Indian players worldwide.",
@@ -213,9 +215,11 @@ export const translations = {
     bestCasinosBannerTitle: "सर्वश्रेष्ठ कैसीनो",
     bestCasinosBannerDesc: "टॉप रेटेड कैसीनो — केवल 20 दिखाएं",
     viewBestCasinos: "20 सर्वश्रेष्ठ कैसीनो",
+    viewBestCasinosCta: "🎰 अभी 20 सर्वश्रेष्ठ देखें",
     badCasinosBannerTitle: "बचने योग्य कैसीनो",
     badCasinosBannerDesc: "मिश्रित समीक्षा — केवल 20 दिखाएं",
     viewBadCasinos: "20 कैसीनो से बचें",
+    viewBadCasinosCta: "⚠️ 20 से बचने वाले देखें",
     goodCasinosHeading: "शीर्ष 20 सर्वश्रेष्ठ कैसीनो (लोकप्रियता + प्रतिष्ठा)",
     goodCasinosDesc:
       "खिलाड़ी संख्या, प्लेटफॉर्म स्थिरता और समग्र प्रतिष्ठा में लगातार अच्छी रैंकिंग वाले ब्रांड।",

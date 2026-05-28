@@ -3,6 +3,8 @@
 import type { CasinoFilter } from "@/lib/casino-filter";
 import { useLocale } from "@/context/LocaleContext";
 import { useTranslation } from "@/lib/useTranslation";
+import LoopingBannerText from "@/components/casinos/LoopingBannerText";
+import BannerCta from "@/components/casinos/BannerCta";
 
 interface CasinoCategoryBannersProps {
   activeFilter: CasinoFilter;
@@ -21,51 +23,57 @@ export default function CasinoCategoryBanners({
       <button
         type="button"
         onClick={() => onSelectFilter("good")}
-        className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 via-emerald-400 to-green-600 p-6 text-left shadow-lg transition-all hover:shadow-xl hover:shadow-emerald-500/25 ${
+        style={{ backgroundColor: "#378A2E" }}
+        className={`group relative overflow-hidden rounded-2xl p-6 text-left shadow-lg transition-all hover:brightness-110 hover:shadow-[0_12px_40px_rgba(55,138,46,0.45)] ${
           activeFilter === "good"
-            ? "ring-4 ring-emerald-300 ring-offset-2 ring-offset-navy-950"
+            ? "ring-4 ring-gold-400 ring-offset-2 ring-offset-navy-950"
             : ""
         }`}
       >
-        <div className="pointer-events-none absolute inset-0 opacity-70 bg-[radial-gradient(ellipse_at_30%_30%,rgba(255,255,255,0.25),transparent_50%)]" />
-        <div className="pointer-events-none absolute -inset-8 bg-[conic-gradient(from_90deg,rgba(16,185,129,0.0),rgba(16,185,129,0.35),rgba(16,185,129,0.0))] animate-spin-slow" />
-        <div className="flex items-start gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 text-xl">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(255,255,255,0.22),transparent_55%)]" />
+        <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
+
+        <div className="relative flex items-start gap-3">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-black/20 text-2xl shadow-inner">
             🏆
           </span>
-          <div>
-            <h2 className="text-lg font-bold text-white">{t("bestCasinosBannerTitle")}</h2>
-            <p className="mt-1 text-sm text-emerald-50">{t("bestCasinosBannerDesc")}</p>
+          <div className="min-w-0 flex-1">
+            <h2 className="text-xl font-bold text-white sm:text-2xl">
+              {t("bestCasinosBannerTitle")}
+            </h2>
+            <LoopingBannerText text={t("bestCasinosBannerDesc")} maskColor="#378A2E" />
           </div>
         </div>
-        <span className="mt-5 inline-flex items-center rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-gray-900 transition group-hover:bg-emerald-50">
-          {t("viewBestCasinos")} →
-        </span>
+
+        <BannerCta label={t("viewBestCasinosCta")} variant="green" />
       </button>
 
       <button
         type="button"
         onClick={() => onSelectFilter("bad")}
-        className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-danger-500 via-rose-500 to-red-700 p-6 text-left shadow-lg transition-all hover:shadow-xl hover:shadow-danger-500/25 ${
+        style={{ backgroundColor: "#BF0000" }}
+        className={`group relative overflow-hidden rounded-2xl p-6 text-left shadow-lg transition-all hover:brightness-110 hover:shadow-[0_12px_40px_rgba(191,0,0,0.5)] ${
           activeFilter === "bad"
-            ? "ring-4 ring-red-300 ring-offset-2 ring-offset-navy-950"
+            ? "ring-4 ring-red-200 ring-offset-2 ring-offset-navy-950"
             : ""
         }`}
       >
-        <div className="pointer-events-none absolute inset-0 opacity-70 bg-[radial-gradient(ellipse_at_30%_30%,rgba(255,255,255,0.22),transparent_55%)]" />
-        <div className="pointer-events-none absolute -inset-8 bg-[conic-gradient(from_90deg,rgba(239,68,68,0.0),rgba(239,68,68,0.35),rgba(239,68,68,0.0))] animate-spin-slow" />
-        <div className="flex items-start gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 text-xl">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(255,255,255,0.18),transparent_55%)]" />
+        <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
+
+        <div className="relative flex items-start gap-3">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-black/20 text-2xl shadow-inner">
             ⚠️
           </span>
-          <div>
-            <h2 className="text-lg font-bold text-white">{t("badCasinosBannerTitle")}</h2>
-            <p className="mt-1 text-sm text-red-50">{t("badCasinosBannerDesc")}</p>
+          <div className="min-w-0 flex-1">
+            <h2 className="text-xl font-bold text-white sm:text-2xl">
+              {t("badCasinosBannerTitle")}
+            </h2>
+            <LoopingBannerText text={t("badCasinosBannerDesc")} maskColor="#BF0000" />
           </div>
         </div>
-        <span className="mt-5 inline-flex items-center rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-gray-900 transition group-hover:bg-red-50">
-          {t("viewBadCasinos")} →
-        </span>
+
+        <BannerCta label={t("viewBadCasinosCta")} variant="red" />
       </button>
     </div>
   );
