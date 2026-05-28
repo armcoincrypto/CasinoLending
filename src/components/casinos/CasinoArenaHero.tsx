@@ -65,13 +65,14 @@ export default function CasinoArenaHero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="relative"
+            className="relative mx-auto w-full max-w-xl lg:mx-0 lg:ml-auto"
           >
-            {/* Slot "screen" with scanline effect */}
-            <div className="slot-video-screen relative rounded-2xl border border-white/10 bg-navy-950/80 p-4 backdrop-blur-sm sm:p-6">
+            <div className="slot-video-screen relative flex flex-col items-center rounded-2xl border border-white/10 bg-navy-950/80 p-4 backdrop-blur-sm sm:p-6">
               <div className="slot-scanlines pointer-events-none absolute inset-0 rounded-2xl opacity-30" />
-              <SlotMachine />
-              <p className="mt-4 text-center text-xs text-slate-500">
+              <div className="relative z-10 w-full">
+                <SlotMachine />
+              </div>
+              <p className="relative z-10 mx-auto mt-5 max-w-md text-center text-xs leading-relaxed text-slate-400 sm:text-sm">
                 {t("casinosSlotDisclaimer")}
               </p>
             </div>

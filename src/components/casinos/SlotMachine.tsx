@@ -5,30 +5,27 @@ import { useState } from "react";
 import WinCelebration from "./WinCelebration";
 import SlotLever from "./SlotLever";
 
-const REEL_STRIPS = [
-  ["🍒", "💎", "7️⃣", "🔔", "⭐", "🍋", "🎰", "💎"],
-  ["7️⃣", "⭐", "🍒", "🎰", "💎", "🔔", "🍋", "7️⃣"],
-  ["💎", "🔔", "⭐", "🍒", "7️⃣", "🎰", "💎", "⭐"],
-];
+const SPIN_SYMBOLS = ["🍒", "💎", "🔔", "⭐", "🍋", "🎰", "💎", "⭐"];
+const JACKPOT = "7️⃣";
 
-function shuffleStrip(strip: string[]) {
-  const copy = [...strip];
-  for (let i = copy.length - 1; i > 0; i -= 1) {
+type SpinPhase = "idle" | "spinning" | "jackpot" | "celebrating";
+
+function buildSpinStrip() {
+  const strip = [...SPIN_SYMBOLS];
+  for (let i = strip.length - 1; i > 0; i -= 1) {
     const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
+    [strip[i], strip[j]] = [strip[j], strip[i]];
   }
-  return copy;
+  return strip;
 }
 
-function Reel({
+function SpinningReel({
   symbols,
-  spinning,
   spinKey,
   duration,
   delay,
 }: {
   symbols: string[];
-  spinning: boolean;
   spinKey: number;
   duration: number;
   delay: number;
@@ -40,13 +37,14 @@ function Reel({
       <div className="absolute inset-x-0 top-1/2 z-10 h-12 -translate-y-1/2 border-y-2 border-gold-400/60 bg-gold-500/15" />
       <motion.div
         className="flex flex-col items-center"
-        key={`${spinKey}-${spinning}`}
-        animate={spinning ? { y: ["0%", "-50%"] } : { y: "-25%" }}
-        transition={
-          spinning
-            ? { duration, repeat: Infinity, ease: "linear", delay }
-            : { duration: 0.3, ease: "easeOut" }
-        }
+        key={spinKey}
+        animate={{ y: ["0%", "-50%"] }}
+        transition={{
+          duration,
+          repeat: Infinity,
+          ease: "linear",
+          delay,
+        }}
       >
         {doubled.map((sym, i) => (
           <span
@@ -61,31 +59,64 @@ function Reel({
   );
 }
 
+function JackpotReel() {
+  return (
+    <div className="slot-reel-window relative h-32 w-full overflow-hidden rounded-lg border-2 border-gold-400 bg-navy-950 shadow-[inset_0_0_24px_rgba(212,175,55,0.35)] sm:h-36">
+      <div className="absolute inset-x-0 top-1/2 z-10 h-12 -translate-y-1/2 border-y-2 border-gold-300 bg-gold-500/25 shadow-glow-gold" />
+      <motion.div
+        className="flex h-full items-center justify-center"
+        initial={{ scale: 0.5, opacity: 0 }}
+        animate={{ scale: [0.5, 1.15, 1], opacity: 1 }}
+        transition={{ duration: 0.45, ease: "easeOut" }}
+      >
+        <span className="text-4xl sm:text-5xl">{JACKPOT}</span>
+      </motion.div>
+    </div>
+  );
+}
+
+function IdleReel() {
+  return (
+    <div className="slot-reel-window relative flex h-32 w-full items-center justify-center overflow-hidden rounded-lg border-2 border-gold-500/30 bg-navy-950 sm:h-36">
+      <div className="absolute inset-x-0 top-1/2 z-10 h-12 -translate-y-1/2 border-y-2 border-gold-400/40 bg-gold-500/10" />
+      <span className="text-3xl opacity-40 sm:text-4xl">❓</span>
+    </div>
+  );
+}
+
 export default function SlotMachine() {
-  const [spinning, setSpinning] = useState(false);
-  const [showWin, setShowWin] = useState(false);
+  const [phase, setPhase] = useState<SpinPhase>("idle");
   const [spinKey, setSpinKey] = useState(0);
-  const [reels, setReels] = useState(REEL_STRIPS);
+  const [reels, setReels] = useState([buildSpinStrip(), buildSpinStrip(), buildSpinStrip()]);
+
+  const spinning = phase === "spinning";
+  const showJackpot = phase === "jackpot" || phase === "celebrating";
+  const showWin = phase === "celebrating";
 
   const pullLever = () => {
-    if (spinning) return;
+    if (phase !== "idle") return;
 
-    setShowWin(false);
-    setSpinning(true);
-    setReels((prev) => prev.map(shuffleStrip));
+    setReels([buildSpinStrip(), buildSpinStrip(), buildSpinStrip()]);
     setSpinKey((k) => k + 1);
+    setPhase("spinning");
 
+    // Spin fast, then land on 7-7-7
     window.setTimeout(() => {
-      setSpinning(false);
-      setShowWin(true);
-      window.setTimeout(() => setShowWin(false), 3200);
-    }, 2800);
+      setPhase("jackpot");
+
+      window.setTimeout(() => {
+        setPhase("celebrating");
+
+        window.setTimeout(() => {
+          setPhase("idle");
+        }, 3200);
+      }, 900);
+    }, 2400);
   };
 
   return (
     <div className="mx-auto w-full max-w-xl">
       <div className="relative flex items-stretch gap-3 sm:gap-5">
-        {/* Cabinet */}
         <div className="slot-machine-frame relative min-w-0 flex-1 p-1">
           <div className="absolute -inset-1 animate-pulse rounded-2xl bg-gradient-to-r from-gold-500 via-emerald-500 to-gold-500 opacity-60 blur-md" />
           <div className="relative overflow-hidden rounded-2xl border-2 border-gold-500/70 bg-gradient-to-b from-navy-800 to-navy-950 p-4 shadow-glow-gold sm:p-5">
@@ -103,7 +134,16 @@ export default function SlotMachine() {
                     animate={{ scale: 1 }}
                     className="font-display text-lg font-black text-emerald-300"
                   >
-                    WINNER!
+                    BIG WIN!
+                  </motion.span>
+                ) : showJackpot ? (
+                  <motion.span
+                    key="jackpot"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="font-display text-lg font-black text-gold-300"
+                  >
+                    7 · 7 · 7
                   </motion.span>
                 ) : (
                   <motion.span
@@ -119,42 +159,39 @@ export default function SlotMachine() {
             </div>
 
             <div className="relative z-10 grid grid-cols-3 gap-2">
-              <Reel
-                symbols={reels[0]}
-                spinning={spinning}
-                spinKey={spinKey}
-                duration={0.9}
-                delay={0}
-              />
-              <Reel
-                symbols={reels[1]}
-                spinning={spinning}
-                spinKey={spinKey}
-                duration={1.0}
-                delay={0.1}
-              />
-              <Reel
-                symbols={reels[2]}
-                spinning={spinning}
-                spinKey={spinKey}
-                duration={1.1}
-                delay={0.2}
-              />
+              {spinning ? (
+                <>
+                  <SpinningReel symbols={reels[0]} spinKey={spinKey} duration={0.75} delay={0} />
+                  <SpinningReel symbols={reels[1]} spinKey={spinKey} duration={0.85} delay={0.08} />
+                  <SpinningReel symbols={reels[2]} spinKey={spinKey} duration={0.95} delay={0.16} />
+                </>
+              ) : showJackpot ? (
+                <>
+                  <JackpotReel />
+                  <JackpotReel />
+                  <JackpotReel />
+                </>
+              ) : (
+                <>
+                  <IdleReel />
+                  <IdleReel />
+                  <IdleReel />
+                </>
+              )}
             </div>
           </div>
         </div>
 
-        {/* Big lever — always visible */}
-        <SlotLever onPull={pullLever} disabled={spinning} pulling={spinning} />
+        <SlotLever onPull={pullLever} disabled={phase !== "idle"} pulling={spinning} />
       </div>
 
       <button
         type="button"
         onClick={pullLever}
-        disabled={spinning}
+        disabled={phase !== "idle"}
         className="btn-premium-primary mt-4 w-full py-4 text-base sm:hidden"
       >
-        {spinning ? "Spinning…" : "🎰 Pull Lever — Spin Now!"}
+        {spinning ? "Spinning…" : showJackpot ? "Jackpot!" : "🎰 Pull Lever — Spin Now!"}
       </button>
     </div>
   );

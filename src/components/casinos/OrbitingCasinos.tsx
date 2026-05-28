@@ -1,29 +1,36 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { top40Casinos } from "@/data/casinos";
 import CasinoLogo from "@/components/CasinoLogo";
 
-const INNER = top40Casinos.slice(0, 20);
-const OUTER = top40Casinos.slice(20, 40);
+const VISIBLE_COUNT = 10;
+const ROTATE_MS = 40_000;
 
-function OrbitRing({
-  casinos,
-  radius,
-  duration,
-  direction,
-}: {
-  casinos: typeof top40Casinos;
-  radius: number;
-  duration: number;
-  direction: 1 | -1;
-}) {
+function pickRandomTen() {
+  const pool = [...top40Casinos];
+  for (let i = pool.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  return pool.slice(0, VISIBLE_COUNT);
+}
+
+function OrbitRing({ casinos }: { casinos: typeof top40Casinos }) {
+  const radius = 150;
+
   return (
     <motion.div
       className="absolute left-1/2 top-1/2 h-0 w-0"
-      animate={{ rotate: direction === 1 ? 360 : -360 }}
-      transition={{ duration, repeat: Infinity, ease: "linear" }}
+      initial={{ opacity: 0, scale: 0.92 }}
+      animate={{ opacity: 1, scale: 1, rotate: 360 }}
+      transition={{
+        opacity: { duration: 0.5 },
+        scale: { duration: 0.5 },
+        rotate: { duration: 50, repeat: Infinity, ease: "linear" },
+      }}
     >
       {casinos.map((casino, i) => {
         const angle = (360 / casinos.length) * i;
@@ -37,8 +44,8 @@ function OrbitRing({
             }}
           >
             <motion.div
-              animate={{ rotate: direction === 1 ? -360 : 360 }}
-              transition={{ duration, repeat: Infinity, ease: "linear" }}
+              animate={{ rotate: -360 }}
+              transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
             >
               <Link
                 href={`/blogs/${casino.blogSlug}`}
@@ -68,25 +75,48 @@ function OrbitRing({
 }
 
 export default function OrbitingCasinos() {
-  return (
-    <div className="relative mx-auto h-[min(520px,85vw)] w-full max-w-3xl">
-      {/* Orbit rings visual */}
-      <div className="absolute left-1/2 top-1/2 h-[42%] w-[42%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold-500/25 bg-gold-500/5" />
-      <div className="absolute left-1/2 top-1/2 h-[78%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
-      <div className="absolute left-1/2 top-1/2 h-[95%] w-[95%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-emerald-500/10" />
+  const [visible, setVisible] = useState(() => pickRandomTen());
+  const [ringKey, setRingKey] = useState(0);
+  const [secondsLeft, setSecondsLeft] = useState(40);
 
-      <OrbitRing casinos={INNER} radius={95} duration={55} direction={1} />
-      <OrbitRing casinos={OUTER} radius={155} duration={75} direction={-1} />
+  const rotateBatch = useCallback(() => {
+    setVisible(pickRandomTen());
+    setRingKey((k) => k + 1);
+    setSecondsLeft(40);
+  }, []);
+
+  useEffect(() => {
+    const rotateId = setInterval(rotateBatch, ROTATE_MS);
+    return () => clearInterval(rotateId);
+  }, [rotateBatch]);
+
+  useEffect(() => {
+    const tickId = setInterval(() => {
+      setSecondsLeft((s) => (s <= 1 ? 40 : s - 1));
+    }, 1000);
+    return () => clearInterval(tickId);
+  }, [ringKey]);
+
+  return (
+    <div className="relative mx-auto h-[min(480px,80vw)] w-full max-w-2xl">
+      <div className="absolute left-1/2 top-1/2 h-[55%] w-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold-500/25 bg-gold-500/5" />
+      <div className="absolute left-1/2 top-1/2 h-[88%] w-[88%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+
+      <AnimatePresence mode="wait">
+        <OrbitRing key={ringKey} casinos={visible} />
+      </AnimatePresence>
 
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <motion.div
-          animate={{ scale: [1, 1.06, 1] }}
+          animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 2.5, repeat: Infinity }}
           className="rounded-2xl border-2 border-gold-500/40 bg-navy-950/90 px-6 py-3 text-center shadow-glow-gold backdrop-blur-md"
         >
-          <p className="text-[10px] uppercase tracking-[0.3em] text-gold-500">All</p>
-          <p className="font-display text-2xl font-bold text-white">40 Casinos</p>
-          <p className="mt-1 text-[10px] text-slate-500">Tap any logo for review</p>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-gold-500">Featured</p>
+          <p className="font-display text-2xl font-bold text-white">10 of 40</p>
+          <p className="mt-1 text-[10px] text-slate-500">
+            New picks in {secondsLeft}s · tap for review
+          </p>
         </motion.div>
       </div>
     </div>
