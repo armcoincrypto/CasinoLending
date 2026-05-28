@@ -1,7 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useMemo, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import WinCelebration from "./WinCelebration";
+import SlotLever from "./SlotLever";
 
 const REEL_STRIPS = [
   ["🍒", "💎", "7️⃣", "🔔", "⭐", "🍋", "🎰", "💎"],
@@ -9,13 +11,24 @@ const REEL_STRIPS = [
   ["💎", "🔔", "⭐", "🍒", "7️⃣", "🎰", "💎", "⭐"],
 ];
 
+function shuffleStrip(strip: string[]) {
+  const copy = [...strip];
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
 function Reel({
   symbols,
+  spinning,
   spinKey,
   duration,
   delay,
 }: {
   symbols: string[];
+  spinning: boolean;
   spinKey: number;
   duration: number;
   delay: number;
@@ -23,23 +36,22 @@ function Reel({
   const doubled = [...symbols, ...symbols];
 
   return (
-    <div className="slot-reel-window relative h-28 w-full overflow-hidden rounded-lg border border-gold-500/40 bg-navy-950 shadow-inner sm:h-32">
-      <div className="absolute inset-x-0 top-1/2 z-10 h-10 -translate-y-1/2 border-y-2 border-gold-400/50 bg-gold-500/10" />
+    <div className="slot-reel-window relative h-32 w-full overflow-hidden rounded-lg border-2 border-gold-500/50 bg-navy-950 shadow-inner sm:h-36">
+      <div className="absolute inset-x-0 top-1/2 z-10 h-12 -translate-y-1/2 border-y-2 border-gold-400/60 bg-gold-500/15" />
       <motion.div
         className="flex flex-col items-center"
-        key={spinKey}
-        animate={{ y: ["0%", "-50%"] }}
-        transition={{
-          duration,
-          repeat: Infinity,
-          ease: "linear",
-          delay,
-        }}
+        key={`${spinKey}-${spinning}`}
+        animate={spinning ? { y: ["0%", "-50%"] } : { y: "-25%" }}
+        transition={
+          spinning
+            ? { duration, repeat: Infinity, ease: "linear", delay }
+            : { duration: 0.3, ease: "easeOut" }
+        }
       >
         {doubled.map((sym, i) => (
           <span
             key={`${sym}-${i}`}
-            className="flex h-10 w-full items-center justify-center text-2xl sm:h-12 sm:text-3xl"
+            className="flex h-12 w-full items-center justify-center text-3xl sm:h-14 sm:text-4xl"
           >
             {sym}
           </span>
@@ -51,93 +63,99 @@ function Reel({
 
 export default function SlotMachine() {
   const [spinning, setSpinning] = useState(false);
+  const [showWin, setShowWin] = useState(false);
   const [spinKey, setSpinKey] = useState(0);
   const [reels, setReels] = useState(REEL_STRIPS);
 
-  const baseDurations = useMemo(() => [2.4, 2.7, 3.0], []);
-
   const pullLever = () => {
     if (spinning) return;
+
+    setShowWin(false);
     setSpinning(true);
-
-    // Randomize reel strips to feel like "new spin"
-    setReels((prev) =>
-      prev.map((strip) => {
-        const copy = [...strip];
-        for (let i = copy.length - 1; i > 0; i -= 1) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [copy[i], copy[j]] = [copy[j], copy[i]];
-        }
-        return copy;
-      })
-    );
-
+    setReels((prev) => prev.map(shuffleStrip));
     setSpinKey((k) => k + 1);
 
     window.setTimeout(() => {
       setSpinning(false);
-    }, 2600);
+      setShowWin(true);
+      window.setTimeout(() => setShowWin(false), 3200);
+    }, 2800);
   };
 
   return (
-    <div className="slot-machine-frame relative mx-auto w-full max-w-md p-1">
-      <div className="absolute -inset-1 animate-pulse rounded-2xl bg-gradient-to-r from-gold-500 via-emerald-500 to-gold-500 opacity-50 blur-sm" />
-      <div className="relative rounded-2xl border-2 border-gold-500/60 bg-gradient-to-b from-navy-800 to-navy-950 p-4 shadow-glow-gold">
-        <div className="mb-3 flex items-center justify-between px-1">
-          <span className="text-xs font-bold uppercase tracking-widest text-gold-400">Jackpot</span>
-          <motion.span
-            className="font-display text-lg font-bold text-emerald-400"
-            animate={{ opacity: [1, 0.4, 1] }}
-            transition={{ duration: 1.2, repeat: Infinity }}
-          >
-            WIN BIG
-          </motion.span>
-        </div>
-        <div className="grid grid-cols-[1fr_1fr_1fr_auto] items-stretch gap-2">
-          <Reel symbols={reels[0]} spinKey={spinKey} duration={spinning ? 1.35 : baseDurations[0]} delay={0.0} />
-          <Reel symbols={reels[1]} spinKey={spinKey} duration={spinning ? 1.45 : baseDurations[1]} delay={0.12} />
-          <Reel symbols={reels[2]} spinKey={spinKey} duration={spinning ? 1.55 : baseDurations[2]} delay={0.22} />
+    <div className="mx-auto w-full max-w-xl">
+      <div className="relative flex items-stretch gap-3 sm:gap-5">
+        {/* Cabinet */}
+        <div className="slot-machine-frame relative min-w-0 flex-1 p-1">
+          <div className="absolute -inset-1 animate-pulse rounded-2xl bg-gradient-to-r from-gold-500 via-emerald-500 to-gold-500 opacity-60 blur-md" />
+          <div className="relative overflow-hidden rounded-2xl border-2 border-gold-500/70 bg-gradient-to-b from-navy-800 to-navy-950 p-4 shadow-glow-gold sm:p-5">
+            <WinCelebration show={showWin} />
 
-          {/* Lever */}
-          <div className="relative ml-2 hidden w-10 sm:block">
-            <div className="absolute left-1/2 top-2 h-[80%] w-2 -translate-x-1/2 rounded-full bg-white/10" />
-            <motion.button
-              type="button"
-              onClick={pullLever}
-              disabled={spinning}
-              className="relative mx-auto flex h-full w-full items-start justify-center"
-              aria-label="Pull slot lever"
-              animate={spinning ? { y: [0, 18, 0] } : { y: 0 }}
-              transition={{ duration: 0.6, times: [0, 0.45, 1] }}
-            >
-              <span className="mt-0.5 h-10 w-1.5 rounded-full bg-gradient-to-b from-gold-400 to-gold-500 shadow-glow-gold" />
-              <span className="absolute top-0 h-6 w-6 rounded-full border border-gold-500/40 bg-gold-500/20 shadow-glow-gold" />
-            </motion.button>
+            <div className="relative z-10 mb-3 flex items-center justify-between px-1">
+              <span className="text-xs font-bold uppercase tracking-widest text-gold-400">
+                Jackpot
+              </span>
+              <AnimatePresence mode="wait">
+                {showWin ? (
+                  <motion.span
+                    key="win"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="font-display text-lg font-black text-emerald-300"
+                  >
+                    WINNER!
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="idle"
+                    className="font-display text-sm font-bold text-slate-500"
+                    animate={{ opacity: [0.4, 1, 0.4] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    Pull the lever →
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <div className="relative z-10 grid grid-cols-3 gap-2">
+              <Reel
+                symbols={reels[0]}
+                spinning={spinning}
+                spinKey={spinKey}
+                duration={0.9}
+                delay={0}
+              />
+              <Reel
+                symbols={reels[1]}
+                spinning={spinning}
+                spinKey={spinKey}
+                duration={1.0}
+                delay={0.1}
+              />
+              <Reel
+                symbols={reels[2]}
+                spinning={spinning}
+                spinKey={spinKey}
+                duration={1.1}
+                delay={0.2}
+              />
+            </div>
           </div>
         </div>
 
-        <div className="mt-3 flex items-center justify-between gap-3">
-          <button
-            type="button"
-            onClick={pullLever}
-            disabled={spinning}
-            className={`rounded-xl px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all ${
-              spinning
-                ? "cursor-not-allowed border border-white/10 bg-white/5 text-slate-500"
-                : "border border-gold-500/30 bg-gold-500/10 text-gold-300 hover:border-gold-500/50 hover:bg-gold-500/15"
-            }`}
-          >
-            {spinning ? "Spinning…" : "Pull Lever"}
-          </button>
-          <motion.div className="h-1 flex-1 overflow-hidden rounded-full bg-navy-900">
-            <motion.div
-              className="h-full w-2/5 bg-gradient-to-r from-gold-500 to-emerald-400"
-              animate={{ x: ["-100%", "250%"] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            />
-          </motion.div>
-        </div>
+        {/* Big lever — always visible */}
+        <SlotLever onPull={pullLever} disabled={spinning} pulling={spinning} />
       </div>
+
+      <button
+        type="button"
+        onClick={pullLever}
+        disabled={spinning}
+        className="btn-premium-primary mt-4 w-full py-4 text-base sm:hidden"
+      >
+        {spinning ? "Spinning…" : "🎰 Pull Lever — Spin Now!"}
+      </button>
     </div>
   );
 }

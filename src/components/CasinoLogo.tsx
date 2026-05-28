@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 interface CasinoLogoProps {
   name: string;
@@ -19,7 +22,6 @@ const brandStyles: Record<string, { bg: string; text: string; label?: string }> 
   betway: { bg: "bg-black", text: "text-white", label: "betway" },
   "pokerstars-casino": { bg: "bg-red-700", text: "text-white", label: "PokerStars" },
   mostbet: { bg: "bg-blue-600", text: "text-white", label: "Mostbet" },
-  bitstarz: { bg: "bg-zinc-900", text: "text-red-400", label: "BitStarz" },
   "888-casino": { bg: "bg-black", text: "text-green-400", label: "888" },
   "draftkings-casino": { bg: "bg-green-800", text: "text-white", label: "DraftKings" },
   "fanduel-casino": { bg: "bg-blue-800", text: "text-white", label: "FanDuel" },
@@ -48,6 +50,7 @@ export default function CasinoLogo({
   type = "good",
   variant = "square",
 }: CasinoLogoProps) {
+  const [imgError, setImgError] = useState(false);
   const style = getBrandStyle(slug, name);
   const sizeClass =
     variant === "wide"
@@ -57,7 +60,8 @@ export default function CasinoLogo({
   const textClass = variant === "wide" ? "text-sm font-bold sm:text-base" : "text-xs font-bold";
   const numericLogoSrc = rank != null ? `/casinos/rank/${rank}.png` : undefined;
   const explicitLogoSrc = logo && !logo.endsWith(".svg") ? logo : undefined;
-  const showImage = Boolean(numericLogoSrc || explicitLogoSrc);
+  const imageSrc = explicitLogoSrc ?? numericLogoSrc;
+  const showImage = Boolean(imageSrc) && !imgError;
 
   return (
     <div
@@ -66,12 +70,13 @@ export default function CasinoLogo({
     >
       {showImage ? (
         <Image
-          src={(explicitLogoSrc ?? numericLogoSrc)!}
+          src={imageSrc!}
           alt={`${name} logo`}
           fill
           sizes={variant === "wide" ? "192px" : "56px"}
           className="object-contain p-3"
           priority={rank != null && rank <= 6}
+          onError={() => setImgError(true)}
         />
       ) : (
         <span className={`truncate px-3 text-center leading-tight ${textClass} ${style.text}`}>

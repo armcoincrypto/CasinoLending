@@ -82,9 +82,9 @@ export default function CasinoArenaHero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.6 }}
-          className="mt-14"
+          className="mt-14 overflow-visible"
         >
-          <p className="mb-6 text-center text-sm font-medium text-slate-500">
+          <p className="mb-8 text-center text-sm font-medium text-slate-400 sm:text-base">
             {t("casinosOrbitLabel")}
           </p>
           <OrbitingCasinos />
