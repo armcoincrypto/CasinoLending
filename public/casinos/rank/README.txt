@@ -13,3 +13,6 @@ Path format:
 
 After uploading, redeploy the site.
 
+Note: PNG or WebP files both work (save as 1.png, 2.png, etc.).
+List cards use rank number to load /casinos/rank/<rank>.png automatically.
+

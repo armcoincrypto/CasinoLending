@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getRankLogoPath } from "@/lib/casino-logo";
 
 interface CasinoLogoProps {
   name: string;
@@ -18,24 +19,12 @@ const brandStyles: Record<string, { bg: string; text: string; label?: string }> 
   leovegas: { bg: "bg-orange-500", text: "text-white", label: "LeoVegas" },
   bet365: { bg: "bg-green-700", text: "text-yellow-300", label: "bet365" },
   roobet: { bg: "bg-amber-500", text: "text-slate-900", label: "Roobet" },
-  rollbit: { bg: "bg-slate-800", text: "text-yellow-400", label: "Rollbit" },
-  betway: { bg: "bg-black", text: "text-white", label: "betway" },
-  "pokerstars-casino": { bg: "bg-red-700", text: "text-white", label: "PokerStars" },
-  mostbet: { bg: "bg-blue-600", text: "text-white", label: "Mostbet" },
-  "888-casino": { bg: "bg-black", text: "text-green-400", label: "888" },
-  "draftkings-casino": { bg: "bg-green-800", text: "text-white", label: "DraftKings" },
-  "fanduel-casino": { bg: "bg-blue-800", text: "text-white", label: "FanDuel" },
-  cloudbet: { bg: "bg-sky-700", text: "text-white", label: "Cloudbet" },
-  bitcasino: { bg: "bg-amber-600", text: "text-white", label: "Bitcasino" },
-  "1xbet": { bg: "bg-blue-700", text: "text-white", label: "1xBet" },
-  parimatch: { bg: "bg-yellow-500", text: "text-black", label: "Parimatch" },
-  melbet: { bg: "bg-yellow-600", text: "text-black", label: "Melbet" },
 };
 
 function getBrandStyle(slug: string, name: string) {
   return (
     brandStyles[slug] ?? {
-      bg: "bg-gradient-to-br from-brand-500 to-brand-700",
+      bg: "bg-navy-800",
       text: "text-white",
       label: name.length > 12 ? name.slice(0, 10) + "…" : name,
     }
@@ -51,6 +40,11 @@ export default function CasinoLogo({
   variant = "square",
 }: CasinoLogoProps) {
   const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    setImgError(false);
+  }, [rank, slug]);
+
   const style = getBrandStyle(slug, name);
   const sizeClass =
     variant === "wide"
@@ -58,14 +52,17 @@ export default function CasinoLogo({
       : "h-14 w-14 rounded-xl";
 
   const textClass = variant === "wide" ? "text-sm font-bold sm:text-base" : "text-xs font-bold";
-  const numericLogoSrc = rank != null ? `/casinos/rank/${rank}.png` : undefined;
+
+  const rankLogoSrc = rank != null ? getRankLogoPath(rank) : undefined;
   const explicitLogoSrc = logo && !logo.endsWith(".svg") ? logo : undefined;
-  const imageSrc = explicitLogoSrc ?? numericLogoSrc;
+  const imageSrc = rankLogoSrc ?? explicitLogoSrc;
   const showImage = Boolean(imageSrc) && !imgError;
 
   return (
     <div
-      className={`relative flex flex-shrink-0 items-center justify-center overflow-hidden border border-white/15 shadow-md ${sizeClass} ${style.bg}`}
+      className={`relative flex flex-shrink-0 items-center justify-center overflow-hidden border border-white/15 shadow-md ${sizeClass} ${
+        showImage ? "bg-white" : style.bg
+      }`}
       aria-label={`${name} logo`}
     >
       {showImage ? (
@@ -73,8 +70,9 @@ export default function CasinoLogo({
           src={imageSrc!}
           alt={`${name} logo`}
           fill
+          unoptimized
           sizes={variant === "wide" ? "192px" : "56px"}
-          className="object-contain p-3"
+          className="object-contain p-2 sm:p-3"
           priority={rank != null && rank <= 6}
           onError={() => setImgError(true)}
         />
@@ -84,7 +82,7 @@ export default function CasinoLogo({
         </span>
       )}
       {rank != null && type !== "ranking" && variant === "square" && (
-        <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-gray-900 text-[10px] font-bold text-white">
+        <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-navy-950 text-[10px] font-bold text-gold-400 ring-1 ring-gold-500/50">
           {rank}
         </span>
       )}

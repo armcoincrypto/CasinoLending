@@ -48,7 +48,7 @@ export default function CasinoCard({ casino, variant = "list" }: CasinoCardProps
           <CasinoLogo
             name={casino.name}
             slug={casino.slug}
-            logo={casino.logo}
+            rank={casino.rank}
             type={casino.type}
             variant="wide"
           />
