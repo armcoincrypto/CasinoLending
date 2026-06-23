@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
-import { allCasinos } from "@/data/casinos";
 import { blogPosts } from "@/data/blogs";
 import { sampleNews } from "@/data/news";
 
@@ -31,12 +30,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  const casinoRoutes = allCasinos.map((casino) => ({
-    url: `${base}/go/${casino.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.4,
-  }));
-
-  return [...staticRoutes, ...blogRoutes, ...newsRoutes, ...casinoRoutes];
+  return [...staticRoutes, ...blogRoutes, ...newsRoutes];
 }
