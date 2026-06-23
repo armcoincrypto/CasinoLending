@@ -39,5 +39,8 @@ export function buildPageMetadata({
       description,
       images: [ogImage],
     },
+    verification: {
+      google: "googlef91513d4d4cddbfe",
+    },
   };
 }
