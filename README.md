@@ -1,4 +1,4 @@
-# CasinoPulse India
+# CasinoPulse
 
 A casino news and review website built for the Indian community worldwide. Half landing page, half content site — with casino reviews, news, blogs, dark/light mode, and English/Hindi support.
 

@@ -18,7 +18,7 @@ export const privacyPolicy: Record<"en" | "hi", LegalDocument> = {
     title: "Privacy Policy",
     lastUpdated,
     intro:
-      'CasinoPulse India ("we", "us", "our") respects your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.',
+      'CasinoPulse ("we", "us", "our") respects your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.',
     sections: [
       {
         title: "1. Information We Collect",
@@ -113,7 +113,7 @@ export const privacyPolicy: Record<"en" | "hi", LegalDocument> = {
     title: "गोपनीयता नीति",
     lastUpdated: "24 मई, 2026",
     intro:
-      'CasinoPulse India ("हम") आपकी गोपनीयता का सम्मान करता है। यह गोपनीयता नीति बताती है कि जब आप हमारी वेबसाइट पर जाते हैं तो हम आपकी जानकारी कैसे एकत्र, उपयोग, प्रकट और सुरक्षित करते हैं।',
+      'CasinoPulse ("हम") आपकी गोपनीयता का सम्मान करता है। यह गोपनीयता नीति बताती है कि जब आप हमारी वेबसाइट पर जाते हैं तो हम आपकी जानकारी कैसे एकत्र, उपयोग, प्रकट और सुरक्षित करते हैं।',
     sections: [
       {
         title: "1. हम जो जानकारी एकत्र करते हैं",
@@ -211,7 +211,7 @@ export const cookiePolicy: Record<"en" | "hi", LegalDocument> = {
     title: "Cookie Policy",
     lastUpdated,
     intro:
-      "This Cookie Policy explains how CasinoPulse India uses cookies and similar technologies when you visit our website. It should be read together with our Privacy Policy.",
+      "This Cookie Policy explains how CasinoPulse uses cookies and similar technologies when you visit our website. It should be read together with our Privacy Policy.",
     sections: [
       {
         title: "1. What Are Cookies?",
@@ -283,7 +283,7 @@ export const cookiePolicy: Record<"en" | "hi", LegalDocument> = {
     title: "कुकी नीति",
     lastUpdated: "24 मई, 2026",
     intro:
-      "यह कुकी नीति बताती है कि CasinoPulse India आपकी साइट पर जाने पर कुकीज़ और समान तकनीकों का उपयोग कैसे करता है। इसे हमारी गोपनीयता नीति के साथ पढ़ें।",
+      "यह कुकी नीति बताती है कि CasinoPulse आपकी साइट पर जाने पर कुकीज़ और समान तकनीकों का उपयोग कैसे करता है। इसे हमारी गोपनीयता नीति के साथ पढ़ें।",
     sections: [
       {
         title: "1. कुकीज़ क्या हैं?",

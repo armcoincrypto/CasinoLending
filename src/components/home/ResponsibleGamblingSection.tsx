@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { useLocale } from "@/context/LocaleContext";
+import { useTranslation } from "@/lib/useTranslation";
 import SectionHeader from "@/components/ui/SectionHeader";
 import GlassCard from "@/components/ui/GlassCard";
 
@@ -26,13 +30,16 @@ const resources = [
 ];
 
 export default function ResponsibleGamblingSection() {
+  const { locale } = useLocale();
+  const { t } = useTranslation(locale);
+
   return (
     <section className="border-t border-white/5 bg-navy-950 py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Player Safety"
           title="Responsible Gambling"
-          subtitle="Casino Journal BD promotes informed play. Never gamble more than you can afford to lose."
+          subtitle={t("responsibleGamblingSubtitle")}
         />
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

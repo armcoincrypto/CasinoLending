@@ -1,6 +1,6 @@
-# Casino Journal BD — Architecture
+# CasinoPulse — Architecture
 
-**Codename:** Casino Journal BD  
+**Codename:** CasinoPulse  
 **Stack:** Next.js 15 · TypeScript · Tailwind · Framer Motion
 
 ## Phase Roadmap

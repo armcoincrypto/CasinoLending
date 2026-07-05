@@ -1,6 +1,6 @@
 export const translations = {
   en: {
-    siteName: "Casino Journal BD",
+    siteName: "CasinoPulse",
     tagline: "Premium Casino News & Reviews for Bangladesh & South Asia",
     navCasinos: "Casinos",
     navNews: "News",
@@ -27,7 +27,7 @@ export const translations = {
     heroStatReaders: "Monthly Readers",
     heroStatReadersSub: "Growing authority brand",
     trustedBy: "Live intelligence · Updated daily for 120K+ readers",
-    featuredTitle: "Why Casino Journal BD",
+    featuredTitle: "Why CasinoPulse",
     featured1Title: "Transparent Reviews",
     featured1Desc:
       "Independent trust scores, withdrawal analysis, and editor verdicts — no paid rankings.",
@@ -134,7 +134,7 @@ export const translations = {
     contactSend: "Send Message",
     contactSuccess: "Thank you! We'll get back to you within 24 hours.",
     footerDesc:
-      "Casino Journal BD — premium casino news, jackpot intelligence, reviews, and safety alerts for Bangladesh & South Asia. 18+ only. Play responsibly.",
+      "CasinoPulse — premium casino news, jackpot intelligence, reviews, and safety alerts for Bangladesh & South Asia. 18+ only. Play responsibly.",
     footerRights: "All rights reserved.",
     playNow: "Visit Casino",
     minRead: "min read",
@@ -158,9 +158,11 @@ export const translations = {
       "We use cookies and similar technologies to improve your experience, remember your preferences, and analyze traffic. By clicking Accept, you agree to our use of cookies as described in our",
     cookieAccept: "Accept All",
     cookieDecline: "Essential Only",
+    responsibleGamblingSubtitle:
+      "CasinoPulse promotes informed play. Never gamble more than you can afford to lose.",
   },
   hi: {
-    siteName: "Casino Journal BD",
+    siteName: "CasinoPulse",
     tagline: "बांग्लादेश और दक्षिण एशिया के लिए प्रीमियम कैसीनो मीडिया",
     navCasinos: "कैसीनो",
     navNews: "समाचार",
@@ -187,7 +189,7 @@ export const translations = {
     heroStatReaders: "मासिक पाठक",
     heroStatReadersSub: "बढ़ता अथॉरिटी ब्रांड",
     trustedBy: "लाइव इंटेलिजेंस · 120K+ पाठकों के लिए दैनिक अपडेट",
-    featuredTitle: "Casino Journal BD क्यों",
+    featuredTitle: "CasinoPulse क्यों",
     featured1Title: "पारदर्शी समीक्षाएं",
     featured1Desc: "स्वतंत्र ट्रस्ट स्कोर, निकासी विश्लेषण और संपादकीय निर्णय।",
     featured2Title: "लाइव बोनस इंटेल",
@@ -287,7 +289,7 @@ export const translations = {
     contactMessage: "आपका संदेश",
     contactSend: "संदेश भेजें",
     contactSuccess: "धन्यवाद! हम 24 घंटे में जवाब देंगे।",
-    footerDesc: "Casino Journal BD — बांग्लादेश और दक्षिण एशिया के लिए प्रीमियम कैसीनो समाचार और सुरक्षा अलर्ट।",
+    footerDesc: "CasinoPulse — बांग्लादेश और दक्षिण एशिया के लिए प्रीमियम कैसीनो समाचार और सुरक्षा अलर्ट।",
     footerRights: "सर्वाधिकार सुरक्षित।",
     playNow: "कैसीनो पर जाएं",
     minRead: "मिनट पढ़ें",
@@ -311,5 +313,7 @@ export const translations = {
       "हम आपके अनुभव को बेहतर बनाने, प्राथमिकताएं याद रखने और ट्रैफ़िक का विश्लेषण करने के लिए कुकीज़ उपयोग करते हैं। स्वीकार पर क्लिक करके, आप हमारी",
     cookieAccept: "सभी स्वीकार करें",
     cookieDecline: "केवल आवश्यक",
+    responsibleGamblingSubtitle:
+      "CasinoPulse जिम्मेदार खेल को बढ़ावा देता है। कभी भी उतना दांव न लगाएं जितना आप खो सकते हैं।",
   },
 } as const;

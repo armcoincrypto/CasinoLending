@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import { siteConfig } from "@/config/site";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { organizationSchema } from "@/lib/seo/schema";
+import { organizationSchema, websiteSchema } from "@/lib/seo/schema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,14 +26,19 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const schema = organizationSchema();
+  const orgSchema = organizationSchema();
+  const siteSchema = websiteSchema();
 
   return (
     <html lang="en" suppressHydrationWarning className="dark">
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }}
         />
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>

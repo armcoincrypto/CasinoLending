@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | CasinoPulse India",
-  description: "Privacy Policy for CasinoPulse India — how we collect, use, and protect your data.",
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: "Privacy Policy",
+  description: "Privacy Policy for CasinoPulse — how we collect, use, and protect your data.",
+  path: "/privacy",
+});
 
 export default function PrivacyLayout({ children }: { children: React.ReactNode }) {
   return children;

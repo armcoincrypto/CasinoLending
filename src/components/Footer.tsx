@@ -28,8 +28,8 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-gold-500 to-gold-400 text-xs font-bold text-navy-950">
-                CJ
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-gold-500 to-gold-400 text-xs font-bold text-navy-950" aria-label="CasinoPulse">
+                CP
               </div>
               <span className="font-bold text-white">{t("siteName")}</span>
             </div>
@@ -87,7 +87,7 @@ export default function Footer() {
         </div>
         <div className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-gray-200 pt-8 text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400 sm:flex-row">
           <span>
-            © {year} CasinoPulse India. {t("footerRights")}
+            © {year} CasinoPulse. {t("footerRights")}
           </span>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-brand-600 dark:hover:text-brand-400">

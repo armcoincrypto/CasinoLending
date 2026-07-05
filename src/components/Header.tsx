@@ -28,8 +28,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy-950/90 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-gold-500 to-gold-400 font-display text-sm font-bold text-navy-950 shadow-glow-gold">
-            CJ
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-gold-500 to-gold-400 font-display text-sm font-bold text-navy-950 shadow-glow-gold" aria-label="CasinoPulse">
+            CP
           </div>
           <div className="hidden sm:block">
             <span className="font-display text-lg font-bold text-white">{t("siteName")}</span>
