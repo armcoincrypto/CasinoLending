@@ -13,3 +13,9 @@ export {
 } from "./payment-pages";
 
 export { getHubPageBySlug, getIndexableHubPages, hubPages } from "./hub-pages";
+
+export {
+  getInternalSeoHrefs,
+  internalSeoLinks,
+  type InternalSeoLink,
+} from "./internal-seo-links";

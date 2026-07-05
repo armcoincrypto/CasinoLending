@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { internalSeoLinks } from "@/data/programmatic/internal-seo-links";
 import { useLocale } from "@/context/LocaleContext";
 import { useTranslation } from "@/lib/useTranslation";
 
@@ -24,8 +25,8 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-navy-950">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-4">
-          <div className="md:col-span-1">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+          <div className="lg:col-span-1">
             <div className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-gold-500 to-gold-400 text-xs font-bold text-navy-950">
                 CJ
@@ -44,6 +45,21 @@ export default function Footer() {
                     className="text-sm text-gray-600 hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-400"
                   >
                     {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Guides</h3>
+            <ul className="mt-3 space-y-2">
+              {internalSeoLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-gray-600 hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-400"
+                  >
+                    {link.footerLabel}
                   </Link>
                 </li>
               ))}

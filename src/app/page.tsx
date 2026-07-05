@@ -1,3 +1,4 @@
+import InternalSeoGuidesSection from "@/components/home/InternalSeoGuidesSection";
 import PremiumHero from "@/components/home/PremiumHero";
 import TrustPillars from "@/components/home/TrustPillars";
 import JackpotWinnersFeed from "@/components/home/JackpotWinnersFeed";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <TrustPillars />
       <JackpotWinnersFeed />
       <TrendingNewsSection />
+      <InternalSeoGuidesSection />
       <HomeBlogPreview />
       <TopCasinosWidget />
       <BlacklistedCasinosSection />

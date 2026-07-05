@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npx tsx scripts/seo/validate-generated-routes.ts",
+    "prebuild": "npx tsx scripts/seo/validate-generated-routes.ts && npx tsx scripts/seo/validate-internal-discovery.ts",
     "build": "next build",
     "postbuild": "bash scripts/postbuild-standalone.sh",
     "start": "next start",
     "start:standalone": "node .next/standalone/server.js",
     "lint": "next lint",
     "validate:routes": "npx tsx scripts/seo/validate-generated-routes.ts",
+    "validate:internal-discovery": "npx tsx scripts/seo/validate-internal-discovery.ts",
     "validate:live": "bash scripts/seo/validate-live-routes.sh",
     "request-indexing": "node scripts/request-indexing.mjs"
   },

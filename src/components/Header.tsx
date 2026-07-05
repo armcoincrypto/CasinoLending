@@ -11,6 +11,8 @@ const navItems = [
   { href: "/casinos", key: "navCasinos" as const },
   { href: "/news", key: "navNews" as const },
   { href: "/blogs", key: "navBlogs" as const },
+  { href: "/india-casino-payments", key: "navGuides" as const },
+  { href: "/compare", key: "navCompare" as const },
   { href: "/#bonus-tracker", key: "navBonuses" as const },
   { href: "/#blacklist", key: "navSafety" as const },
   { href: "/contact", key: "navContact" as const },
