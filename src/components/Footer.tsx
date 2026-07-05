@@ -14,6 +14,7 @@ export default function Footer() {
     { href: "/casinos", label: t("navCasinos") },
     { href: "/news", label: t("navNews") },
     { href: "/blogs", label: t("navBlogs") },
+    { href: "/how-we-review", label: t("navHowWeReview") },
     { href: "/contact", label: t("navContact") },
   ];
 

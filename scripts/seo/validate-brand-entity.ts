@@ -3,7 +3,11 @@ import path from "path";
 import { siteConfig } from "../../src/config/site";
 
 const ROOT = path.join(__dirname, "../..");
-const FORBIDDEN_PATTERNS = ["Casino Journal BD", "CasinoPulse India"] as const;
+const FORBIDDEN_PATTERNS = [
+  "casinojournalbd",
+  "Casino Journal BD",
+  "CasinoPulse India",
+] as const;
 const SCAN_DIRS = ["src/app", "src/components", "src/config", "src/lib", "src/data", "public"] as const;
 const ALLOWLIST = new Set(["BRAND_ENTITY_AUDIT.md"]);
 

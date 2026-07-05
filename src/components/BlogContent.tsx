@@ -10,9 +10,10 @@ import { BlogPost } from "@/types";
 interface BlogContentProps {
   post: BlogPost;
   casino?: Casino;
+  showMethodologyLink?: boolean;
 }
 
-export default function BlogContent({ post, casino }: BlogContentProps) {
+export default function BlogContent({ post, casino, showMethodologyLink = false }: BlogContentProps) {
   const { locale } = useLocale();
   const { t } = useTranslation(locale);
   const content = getLocalizedText(post.content, locale);
@@ -43,7 +44,7 @@ export default function BlogContent({ post, casino }: BlogContentProps) {
         {getLocalizedText(post.title, locale)}
       </h1>
 
-      <div className="mt-4 flex items-center gap-4 text-sm text-gray-500">
+      <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-gray-500">
         <span>{post.author}</span>
         <span>·</span>
         <span>
@@ -52,6 +53,21 @@ export default function BlogContent({ post, casino }: BlogContentProps) {
         <span>·</span>
         <time>{new Date(post.publishedAt).toLocaleDateString(locale === "hi" ? "hi-IN" : "en-IN")}</time>
       </div>
+
+      {showMethodologyLink && (
+        <div className="mt-5 rounded-xl border border-gold-500/20 bg-gold-500/5 p-4 dark:border-gold-500/30">
+          <p className="text-sm text-slate-600 dark:text-slate-300">
+            Ratings on CasinoPulse follow our published scoring model covering safety, payments,
+            bonuses, and player complaints.
+          </p>
+          <Link
+            href="/how-we-review"
+            className="mt-2 inline-flex text-sm font-semibold text-brand-600 hover:text-brand-700 dark:text-gold-400 dark:hover:text-gold-300"
+          >
+            Read our methodology →
+          </Link>
+        </div>
+      )}
 
       {casino && casino.type === "good" && (
         <div className="mt-6 rounded-xl border border-green-200 bg-green-50 p-4 dark:border-green-900 dark:bg-green-900/20">

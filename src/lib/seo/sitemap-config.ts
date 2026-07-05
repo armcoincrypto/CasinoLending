@@ -12,6 +12,7 @@ export function buildStaticSitemapRoutes(): MetadataRoute.Sitemap {
     { url: `${base}/casinos`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/news`, lastModified: new Date(), changeFrequency: "daily", priority: 0.9 },
     { url: `${base}/blogs`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.85 },
+    { url: `${base}/how-we-review`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/privacy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/cookies`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },

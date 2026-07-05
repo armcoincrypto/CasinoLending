@@ -7,10 +7,6 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://casinopuls.site",
   locale: "en",
   regions: ["BD", "IN", "PK", "LK", "GLOBAL"] as const,
-  social: {
-    twitter: "@casinojournalbd",
-    telegram: "https://t.me/casinojournalbd",
-  },
   legal: {
     minAge: 18,
     affiliateDisclosure: true,
