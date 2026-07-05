@@ -16,8 +16,9 @@ interface NewsSidebarProps {
 export default function NewsSidebar({ articles }: NewsSidebarProps) {
   const { locale } = useLocale();
   const { t } = useTranslation(locale);
-  const trending = articles.slice(0, 5);
-  const latest = [...articles]
+  const indexableArticles = articles.filter((article) => article.indexable !== false);
+  const trending = indexableArticles.slice(0, 5);
+  const latest = [...indexableArticles]
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .slice(0, 4);
   const promos = goodCasinos.slice(0, 4);
