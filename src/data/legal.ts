@@ -351,3 +351,225 @@ export const cookiePolicy: Record<"en" | "hi", LegalDocument> = {
     ],
   },
 };
+
+export const ABOUT_PATH = "/about";
+export const RESPONSIBLE_GAMBLING_PATH = "/responsible-gambling";
+export const BLACKLIST_PATH = "/blacklist";
+
+export const aboutMeta = {
+  title: "About CasinoPulse",
+  description:
+    "Learn about CasinoPulse — independent casino reviews, South Asia and crypto casino coverage, editorial standards, and affiliate disclosure.",
+};
+
+export const responsibleGamblingMeta = {
+  title: "Responsible Gambling",
+  description:
+    "Responsible gambling guidance from CasinoPulse — 18+ only, risk awareness, limits, self-exclusion, and help resources for players in South Asia.",
+};
+
+export const blacklistMeta = {
+  title: "Casino Blacklist — Editorial Risk Assessments",
+  description:
+    "CasinoPulse editorial blacklist of online casinos with reported concerns and risk indicators for South Asian players. Not legal findings — review carefully before playing.",
+};
+
+export const responsibleGamblingQuickLinks = [
+  {
+    title: "Full Responsible Gambling Guide",
+    desc: "Read our dedicated page on limits, self-exclusion, and problem gambling warning signs.",
+    href: RESPONSIBLE_GAMBLING_PATH,
+  },
+  {
+    title: "Age Restriction",
+    desc: "You must be 18+ (or the legal age in your jurisdiction) to use this site.",
+    href: RESPONSIBLE_GAMBLING_PATH,
+  },
+  {
+    title: "Legal Disclaimer",
+    desc: "Information is editorial only — not legal, medical, or financial advice.",
+    href: "/privacy",
+  },
+  {
+    title: "Affiliate Disclosure",
+    desc: "We may earn commission from casino links. Reviews and risk assessments remain independent.",
+    href: ABOUT_PATH,
+  },
+] as const;
+
+export const blacklistFaqs = [
+  {
+    question: "What is the CasinoPulse blacklist?",
+    answer:
+      "The CasinoPulse blacklist is an editorial list of online casinos that show repeated risk indicators or reported concerns in public player feedback. It is not a legal ruling or regulator blacklist.",
+  },
+  {
+    question: "How does CasinoPulse assess blacklist risk?",
+    answer:
+      "We apply our published review methodology, track reported concerns such as payout delays or licensing questions, and document risk indicators before recommending players research carefully or avoid a brand.",
+  },
+  {
+    question: "Are blacklist entries proven scams?",
+    answer:
+      "No. Entries reflect CasinoPulse editorial risk assessments based on reported concerns and risk indicators we monitor. Players should verify operator terms, licensing, and local laws before depositing.",
+  },
+] as const;
+
+export const aboutPage: Record<"en" | "hi", LegalDocument> = {
+  en: {
+    title: "About CasinoPulse",
+    lastUpdated,
+    intro:
+      "CasinoPulse is an editorial casino media site focused on South Asia and crypto gambling topics. We publish casino reviews, payment and crypto guides, editorial risk assessments, and player safety resources.",
+    sections: [
+      {
+        title: "What We Cover",
+        paragraphs: [
+          "Our coverage prioritises Bangladesh, India, Pakistan, Sri Lanka, and global crypto casino audiences. We explain payment methods (UPI, wallets, crypto), review operators for Indian and South Asian players, and document reported concerns when risk indicators appear frequently.",
+        ],
+      },
+      {
+        title: "Editorial Independence",
+        paragraphs: [
+          "CasinoPulse ratings and blacklist placements are editorial decisions based on our published methodology. Commercial relationships do not buy higher scores or favourable placement.",
+          "When we link to partner casinos, affiliate commissions may apply, but they do not determine review conclusions or risk assessments.",
+        ],
+      },
+      {
+        title: "Affiliate Disclosure",
+        paragraphs: [
+          "Some outbound links on CasinoPulse are affiliate links. If you register or deposit through those links, we may receive a commission at no extra cost to you.",
+          "Affiliate revenue supports site operations. It does not change our editorial scoring model or how we document reported concerns.",
+        ],
+      },
+      {
+        title: "What We Do Not Claim",
+        paragraphs: [
+          "CasinoPulse is not a regulator, law firm, or complaint resolution service. We do not guarantee operator payouts, verify every player report independently, or provide legal advice about gambling in your jurisdiction.",
+        ],
+      },
+      {
+        title: "Contact & Updates",
+        paragraphs: [
+          "Questions about our editorial standards or corrections can be sent through our Contact page. Review and blacklist entries are updated when operator terms, payment options, or reported concern patterns change.",
+        ],
+      },
+    ],
+  },
+  hi: {
+    title: "CasinoPulse के बारे में",
+    lastUpdated,
+    intro:
+      "CasinoPulse दक्षिण एशिया और क्रिप्टो जुआ विषयों पर केंद्रित एक संपादकीय कैसीनो मीडिया साइट है।",
+    sections: [
+      {
+        title: "हम क्या कवर करते हैं",
+        paragraphs: [
+          "हमारा फोकस भारत, बांग्लादेश, पाकिस्तान, श्रीलंका और वैश्विक क्रिप्टो कैसीनो दर्शकों पर है — समीक्षाएं, भुगतान गाइड, और जोखिम मूल्यांकन।",
+        ],
+      },
+      {
+        title: "संपादकीय स्वतंत्रता",
+        paragraphs: [
+          "रेटिंग और ब्लैकलिस्ट प्लेसमेंट हमारी प्रकाशित methodology पर आधारित हैं। व्यावसायिक संबंध बेहतर स्कोर नहीं खरीद सकते।",
+        ],
+      },
+      {
+        title: "सहबद्ध प्रकटीकरण",
+        paragraphs: [
+          "कुछ लिंक सहबद्ध लिंक हो सकते हैं। कमीशन समीक्षा निष्पक्षता को प्रभावित नहीं करता।",
+        ],
+      },
+    ],
+  },
+};
+
+export const responsibleGamblingPage: Record<"en" | "hi", LegalDocument> = {
+  en: {
+    title: "Responsible Gambling",
+    lastUpdated,
+    intro:
+      "CasinoPulse promotes informed, safer play. Gambling should be entertainment — never a way to solve financial problems. This page summarises practical guidance for adults who choose to gamble.",
+    sections: [
+      {
+        title: "18+ Only",
+        paragraphs: [
+          "You must be at least 18 years old, or the legal gambling age in your jurisdiction, to use CasinoPulse or visit linked operator sites. Never allow minors to access gambling content or accounts.",
+        ],
+      },
+      {
+        title: "Understand the Risks",
+        paragraphs: [
+          "All gambling involves risk of losing money. Outcomes are unpredictable. Never gamble with rent, savings, loans, or money you cannot afford to lose.",
+          "Chasing losses often leads to greater harm. Set a budget before you play and treat any win as a bonus — not expected income.",
+        ],
+      },
+      {
+        title: "Set Deposit and Time Limits",
+        paragraphs: [
+          "Decide how much time and money you will spend before opening a casino account. Use operator deposit limits, session reminders, and cooling-off tools where available.",
+          "Stop playing when you reach your limit — even if you are winning.",
+        ],
+      },
+      {
+        title: "Self-Exclusion",
+        paragraphs: [
+          "If you need a break, use self-exclusion tools offered by licensed operators and consider national self-exclusion schemes where they exist.",
+          "Self-exclusion can block access to gambling accounts for a chosen period. Support organisations can help you set this up.",
+        ],
+      },
+      {
+        title: "Signs of Problem Gambling",
+        paragraphs: ["Consider seeking help if you:"],
+        list: [
+          "Spend more money or time gambling than you planned.",
+          "Borrow money or hide gambling from family or friends.",
+          "Feel anxious, irritable, or restless when trying to stop.",
+          "Gamble to escape stress, debt, or other problems.",
+          "Neglect work, study, or relationships because of gambling.",
+        ],
+      },
+      {
+        title: "Stop If Gambling Causes Harm",
+        paragraphs: [
+          "If gambling stops being fun, causes financial stress, or affects your health or relationships, stop playing and seek support.",
+          "CasinoPulse does not provide medical or legal advice. Contact independent helplines such as BeGambleAware.org or your national gambling support service.",
+        ],
+      },
+      {
+        title: "Our Editorial Role",
+        paragraphs: [
+          "We document responsible gambling tools in our reviews when operators disclose them. This page is general guidance only — check each operator's terms and local laws before playing.",
+        ],
+      },
+    ],
+  },
+  hi: {
+    title: "जिम्मेदार जुआ",
+    lastUpdated,
+    intro:
+      "CasinoPulse सुरक्षित, सूचित खेल को बढ़ावा देता है। जुआ केवल मनोरंजन होना चाहिए — वित्तीय समाधान नहीं।",
+    sections: [
+      {
+        title: "केवल 18+",
+        paragraphs: ["आपकी आयु कानूनी सीमा से अधिक होनी चाहिए। नाबालिगों को जुआ सामग्री तक पहुंच न दें।"],
+      },
+      {
+        title: "जोखिम समझें",
+        paragraphs: ["जुआ में पैसा खोने का जोखिम होता है। कभी भी उधार या बचत से न खेलें।"],
+      },
+      {
+        title: "सीमाएं और स्व-बहिष्करण",
+        paragraphs: [
+          "जमा और समय की सीमा तय करें। आवश्यकता हो तो स्व-बहिष्करण उपकरणों का उपयोग करें।",
+        ],
+      },
+      {
+        title: "मदद लें",
+        paragraphs: [
+          "यदि जुआ हानि पहुंचा रहा है, तो खेलना बंद करें और BeGambleAware.org या राष्ट्रीय हेल्पलाइन से संपर्क करें।",
+        ],
+      },
+    ],
+  },
+};

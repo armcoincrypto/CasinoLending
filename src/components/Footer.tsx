@@ -14,13 +14,16 @@ export default function Footer() {
     { href: "/casinos", label: t("navCasinos") },
     { href: "/news", label: t("navNews") },
     { href: "/blogs", label: t("navBlogs") },
+    { href: "/about", label: t("navAbout") },
     { href: "/how-we-review", label: t("navHowWeReview") },
+    { href: "/blacklist", label: t("navSafety") },
     { href: "/contact", label: t("navContact") },
   ];
 
   const legalLinks = [
     { href: "/privacy", label: t("navPrivacy") },
     { href: "/cookies", label: t("navCookies") },
+    { href: "/responsible-gambling", label: t("footerResponsible") },
   ];
 
   return (
@@ -83,7 +86,15 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="text-sm font-semibold text-gray-900 dark:text-white">{t("footerResponsible")}</h3>
-            <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">{t("footerResponsibleText")}</p>
+            <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
+              {t("footerResponsibleText")}{" "}
+              <Link
+                href="/responsible-gambling"
+                className="font-medium text-brand-600 hover:underline dark:text-brand-400"
+              >
+                {t("footerResponsibleLink")}
+              </Link>
+            </p>
           </div>
         </div>
         <div className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-gray-200 pt-8 text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400 sm:flex-row">

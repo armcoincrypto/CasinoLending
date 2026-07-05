@@ -7,11 +7,17 @@ import { LegalDocument } from "@/data/legal";
 
 interface LegalPageProps {
   document: LegalDocument;
-  otherPageHref: string;
-  otherPageLabelKey: "navPrivacy" | "navCookies";
+  otherPageHref?: string;
+  otherPageLabelKey?: "navPrivacy" | "navCookies";
+  relatedLinks?: { href: string; label: string }[];
 }
 
-export default function LegalPage({ document, otherPageHref, otherPageLabelKey }: LegalPageProps) {
+export default function LegalPage({
+  document,
+  otherPageHref,
+  otherPageLabelKey,
+  relatedLinks,
+}: LegalPageProps) {
   const { locale } = useLocale();
   const { t } = useTranslation(locale);
 
@@ -51,18 +57,38 @@ export default function LegalPage({ document, otherPageHref, otherPageLabelKey }
             </section>
           ))}
 
-          <div className="mt-10 border-t border-gray-200 pt-6 dark:border-gray-700">
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              {t("seeAlso")}{" "}
-              <Link href={otherPageHref} className="font-medium text-brand-600 hover:underline dark:text-brand-400">
-                {t(otherPageLabelKey)}
-              </Link>
-              {" · "}
-              <Link href="/contact" className="font-medium text-brand-600 hover:underline dark:text-brand-400">
-                {t("navContact")}
-              </Link>
-            </p>
-          </div>
+          {(relatedLinks?.length || otherPageHref) && (
+            <div className="mt-10 border-t border-gray-200 pt-6 dark:border-gray-700">
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                {relatedLinks?.map((link, index) => (
+                  <span key={link.href}>
+                    {index > 0 && " · "}
+                    <Link
+                      href={link.href}
+                      className="font-medium text-brand-600 hover:underline dark:text-brand-400"
+                    >
+                      {link.label}
+                    </Link>
+                  </span>
+                ))}
+                {otherPageHref && otherPageLabelKey && (
+                  <>
+                    {relatedLinks?.length ? " · " : `${t("seeAlso")} `}
+                    <Link
+                      href={otherPageHref}
+                      className="font-medium text-brand-600 hover:underline dark:text-brand-400"
+                    >
+                      {t(otherPageLabelKey)}
+                    </Link>
+                  </>
+                )}
+                {" · "}
+                <Link href="/contact" className="font-medium text-brand-600 hover:underline dark:text-brand-400">
+                  {t("navContact")}
+                </Link>
+              </p>
+            </div>
+          )}
         </article>
       </div>
     </div>

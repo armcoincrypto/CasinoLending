@@ -1,10 +1,11 @@
 export const translations = {
   en: {
     siteName: "CasinoPulse",
-    tagline: "Premium Casino News & Reviews for Bangladesh & South Asia",
+    tagline: "Casino Reviews, Crypto Guides & Safety Resources for South Asia",
     navCasinos: "Casinos",
     navNews: "News",
     navBlogs: "Reviews",
+    navAbout: "About",
     navHowWeReview: "How We Review",
     navGuides: "Guides",
     navCompare: "Compare",
@@ -15,7 +16,7 @@ export const translations = {
     heroTitleMain: "South Asia's Premium",
     heroTitleHighlight: "Casino Intelligence",
     heroSubtitle:
-      "Breaking jackpots, trusted reviews, live bonus tracking, and blacklist alerts — built for Bangladesh, India, Pakistan, and the global casino audience.",
+      "Independent casino reviews, crypto and payment guides, editorial blacklist assessments, and responsible gambling resources for Bangladesh, India, Pakistan, and South Asia.",
     heroCta: "Explore Top Casinos",
     heroCtaJackpots: "Jackpot Winners",
     heroCtaBonuses: "Bonus Tracker",
@@ -32,12 +33,12 @@ export const translations = {
     featured1Title: "Transparent Reviews",
     featured1Desc:
       "Independent trust scores, withdrawal analysis, and editor verdicts — no paid rankings.",
-    featured2Title: "Live Bonus Intelligence",
+    featured2Title: "Crypto & Payment Guides",
     featured2Desc:
-      "Track welcome offers, crypto packages, and wagering terms across South Asian markets.",
-    featured3Title: "Blacklist Monitoring",
+      "Practical guides for Bitcoin, USDT, UPI, Paytm, and India-focused casino payment methods.",
+    featured3Title: "Editorial Blacklist",
     featured3Desc:
-      "We flag delayed payouts, fake licenses, and unresolved complaints before you deposit.",
+      "CasinoPulse editorial risk assessments flag reported concerns and risk indicators before you deposit.",
     featured4Title: "South Asia First",
     featured4Desc:
       "Coverage tailored for Bangladesh, India, Pakistan, Sri Lanka, and global jackpots.",
@@ -135,7 +136,7 @@ export const translations = {
     contactSend: "Send Message",
     contactSuccess: "Thank you! We'll get back to you within 24 hours.",
     footerDesc:
-      "CasinoPulse — premium casino news, jackpot intelligence, reviews, and safety alerts for Bangladesh & South Asia. 18+ only. Play responsibly.",
+      "CasinoPulse — independent casino reviews, crypto guides, payment guides, editorial blacklist, and responsible gambling resources for Bangladesh & South Asia. 18+ only.",
     footerRights: "All rights reserved.",
     playNow: "Visit Casino",
     minRead: "min read",
@@ -150,7 +151,8 @@ export const translations = {
     footerQuickLinks: "Quick Links",
     footerLegal: "Legal",
     footerResponsible: "Responsible Gaming",
-    footerResponsibleText: "18+ only. Gamble responsibly. If you need help, visit begambleaware.org",
+    footerResponsibleText: "18+ only. Gamble responsibly. If you need help, visit begambleaware.org or read our",
+    footerResponsibleLink: "Responsible Gambling guide",
     lastUpdated: "Last updated",
     backHome: "Back to Home",
     seeAlso: "See also:",
@@ -164,10 +166,11 @@ export const translations = {
   },
   hi: {
     siteName: "CasinoPulse",
-    tagline: "बांग्लादेश और दक्षिण एशिया के लिए प्रीमियम कैसीनो मीडिया",
+    tagline: "दक्षिण एशिया के लिए कैसीनो समीक्षाएं, क्रिप्टो गाइड और सुरक्षा संसाधन",
     navCasinos: "कैसीनो",
     navNews: "समाचार",
     navBlogs: "समीक्षाएं",
+    navAbout: "हमारे बारे में",
     navHowWeReview: "हम कैसे समीक्षा करते हैं",
     navGuides: "गाइड",
     navCompare: "तुलना",
@@ -306,7 +309,8 @@ export const translations = {
     footerQuickLinks: "त्वरित लिंक",
     footerLegal: "कानूनी",
     footerResponsible: "जिम्मेदार गेमिंग",
-    footerResponsibleText: "केवल 18+। जिम्मेदारी से खेलें। मदद के लिए begambleaware.org देखें।",
+    footerResponsibleText: "केवल 18+। जिम्मेदारी से खेलें। मदद के लिए begambleaware.org देखें या हमारी",
+    footerResponsibleLink: "जिम्मेदार जुआ गाइड",
     lastUpdated: "अंतिम अपडेट",
     backHome: "होम पर वापस",
     seeAlso: "यह भी देखें:",
