@@ -20,7 +20,7 @@ npm ci
 npm run build
 
 pm2 delete casino-news-blog 2>/dev/null || true
-PORT=$APP_PORT pm2 start npm --name casino-news-blog -- start
+PORT=$APP_PORT pm2 start .next/standalone/server.js --name casino-news-blog
 pm2 save
 
 nginx -t && systemctl reload nginx
