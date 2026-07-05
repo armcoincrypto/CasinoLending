@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { bonusOffers } from "@/data/bonuses";
-import type { BonusType } from "@/types/domain";
+import { homepageBonusExamples } from "@/data/bonuses";
+import type { BonusType, BonusVerificationStatus } from "@/types/domain";
 import SectionHeader from "@/components/ui/SectionHeader";
 import GlassCard from "@/components/ui/GlassCard";
 import { isFeatureEnabled } from "@/config/features";
@@ -20,11 +20,18 @@ const typeFilters: { value: BonusType | "all"; label: string }[] = [
 
 const countryFilters = ["all", "BD", "IN", "PK", "GLOBAL"] as const;
 
+const statusLabels: Record<BonusVerificationStatus, string> = {
+  placeholder: "Example",
+  needs_review: "Review pending",
+  verified: "Verified",
+  rejected: "Rejected",
+};
+
 export default function BonusTracker() {
   const [type, setType] = useState<BonusType | "all">("all");
   const [country, setCountry] = useState<(typeof countryFilters)[number]>("all");
 
-  const filtered = bonusOffers.filter((b) => {
+  const filtered = homepageBonusExamples.filter((b) => {
     const typeMatch = type === "all" || b.type === type;
     const countryMatch =
       country === "all" || b.countries.includes(country) || b.countries.includes("GLOBAL");
@@ -97,14 +104,18 @@ export default function BonusTracker() {
                     {bonus.casinoName}
                   </Link>
                   <span className="rounded-full border border-white/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-400">
-                    Example
+                    {statusLabels[bonus.verificationStatus]}
                   </span>
                 </div>
                 <p className="mt-2 text-sm font-medium text-emerald-400">{bonus.title}</p>
                 <p className="mt-1 text-lg font-semibold text-gold-400">{bonus.value}</p>
                 <p className="mt-2 text-xs text-slate-500">
-                  Wagering: {bonus.wagering} · {bonus.countries.join(", ")}
+                  Wagering: {bonus.wagering}
+                  {bonus.countries.length > 0 ? ` · ${bonus.countries.join(", ")}` : ""}
                 </p>
+                {bonus.verificationNotes && (
+                  <p className="mt-2 line-clamp-2 text-xs text-slate-600">{bonus.verificationNotes}</p>
+                )}
               </GlassCard>
             </motion.div>
           ))}

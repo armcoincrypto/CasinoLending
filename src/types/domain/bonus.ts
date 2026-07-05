@@ -6,6 +6,12 @@ export type BonusType =
   | "crypto"
   | "no-deposit";
 
+export type BonusVerificationStatus =
+  | "verified"
+  | "needs_review"
+  | "placeholder"
+  | "rejected";
+
 export interface CasinoBonusOffer {
   id: string;
   casinoName: string;
@@ -17,5 +23,15 @@ export interface CasinoBonusOffer {
   countries: string[];
   games?: string[];
   updatedAt: string;
+  verificationStatus: BonusVerificationStatus;
+  sourceUrl?: string;
+  termsUrl?: string;
+  verifiedAt?: string;
+  verificationNotes?: string;
+  geoNotes?: string;
+  wageringNotes?: string;
+  kycNotes?: string;
+  withdrawalNotes?: string;
+  /** @deprecated Homepage no longer uses hot badges — kept for backward compatibility */
   isHot?: boolean;
 }
