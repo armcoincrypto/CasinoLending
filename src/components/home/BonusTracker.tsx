@@ -7,7 +7,6 @@ import { bonusOffers } from "@/data/bonuses";
 import type { BonusType } from "@/types/domain";
 import SectionHeader from "@/components/ui/SectionHeader";
 import GlassCard from "@/components/ui/GlassCard";
-import NeonBadge from "@/components/ui/NeonBadge";
 import { isFeatureEnabled } from "@/config/features";
 
 const typeFilters: { value: BonusType | "all"; label: string }[] = [
@@ -36,9 +35,9 @@ export default function BonusTracker() {
     <section id="bonus-tracker" className="bg-navy-900 py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow="Bonus Intelligence"
-          title="Live Bonus Tracker"
-          subtitle="Welcome offers, crypto packages, and no-deposit deals — filter by region and type."
+          eyebrow="Bonus Examples"
+          title="Sample Operator Promotions"
+          subtitle="Illustrative bonus types only — not a verified database. Offers may change. Wagering requirements apply. Check terms before claiming on the operator site."
         />
 
         {isFeatureEnabled("bonusTrackerFilters") && (
@@ -75,6 +74,11 @@ export default function BonusTracker() {
           </div>
         )}
 
+        <p className="mt-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3 text-sm text-amber-200/90">
+          Unverified examples for orientation only. CasinoPulse does not guarantee bonus values or
+          eligibility. Read the official promotion page and terms before depositing.
+        </p>
+
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((bonus, i) => (
             <motion.div
@@ -84,7 +88,7 @@ export default function BonusTracker() {
               animate={{ opacity: 1 }}
               transition={{ delay: i * 0.04 }}
             >
-              <GlassCard glow={bonus.isHot ? "gold" : "emerald"} className="p-5 h-full">
+              <GlassCard glow="emerald" className="h-full p-5">
                 <div className="flex items-center justify-between">
                   <Link
                     href={`/go/${bonus.casinoSlug}`}
@@ -92,10 +96,12 @@ export default function BonusTracker() {
                   >
                     {bonus.casinoName}
                   </Link>
-                  {bonus.isHot && <NeonBadge variant="gold">Hot</NeonBadge>}
+                  <span className="rounded-full border border-white/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-400">
+                    Example
+                  </span>
                 </div>
                 <p className="mt-2 text-sm font-medium text-emerald-400">{bonus.title}</p>
-                <p className="mt-1 text-xl font-bold text-gold-400">{bonus.value}</p>
+                <p className="mt-1 text-lg font-semibold text-gold-400">{bonus.value}</p>
                 <p className="mt-2 text-xs text-slate-500">
                   Wagering: {bonus.wagering} · {bonus.countries.join(", ")}
                 </p>

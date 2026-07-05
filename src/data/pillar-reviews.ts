@@ -19,6 +19,8 @@ type PillarProfile = {
   cons: string[];
   risks: string[];
   extraContext: string;
+  excerptEn: string;
+  excerptHi: string;
 };
 
 const profiles: PillarProfile[] = [
@@ -69,6 +71,10 @@ const profiles: PillarProfile[] = [
     ],
     extraContext:
       "Stake’s sportsbook and casino wallets may interact on one account depending on region. Sports losing streaks sometimes push players toward casino chase play — set a cross-product loss limit before the first wager.",
+    excerptEn:
+      "Editorial Stake review for South Asia players — crypto support, withdrawal notes, licensing context, and risk cautions. Terms may vary by region.",
+    excerptHi:
+      "Stake संपादकीय समीक्षा — क्रिप्टो समर्थन, निकासी नोट्स और जोखिम संदर्भ। शर्तें क्षेत्र के अनुसार बदल सकती हैं।",
   },
   {
     slug: "review-bc-game",
@@ -116,7 +122,11 @@ const profiles: PillarProfile[] = [
       "Phishing sites impersonating BC.Game — verify URL",
     ],
     extraContext:
-      "BC.Game’s task-based rewards can encourage frequent logins. Treat missions as optional — completing them is never required to enjoy the core casino product. If missions push you above your planned session length, disable notifications and stick to a fixed bankroll. Seasonal tournaments may require opt-in — screenshot rules before joining. If a mission conflicts with responsible limits you set, skip it entirely.",
+      "BC.Game’s task-based rewards can encourage frequent logins. Treat missions as optional — completing them is never required to enjoy the core casino product. If missions push you above your planned session length, disable notifications and stick to a fixed bankroll. Seasonal tournaments may require opt-in — screenshot rules before joining. If a mission conflicts with responsible limits you set, skip it entirely.\n\n**Withdrawal caution:** First crypto cashouts often trigger manual review even when marketing suggests instant processing. If your balance is large relative to deposit history, expect additional questions about source of funds. Avoid splitting withdrawals across many small requests in one day — some risk systems flag that pattern.\n\n**South Asia note:** Players in India and Bangladesh who deposit via P2P USDT should keep exchange receipts. If KYC is requested mid-withdrawal, missing payment trail documentation can delay approval for weeks.",
+    excerptEn:
+      "Editorial BC.Game review for South Asia players — crypto payments, KYC expectations, withdrawal caution, and bonus terms notes. Verify operator terms before depositing.",
+    excerptHi:
+      "BC.Game संपादकीय समीक्षा — क्रिप्टो भुगतान, KYC और निकासी नोट्स। जमा करने से पहले ऑपरेटर शर्तें सत्यापित करें।",
   },
   {
     slug: "review-roobet",
@@ -164,7 +174,11 @@ const profiles: PillarProfile[] = [
       "Ignoring KYC until a large balance is stuck",
     ],
     extraContext:
-      "Roobet’s brand visibility on streaming platforms does not replace due diligence. Streamers may use sponsored codes with terms you never see on screen. Always read the promotion page yourself and compare house edges on original games versus mainstream slots.",
+      "Roobet’s brand visibility on streaming platforms does not replace due diligence. Streamers may use sponsored codes with terms you never see on screen. Always read the promotion page yourself and compare house edges on original games versus mainstream slots.\n\n**KYC expectations:** Roobet may allow small deposits with minimal verification, then request full ID before releasing larger withdrawals. Do not treat early play as proof that cashouts will stay friction-free — policies can tighten after wins accumulate. Submit documents promptly through the official portal only.\n\n**Who should avoid it (extra):** If you struggle with impulse control on fast-loop games, Roobet’s crash and mini-game lobby can accelerate losses compared with slower slot sessions. Consider operators with stronger deposit-limit defaults or skip entirely.",
+    excerptEn:
+      "Editorial Roobet review — crypto payments, KYC notes, crash-game risk context, and South Asia relevance. Terms may change; verify on the official site.",
+    excerptHi:
+      "Roobet संपादकीय समीक्षा — क्रिप्टो भुगतान, KYC नोट्स और जोखिम संदर्भ। शर्तें बदल सकती हैं।",
   },
   {
     slug: "review-bet365",
@@ -213,6 +227,10 @@ const profiles: PillarProfile[] = [
     ],
     extraContext:
       "Bet365’s strength is breadth — sports, in-play, casino, and poker may share one wallet on some mirrors. That convenience can blur spend categories. Consider separate mental budgets for sports bets and casino spins, even if the balance is combined.",
+    excerptEn:
+      "Editorial Bet365 review — licensing notes by jurisdiction, payment and KYC expectations, and risk context for South Asian players abroad. Terms may vary.",
+    excerptHi:
+      "Bet365 संपादकीय समीक्षा — लाइसेंसिंग, भुगतान और KYC नोट्स। शर्तें अधिकार क्षेत्र के अनुसार बदल सकती हैं।",
   },
   {
     slug: "review-leovegas",
@@ -260,7 +278,11 @@ const profiles: PillarProfile[] = [
       "Ignoring bonus max-withdrawal clauses",
     ],
     extraContext:
-      "LeoVegas has invested in safer-gambling messaging in EU markets — tool availability still depends on the licence attached to your account. Open account settings on day one and enable deposit limits even if you consider yourself a casual player. Live dealer tables can extend sessions — use reality checks where offered. If your mirror lacks Hindi support, confirm you understand English T&Cs before accepting bonuses.",
+      "LeoVegas has invested in safer-gambling messaging in EU markets — tool availability still depends on the licence attached to your account. Open account settings on day one and enable deposit limits even if you consider yourself a casual player. Live dealer tables can extend sessions — use reality checks where offered. If your mirror lacks Hindi support, confirm you understand English T&Cs before accepting bonuses.\n\n**Payment limitations:** UPI and Paytm are not consistently listed for South Asian registrations — do not assume local rails work because LeoVegas markets mobile UX globally. Confirm deposit methods after login; withdrawal routes may differ from deposit routes.\n\n**Bonus terms caution:** Free-spin bundles often cap maximum withdrawable winnings separately from deposit-match offers. Live dealer play may contribute zero toward wagering — read game weighting before accepting any package.",
+    excerptEn:
+      "Editorial LeoVegas review — mobile UX, fiat payment notes, South Asia geo-restrictions, and bonus terms caution. Terms may vary by licensed mirror.",
+    excerptHi:
+      "LeoVegas संपादकीय समीक्षा — मोबाइल UX, भुगतान नोट्स और दक्षिण एशिया प्रतिबंध। शर्तें मिरर के अनुसार बदल सकती हैं।",
   },
 ];
 
@@ -370,7 +392,11 @@ CasinoPulse स्कोर: **${profile.rating}/5**। जमा करने �
 
 export const pillarReviewOverrides: Record<
   string,
-  { content: { en: string; hi: string }; readTime: number }
+  {
+    content: { en: string; hi: string };
+    excerpt: { en: string; hi: string };
+    readTime: number;
+  }
 > = Object.fromEntries(
   profiles.map((profile) => [
     profile.slug,
@@ -378,6 +404,10 @@ export const pillarReviewOverrides: Record<
       content: {
         en: buildPillarReviewEn(profile),
         hi: buildPillarReviewHi(profile),
+      },
+      excerpt: {
+        en: profile.excerptEn,
+        hi: profile.excerptHi,
       },
       readTime: 14,
     },

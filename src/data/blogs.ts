@@ -273,6 +273,7 @@ export const blogPosts: BlogPost[] = [
   return {
     ...post,
     content: override.content,
+    excerpt: override.excerpt,
     readTime: override.readTime,
   };
 });

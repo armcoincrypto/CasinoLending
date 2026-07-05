@@ -9,13 +9,15 @@ import { NewsArticle } from "@/types";
 
 interface NewsCardProps {
   article: NewsArticle;
+  variant?: "featured" | "brief";
 }
 
-export default function NewsCard({ article }: NewsCardProps) {
+export default function NewsCard({ article, variant = "featured" }: NewsCardProps) {
   const { locale } = useLocale();
   const styles = categoryStyles(article.category);
   const title = getLocalizedText(article.title, locale);
   const excerpt = getLocalizedText(article.excerpt, locale);
+  const isBrief = variant === "brief" || article.indexable === false;
 
   return (
     <Link href={`/news/${article.id}`} className="group block h-full">
@@ -37,6 +39,11 @@ export default function NewsCard({ article }: NewsCardProps) {
             <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${styles.pill}`}>
               {article.category}
             </span>
+            {isBrief && (
+              <span className="rounded-full border border-slate-500/40 bg-navy-950/70 px-2.5 py-1 text-xs font-semibold text-slate-300 backdrop-blur">
+                Brief update
+              </span>
+            )}
             <span className="rounded-full border border-white/20 bg-navy-950/60 px-2 py-0.5 text-xs font-medium text-slate-200 backdrop-blur">
               {formatTimeAgo(article.publishedAt, locale)}
             </span>
