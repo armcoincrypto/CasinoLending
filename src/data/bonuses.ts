@@ -59,7 +59,7 @@ export const bonusOffers: CasinoBonusOffer[] = [
     updatedAt: "2026-07-06T00:00:00.000Z",
     verificationStatus: "needs_review",
     sourceUrl: "https://roobet.com/promotions",
-    termsUrl: "https://roobet.com/terms",
+    termsUrl: "https://roobet.com/policies/bonus-promotion",
     verificationNotes:
       "2026-07-06 review: roobet.com/promotions lists Casino, Sportsbook, and VIP promo categories but specific headline values require in-session load. Rakeback percentages not quoted here.",
     geoNotes: "Offshore crypto brand — confirm whether your country is accepted before registering.",

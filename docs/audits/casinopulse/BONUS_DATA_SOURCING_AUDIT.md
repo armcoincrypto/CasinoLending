@@ -152,3 +152,47 @@ Then re-run this audit and Phase F planning for minimal `/bonuses` index.
 **Re-audit verdict:** `BONUS_DATA_NOT_READY`
 
 **Owner next step:** Human verification logged in browser on target mirror (India/BD diaspora or intended geo), screenshot promotion + terms, then set `verifiedAt` and flip status per row.
+
+---
+
+## Phase E continuation — attempt #3 (2026-07-06, server audit)
+
+**Git push:** Still blocked (`could not read Username for 'https://github.com'`). Branch **10 commits ahead** of `origin/main`.
+
+**Additional checks:**
+
+| Blocker | Detail |
+|---------|--------|
+| Browser MCP | Unavailable in this environment — cannot run logged-in mirror checks |
+| Stake / Bet365 / LeoVegas | HTTP 403 or Cloudflare challenge to server fetch |
+| Roobet promotions | SPA — promo cards load via JavaScript after auth/geo routing |
+| Roobet bonus policy | `/policies/bonus-promotion` returns shell HTML only to curl |
+| BC.Game terms | `/help/terms` redirects to marketing homepage in server fetch |
+| Cloudbet | Page title references welcome package; body blocked — **no dollar values stored** |
+
+**Data change this attempt:** Roobet `termsUrl` → `https://roobet.com/policies/bonus-promotion` (policy reference only, not verified).
+
+**Verified rows:** still **0**. **Verdict:** `BONUS_DATA_NOT_READY`. **Phase F:** blocked.
+
+---
+
+## Owner verification worksheet (fill before marking `verified`)
+
+Complete one block per pillar brand in browser on the **target mirror**, then update `src/data/bonuses.ts`.
+
+| Brand | Promotion URL checked | Exact headline copied | Wagering/expiry copied | Terms/policy URL | Geo/eligibility note | Screenshot saved | `verifiedAt` (ISO) | Ready for `verified`? |
+|-------|----------------------|------------------------|-------------------------|------------------|----------------------|------------------|--------------------|------------------------|
+| Stake | | | | | | | | ☐ |
+| BC.Game | | | | | | | | ☐ |
+| Roobet | | | | | | | | ☐ |
+| LeoVegas | | | | | | | | ☐ |
+| Bet365 | | | | | | | | ☐ |
+
+**Rule:** Check “Ready” only when every column is filled and wording matches operator pages exactly. Then set `verificationStatus: "verified"` and commit with audit note.
+
+**Push after local verification:**
+
+```bash
+cd /var/www/casino-news-blog
+git push https://<GITHUB_PAT>@github.com/gagpoghosyan99/casino-news-blog.git main
+```
