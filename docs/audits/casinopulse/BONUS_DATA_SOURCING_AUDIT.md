@@ -128,3 +128,27 @@ Then re-run this audit and Phase F planning for minimal `/bonuses` index.
 ## `/bonuses` route
 
 **Still blocked.** Do not implement until verdict flips to `BONUS_DATA_READY`.
+
+---
+
+## Phase E continuation — manual verification attempt (2026-07-06)
+
+**Git push:** Still blocked on server (`could not read Username for 'https://github.com'`). Branch remains 9+ commits ahead until owner pushes with PAT/SSH.
+
+**Automated operator page review (not human mirror login):**
+
+| Brand | Fetch result | Quotable terms? | Action |
+|-------|--------------|-----------------|--------|
+| Stake | 403 on offers/terms | No | Stays `needs_review` |
+| BC.Game | 200 on /bonus | Generic only (“welcome bonuses and ongoing cashback”) | Title updated; stays `needs_review` — no wagering/amount verified |
+| Roobet | 200 on /promotions | Categories only, no headline % | Stays `needs_review` |
+| LeoVegas | Not reliably fetchable | No | Stays `needs_review` |
+| Bet365 | 403 / incomplete | No | Stays `needs_review` |
+| Cloudbet | Title mentions welcome package; body blocked | No dollar amounts quoted | Stays `placeholder` |
+| Rollbit | Unchanged | No | Stays `rejected` |
+
+**Verified rows after continuation:** still **zero**.
+
+**Re-audit verdict:** `BONUS_DATA_NOT_READY`
+
+**Owner next step:** Human verification logged in browser on target mirror (India/BD diaspora or intended geo), screenshot promotion + terms, then set `verifiedAt` and flip status per row.
