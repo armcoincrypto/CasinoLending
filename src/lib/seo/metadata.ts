@@ -23,7 +23,7 @@ export function buildPageMetadata({
     title: `${title} | ${siteConfig.name}`,
     description,
     alternates: { canonical: url },
-    robots: noIndex ? { index: false, follow: false } : { index: true, follow: true },
+    robots: noIndex ? { index: false, follow: true } : { index: true, follow: true },
     openGraph: {
       type: "website",
       locale: siteConfig.locale,

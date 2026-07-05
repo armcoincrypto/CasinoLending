@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: article.title.en,
     description: article.excerpt.en,
     path: `/news/${id}`,
+    noIndex: article.indexable === false,
   });
 }
 

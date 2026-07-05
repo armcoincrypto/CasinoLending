@@ -1,5 +1,6 @@
 import { BlogPost } from "@/types";
 import { allCasinos } from "./casinos";
+import { pillarReviewOverrides } from "./pillar-reviews";
 
 function generateCasinoBlog(
   casino: typeof allCasinos[number],
@@ -264,7 +265,17 @@ export const blogPosts: BlogPost[] = [
     )
   ),
   ...dailyBlogs,
-];
+].map((post) => {
+  const override = pillarReviewOverrides[post.slug];
+  if (!override) {
+    return post;
+  }
+  return {
+    ...post,
+    content: override.content,
+    readTime: override.readTime,
+  };
+});
 
 export function getBlogBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((b) => b.slug === slug);

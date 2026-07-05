@@ -47,4 +47,6 @@ export interface NewsArticle {
   publishedAt: string;
   image?: string;
   category: string;
+  /** When false, article is noindex and excluded from sitemap. Defaults to true. */
+  indexable?: boolean;
 }

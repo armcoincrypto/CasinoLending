@@ -1,11 +1,31 @@
 "use client";
 
+import Link from "next/link";
 import { useLocale } from "@/context/LocaleContext";
 import { getLocalizedText } from "@/lib/i18n";
 import { NewsArticle } from "@/types";
 
 interface NewsDetailProps {
   article: NewsArticle;
+}
+
+function renderInlineContent(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, index) => {
+    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      return (
+        <Link
+          key={index}
+          href={linkMatch[2]}
+          className="font-medium text-brand-600 hover:underline dark:text-brand-400"
+        >
+          {linkMatch[1]}
+        </Link>
+      );
+    }
+    return part;
+  });
 }
 
 export default function NewsDetail({ article }: NewsDetailProps) {
@@ -33,12 +53,25 @@ export default function NewsDetail({ article }: NewsDetailProps) {
       </p>
 
       <div className="mt-6 space-y-4 leading-relaxed text-gray-700 dark:text-gray-300">
-        {content.split(". ").map((sentence, i) => (
-          <p key={i}>
-            {sentence.trim()}
-            {sentence.endsWith(".") ? "" : "."}
-          </p>
-        ))}
+        {content.split("\n\n").map((paragraph, i) => {
+          if (paragraph.startsWith("## ")) {
+            return (
+              <h2 key={i} className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                {paragraph.replace("## ", "")}
+              </h2>
+            );
+          }
+          if (paragraph.startsWith("- ")) {
+            return (
+              <ul key={i} className="list-disc space-y-1 pl-6">
+                {paragraph.split("\n").map((line, j) => (
+                  <li key={j}>{renderInlineContent(line.replace("- ", ""))}</li>
+                ))}
+              </ul>
+            );
+          }
+          return <p key={i}>{renderInlineContent(paragraph)}</p>;
+        })}
       </div>
     </article>
   );

@@ -7,6 +7,25 @@ import { useTranslation } from "@/lib/useTranslation";
 import { Casino } from "@/types";
 import { BlogPost } from "@/types";
 
+function renderInlineContent(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, index) => {
+    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      return (
+        <Link
+          key={index}
+          href={linkMatch[2]}
+          className="font-medium text-brand-600 hover:underline dark:text-gold-400"
+        >
+          {linkMatch[1]}
+        </Link>
+      );
+    }
+    return part;
+  });
+}
+
 interface BlogContentProps {
   post: BlogPost;
   casino?: Casino;
@@ -107,7 +126,7 @@ export default function BlogContent({ post, casino, showMethodologyLink = false 
           }
           return (
             <p key={i} className="mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
-              {paragraph}
+              {renderInlineContent(paragraph)}
             </p>
           );
         })}

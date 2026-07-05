@@ -49,7 +49,9 @@ export function buildBlogSitemapRoutes(): MetadataRoute.Sitemap {
 export function buildNewsSitemapRoutes(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
 
-  return sampleNews.map((article) => ({
+  return sampleNews
+    .filter((article) => article.indexable !== false)
+    .map((article) => ({
     url: `${base}/news/${article.id}`,
     lastModified: new Date(article.publishedAt),
     changeFrequency: "daily" as const,
