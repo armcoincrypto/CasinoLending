@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import EditorialTeamClient from "./EditorialTeamClient";
 import { EDITORIAL_TEAM_PATH, editorialTeamMeta } from "@/data/legal";
+import { editorialAuthor } from "@/data/editorial";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { breadcrumbSchema, webPageSchema } from "@/lib/seo/schema";
+import { breadcrumbSchema, personSchema, webPageSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -14,10 +15,18 @@ export const metadata: Metadata = buildPageMetadata({
 export default function EditorialTeamPage() {
   const pageUrl = `${siteConfig.url}${EDITORIAL_TEAM_PATH}`;
   const jsonLd = [
+    personSchema({
+      name: editorialAuthor.name,
+      url: editorialAuthor.url,
+      description: editorialAuthor.description,
+      jobTitle: editorialAuthor.jobTitle,
+      knowsAbout: [...editorialAuthor.knowsAbout],
+    }),
     webPageSchema({
       name: editorialTeamMeta.title,
       description: editorialTeamMeta.description,
       url: pageUrl,
+      dateModified: "2026-07-06",
     }),
     breadcrumbSchema([
       { name: "Home", url: siteConfig.url },

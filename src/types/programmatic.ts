@@ -24,6 +24,10 @@ export interface ProgrammaticPage {
   sections: ProgrammaticSection[];
   faqs?: ProgrammaticFaq[];
   relatedLinks?: ProgrammaticRelatedLink[];
+  relatedClusterTitle?: string;
+  datePublished?: string;
+  dateModified?: string;
+  lastReviewed?: string;
   indexable: boolean;
   contentQuality: ContentQuality;
   keywords: string[];

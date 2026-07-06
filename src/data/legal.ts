@@ -787,6 +787,7 @@ export const editorialTeamPage: Record<"en" | "hi", LegalDocument> = {
         title: "Independence Reminder",
         paragraphs: [
           "Affiliate links may fund site operations but do not buy review scores. See Editorial Policy and How We Review for full standards.",
+          "Read our collective author profile at /author/casinopulse-editorial-team for editorial process, fact-checking, and content update standards.",
         ],
       },
     ],

@@ -62,6 +62,9 @@ export default function ComparePage() {
           { href: "/blogs/review-betway", label: "Betway review" },
           { href: "/india-casino-payments", label: "India payment hub" },
           { href: "/payment/upi", label: "UPI guide" },
+          { href: "/crypto/bitcoin-casino", label: "Bitcoin guide" },
+          { href: "/crypto/ethereum-casino", label: "Ethereum guide" },
+          { href: "/crypto/usdt-casino", label: "USDT guide" },
         ]}
       />
     </>

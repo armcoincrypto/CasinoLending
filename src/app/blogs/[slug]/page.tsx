@@ -4,7 +4,12 @@ import { notFound } from "next/navigation";
 import { getBlogBySlug, blogPosts } from "@/data/blogs";
 import { getCasinoByBlogSlug } from "@/data/casinos";
 import BlogContent from "@/components/BlogContent";
-import { getPillarReviewFaqs, isPillarReviewSlug } from "@/data/pillar-reviews";
+import EditorialTrustBlock from "@/components/editorial/EditorialTrustBlock";
+import { editorialAuthor, getPillarReviewFreshness } from "@/data/editorial";
+import {
+  getPillarReviewFaqs,
+  isPillarReviewSlug,
+} from "@/data/pillar-reviews";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbSchema, faqPageSchema, reviewSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/config/site";
@@ -45,15 +50,21 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
   const casino = getCasinoByBlogSlug(slug);
   const isCasinoReview = reviewCategories.has(post.category);
+  const isPillar = isPillarReviewSlug(slug);
   const pageUrl = `${siteConfig.url}/blogs/${post.slug}`;
+  const freshness = isPillar ? getPillarReviewFreshness(slug) : undefined;
 
   const reviewJsonLd =
-    isCasinoReview && casino && isPillarReviewSlug(slug)
+    isCasinoReview && casino && isPillar
       ? reviewSchema({
           name: casino.name,
           rating: casino.rating,
           description: post.excerpt.en,
           url: pageUrl,
+          datePublished: freshness?.datePublished,
+          dateModified: freshness?.dateModified,
+          authorName: editorialAuthor.name,
+          authorUrl: editorialAuthor.url,
         })
       : null;
 
@@ -84,6 +95,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
         >
           ← Back to Blogs
         </Link>
+        {isPillar && <EditorialTrustBlock slug={slug} />}
         <BlogContent post={post} casino={casino} showMethodologyLink={isCasinoReview} />
       </div>
     </div>

@@ -98,7 +98,9 @@ export default function ProgrammaticPageLayout({
         <div className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
           {links.length > 0 && (
             <div className="mb-6 border-b border-white/10 pb-6">
-              <h2 className="font-display text-lg font-semibold text-white">Related guides</h2>
+              <h2 className="font-display text-lg font-semibold text-white">
+                {page.relatedClusterTitle ?? "Related guides"}
+              </h2>
               <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
                 {links.map((link) => (
                   <li key={link.href}>

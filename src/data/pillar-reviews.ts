@@ -688,7 +688,7 @@ Before any deposit, screenshot the cashier page showing method name, fees, and m
 ## Crypto Support
 ${profile.crypto}
 
-If you prefer stablecoins, read our [USDT casino guide](/crypto/usdt-casino) for chain-selection tips. Crypto removes some banking friction but does not remove legal or tax obligations in India, Bangladesh, or Pakistan.
+For chain-specific deposit guidance, see our [Bitcoin casino guide](/crypto/bitcoin-casino), [Ethereum casino guide](/crypto/ethereum-casino), and [USDT stablecoin guide](/crypto/usdt-casino).
 
 ## Withdrawal Expectations
 ${profile.withdrawals}

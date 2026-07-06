@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { blogPosts } from "@/data/blogs";
+import { getPillarReviewFreshness } from "@/data/editorial";
 import { sampleNews } from "@/data/news";
 import { getAllRegistryRoutes } from "@/lib/seo/route-registry";
 
@@ -15,6 +16,7 @@ export function buildStaticSitemapRoutes(): MetadataRoute.Sitemap {
     { url: `${base}/how-we-review`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/editorial-policy`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/editorial-team`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.75 },
+    { url: `${base}/author/casinopulse-editorial-team`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blacklist`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.85 },
     { url: `${base}/responsible-gambling`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.75 },
@@ -43,12 +45,15 @@ export function buildBlogSitemapRoutes(): MetadataRoute.Sitemap {
 
   return blogPosts
     .filter((post) => post.indexable !== false)
-    .map((post) => ({
-    url: `${base}/blogs/${post.slug}`,
-    lastModified: new Date(post.publishedAt),
-    changeFrequency: "weekly" as const,
-    priority: 0.7,
-  }));
+    .map((post) => {
+      const freshness = getPillarReviewFreshness(post.slug);
+      return {
+        url: `${base}/blogs/${post.slug}`,
+        lastModified: new Date(freshness?.dateModified ?? post.publishedAt),
+        changeFrequency: "weekly" as const,
+        priority: 0.7,
+      };
+    });
 }
 
 export function buildNewsSitemapRoutes(): MetadataRoute.Sitemap {

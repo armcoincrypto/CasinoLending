@@ -12,6 +12,8 @@ export function buildProgrammaticPageJsonLd(
       name: page.h1,
       description: page.metaDescription,
       url: pageUrl,
+      datePublished: page.datePublished,
+      dateModified: page.dateModified,
     }),
   ];
 

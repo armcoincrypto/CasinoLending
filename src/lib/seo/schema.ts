@@ -42,6 +42,8 @@ export function webPageSchema(input: {
   name: string;
   description: string;
   url: string;
+  datePublished?: string;
+  dateModified?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -49,6 +51,8 @@ export function webPageSchema(input: {
     name: input.name,
     description: input.description,
     url: input.url,
+    ...(input.datePublished ? { datePublished: input.datePublished } : {}),
+    ...(input.dateModified ? { dateModified: input.dateModified } : {}),
     isPartOf: {
       "@type": "WebSite",
       name: siteConfig.name,
@@ -101,6 +105,29 @@ export function faqPageSchema(faqs: { question: string; answer: string }[]) {
 
 export const methodologyPageUrl = `${siteConfig.url}/how-we-review`;
 
+export function personSchema(input: {
+  name: string;
+  url: string;
+  description: string;
+  jobTitle?: string;
+  knowsAbout?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: input.name,
+    url: input.url,
+    description: input.description,
+    ...(input.jobTitle ? { jobTitle: input.jobTitle } : {}),
+    ...(input.knowsAbout?.length ? { knowsAbout: input.knowsAbout } : {}),
+    memberOf: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+}
+
 export function articleSchema(input: {
   title: string;
   description: string;
@@ -132,7 +159,25 @@ export function reviewSchema(input: {
   rating: number;
   description: string;
   url: string;
+  datePublished?: string;
+  dateModified?: string;
+  authorName?: string;
+  authorUrl?: string;
 }) {
+  const author =
+    input.authorName && input.authorUrl
+      ? {
+          "@type": "Person" as const,
+          name: input.authorName,
+          url: input.authorUrl,
+          memberOf: {
+            "@type": "Organization",
+            name: siteConfig.name,
+            url: siteConfig.url,
+          },
+        }
+      : { "@type": "Organization" as const, name: siteConfig.name };
+
   return {
     "@context": "https://schema.org",
     "@type": "Review",
@@ -145,9 +190,11 @@ export function reviewSchema(input: {
       ratingValue: input.rating,
       bestRating: 5,
     },
-    author: { "@type": "Organization", name: siteConfig.name },
+    author,
     reviewBody: input.description,
     url: input.url,
+    ...(input.datePublished ? { datePublished: input.datePublished } : {}),
+    ...(input.dateModified ? { dateModified: input.dateModified } : {}),
     isBasedOn: {
       "@type": "WebPage",
       name: "How We Review Online Casinos",

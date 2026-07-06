@@ -204,6 +204,18 @@ export default function HowWeReviewPage() {
               >
                 Compare Casinos
               </Link>
+              <Link
+                href="/crypto/bitcoin-casino"
+                className="rounded-lg border border-white/10 px-4 py-2 text-sm font-semibold text-gold-400 hover:border-gold-500/40"
+              >
+                Bitcoin Guide
+              </Link>
+              <Link
+                href="/crypto/usdt-casino"
+                className="rounded-lg border border-white/10 px-4 py-2 text-sm font-semibold text-gold-400 hover:border-gold-500/40"
+              >
+                USDT Guide
+              </Link>
             </div>
           </div>
         </div>

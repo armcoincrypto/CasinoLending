@@ -17,6 +17,7 @@ export default function EditorialTeamClient() {
     <LegalPage
       document={editorialTeamPage[locale]}
       relatedLinks={[
+        { href: "/author/casinopulse-editorial-team", label: "Author profile" },
         { href: ABOUT_PATH, label: "About CasinoPulse" },
         { href: HOW_WE_REVIEW_PATH, label: "How We Review" },
         { href: EDITORIAL_POLICY_PATH, label: "Editorial Policy" },
