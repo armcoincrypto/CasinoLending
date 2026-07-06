@@ -16,9 +16,10 @@ const RESOURCE_LINKS = [
   { href: "/blogs/review-roobet", label: "Roobet review" },
   { href: "/blogs/review-bet365", label: "Bet365 review" },
   { href: "/blogs/review-leovegas", label: "LeoVegas review" },
+  { href: "/payment/upi", label: "UPI payment guide" },
+  { href: "/india-casino-payments", label: "India payment hub" },
   { href: "/compare", label: "Compare casinos" },
   { href: "/how-we-review", label: "Review methodology" },
-  { href: "/india-casino-payments", label: "India payment guide" },
   { href: "/responsible-gambling", label: "Responsible gambling" },
 ];
 

@@ -419,6 +419,240 @@ const profiles: PillarProfile[] = [
     excerptHi:
       "LeoVegas संपादकीय समीक्षा — मोबाइल UX, भुगतान नोट्स और दक्षिण एशिया प्रतिबंध। शर्तें मिरर के अनुसार बदल सकती हैं।",
   },
+  {
+    slug: "review-rollbit",
+    name: "Rollbit",
+    rating: 4.4,
+    bonusLine: "Promotional packages and rakeback — terms vary by region",
+    withdrawalLine: "Crypto withdrawals commonly reported — timing varies with KYC and chain congestion",
+    licenseNote:
+      "Rollbit operates as an offshore crypto casino and sportsbook brand. Licensing and corporate disclosures should be verified on the official site footer. Players should not treat streaming sponsorships or influencer codes as independent safety audits.",
+    bestFor:
+      "Crypto-comfortable players who want a combined casino, sports, and NFT-adjacent product experience with fast web UX. Rollbit may suit users who already hold BTC or USDT and want proprietary games alongside mainstream slots.",
+    avoidFor:
+      "Players who need UPI, Paytm, or Indian bank withdrawals as primary rails. Also reconsider if you dislike high-variance proprietary games without strict session limits.",
+    payments:
+      "Rollbit is crypto-first. Bitcoin, Ethereum, and stablecoins such as USDT may be supported depending on chain and account region — confirm in the cashier. For Indian players blocked on fiat, compare our [UPI guide](/payment/upi) and [India payments hub](/india-casino-payments) before assuming crypto is your only path.",
+    crypto:
+      "Crypto is central to Rollbit. Match deposit networks exactly (TRC-20 vs ERC-20 for USDT). Enable 2FA, bookmark the official domain, and avoid Telegram 'support' asking for seed phrases. Read [Bitcoin](/crypto/bitcoin-casino) and [USDT](/crypto/usdt-casino) guides for chain hygiene.",
+    withdrawals:
+      "Crypto cashouts typically follow internal review plus blockchain confirmation. First withdrawals may trigger KYC. Rollbit does not guarantee universal SLAs — timing may vary with risk checks and network fees. Test with a small amount after verification.",
+    kyc:
+      "KYC may be requested before larger withdrawals or if compliance systems flag activity. Submit documents only through the official portal. Keep wallet transaction hashes for support tickets.",
+    bonusCaution:
+      "Rollbit promotes rakeback, races, and seasonal events. Each promotion can carry separate eligibility and wagering concepts. Headline rewards are not withdrawable cash until terms are met — read the promotion page at sign-up.",
+    mobile:
+      "Rollbit is widely used on mobile browsers. Test proprietary games and sports bet slips on your connection. Fast game loops benefit from deposit and loss limits set before play.",
+    support:
+      "Support is typically chat-based. For crypto issues, provide TXIDs, timestamps, and wallet addresses immediately.",
+    southAsia:
+      "Rollbit appears in South Asian crypto casino discussions when UPI rails fail. That does not make play legal in every jurisdiction — see [responsible gambling](/responsible-gambling). Compare [Stake](/blogs/review-stake) and [BC.Game](/blogs/review-bc-game) before depositing.",
+    pros: [
+      "Strong crypto-native cashier and modern interface",
+      "Casino, sports, and proprietary games in one account",
+      "Active promotional calendar for volume players",
+      "Mobile-friendly web experience",
+    ],
+    cons: [
+      "Limited fiat options for Indian banking workflows",
+      "Proprietary games can encourage fast session loops",
+      "Offshore licensing requires extra due diligence",
+      "Bonus structures can be complex",
+    ],
+    risks: [
+      "Sending crypto on the wrong network",
+      "Chasing losses on high-frequency Rollbit originals",
+      "Using unofficial mirror links from social media",
+    ],
+    gamesDetail:
+      "Rollbit typically lists proprietary originals, slots from major providers, live dealer tables, and sports markets where licensed. Game weighting for bonuses may exclude certain categories — read promotion terms. Sports and casino wallets may interact depending on region.",
+    alternatives:
+      "Compare [Stake](/blogs/review-stake) for a similar crypto-first lobby, [Cloudbet](/blogs/review-cloudbet) for Bitcoin-focused sports crossover, or [BC.Game](/blogs/review-bc-game) for gamified missions. Use [/compare](/compare) and [/how-we-review](/how-we-review) before switching.",
+    faqs: [
+      {
+        question: "Does Rollbit accept UPI or Paytm?",
+        answer:
+          "Rollbit is primarily crypto-first. UPI and Paytm are not standard deposit rails in most setups. Indian players often use USDT or BTC after verifying supported networks in the cashier.",
+      },
+      {
+        question: "Is Rollbit good for sports betting?",
+        answer:
+          "Rollbit offers sports markets in supported regions, but product depth varies by mirror and account. Compare odds, limits, and cashout rules on the official site — we do not run live odds checks.",
+      },
+      {
+        question: "How do Rollbit withdrawals work?",
+        answer:
+          "Withdrawals are typically crypto-based after any KYC review. Timing may vary with internal checks and blockchain congestion. Test with a small cashout early.",
+      },
+      {
+        question: "What are safer habits on Rollbit?",
+        answer:
+          "Verify the official URL, set deposit limits, read bonus terms, and avoid increasing stakes to chase leaderboard races.",
+      },
+    ],
+    extraContext:
+      "Rollbit's visibility in crypto communities does not replace reading current terms. NFT or token-linked promotions may add complexity — only opt in if you understand settlement rules.\n\n**Bankroll discipline:** Combined sports and casino wallets make it easy to cross-subsidise losses. Track categories separately even if the balance is unified.\n\n**Network fees:** Small BTC deposits can be uneconomical during high fee periods — consider layer-2 or alternative coins if the cashier supports them.",
+    excerptEn:
+      "Editorial Rollbit review — crypto payments, games overview, KYC notes, and South Asia context. Terms may vary; verify on the official site.",
+    excerptHi:
+      "Rollbit संपादकीय समीक्षा — क्रिप्टो भुगतान, गेम्स और KYC नोट्स। शर्तें बदल सकती हैं।",
+  },
+  {
+    slug: "review-cloudbet",
+    name: "Cloudbet",
+    rating: 4.5,
+    bonusLine: "Bitcoin-focused welcome offers — terms vary by region",
+    withdrawalLine: "Bitcoin withdrawals widely reported — speed varies with KYC and chain conditions",
+    licenseNote:
+      "Cloudbet is a long-running Bitcoin casino and sportsbook brand often associated with Curaçao-style offshore licensing. Verify licence links and restricted-country lists on the site you use. Longevity does not guarantee future payout performance.",
+    bestFor:
+      "Players who want a Bitcoin-first operator with sportsbook crossover and established market presence. Cloudbet may appear suitable for crypto users prioritising BTC deposits over wallet UPI flows.",
+    avoidFor:
+      "Players who require Indian UPI/Paytm deposits or guaranteed local fiat withdrawals. Also avoid if you need Hindi-first support as a default.",
+    payments:
+      "Cloudbet centres on cryptocurrency, especially Bitcoin. Some regions may see additional rails — confirm after login. Indian players comparing fiat should read [IMPS](/payment/imps) and [UPI](/payment/upi) guides, then decide if crypto is appropriate.",
+    crypto:
+      "Bitcoin is Cloudbet's historical focus; other coins may appear in the cashier. Use correct addresses, start with test deposits, and read [Bitcoin casino guide](/crypto/bitcoin-casino). USDT users should compare [USDT guide](/crypto/usdt-casino) and network fees.",
+    withdrawals:
+      "BTC withdrawals follow operator review and blockchain confirmation. KYC may apply. Cloudbet does not promise fixed timelines — player reports range from fast to delayed during verification backlogs.",
+    kyc:
+      "Expect identity verification for meaningful withdrawals. Cloudbet has operated for years — compliance checks may be stricter than newer crypto casinos. Keep consistent names across documents.",
+    bonusCaution:
+      "Bitcoin welcome offers and sports combo promos carry wagering and expiry rules. Sports and casino bonuses may not share the same terms — read each promotion independently.",
+    mobile:
+      "Cloudbet supports mobile web for sports and casino. Live betting during events can extend sessions — enable limits where offered.",
+    support:
+      "Help centre and chat are typical channels. For BTC tracing, provide TXIDs and screenshot the cashier history.",
+    southAsia:
+      "Cloudbet is discussed among South Asian crypto bettors when local rails block gambling. Legal status remains jurisdiction-specific — [responsible gambling](/responsible-gambling). Compare [Rollbit](/blogs/review-rollbit) and [Stake](/blogs/review-stake) for alternative crypto lobbies.",
+    pros: [
+      "Established Bitcoin casino and sportsbook brand",
+      "BTC-focused cashier familiar to crypto users",
+      "Broad sports markets where served",
+      "Long operational track record relative to new clones",
+    ],
+    cons: [
+      "Not UPI-first for Indian workflows",
+      "Offshore dispute paths can be slow",
+      "Bonus terms vary by product (sports vs casino)",
+      "KYC may feel heavy for casual crypto users",
+    ],
+    risks: [
+      "Assuming BTC price stability protects bankroll value",
+      "Ignoring bonus game weighting on sports vs slots",
+      "Registering via phishing domains impersonating Cloudbet",
+    ],
+    gamesDetail:
+      "Cloudbet lists slots, live dealer, provably fair titles, and extensive sportsbook markets. Cricket and football may be prominent depending on season and licence. Casino promotions may exclude sports bets — check weighting tables.",
+    alternatives:
+      "Try [Stake](/blogs/review-stake) or [Rollbit](/blogs/review-rollbit) for alternative crypto UX, or [Bet365](/blogs/review-bet365) for fiat-heavy sports where legally served. See [/compare](/compare).",
+    faqs: [
+      {
+        question: "Is Cloudbet only for Bitcoin?",
+        answer:
+          "Bitcoin is the core brand focus, but other cryptocurrencies may appear in the cashier. Confirm supported coins after login.",
+      },
+      {
+        question: "Does Cloudbet work for Indian cricket betting?",
+        answer:
+          "Markets may be available on mirrors that accept your jurisdiction, but legal access varies. CasinoPulse does not provide legal advice — verify locally.",
+      },
+      {
+        question: "How fast are Cloudbet BTC withdrawals?",
+        answer:
+          "Timing may vary with KYC, internal review, and Bitcoin network congestion. Test with a small withdrawal after verification.",
+      },
+      {
+        question: "Cloudbet vs Rollbit — which for crypto?",
+        answer:
+          "Both are crypto-first. Cloudbet emphasises BTC sports heritage; Rollbit emphasises proprietary games and races. Compare cashiers, KYC friction, and game libraries on each review.",
+      },
+    ],
+    extraContext:
+      "Bitcoin-denominated balances fluctuate with BTC price — a winning session can still feel smaller if BTC drops afterward. Some players mentally convert to INR; track both crypto and fiat reference values.\n\n**Sports vs casino bankroll:** Cloudbet's sportsbook can dominate UX. Set separate limits for in-play betting and casino spins.\n\n**Mirror hygiene:** Long-lived brands attract clone sites — verify SSL and official social links.",
+    excerptEn:
+      "Editorial Cloudbet review — Bitcoin payments, sportsbook notes, KYC expectations, and alternatives for South Asian crypto players.",
+    excerptHi:
+      "Cloudbet संपादकीय समीक्षा — बिटकॉइन भुगतान, स्पोर्ट्सबुक और KYC नोट्स।",
+  },
+  {
+    slug: "review-betway",
+    name: "Betway",
+    rating: 4.5,
+    bonusLine: "Regional welcome offers — terms and availability vary sharply by market",
+    withdrawalLine: "Fiat withdrawals may be available on served mirrors — timing varies with KYC",
+    licenseNote:
+      "Betway is associated with multiple regulated entities (including MGA and UKGC licences on certain domains). The exact regulator depends on the mirror you access. Always read the footer licence section for your country — do not assume one global licence covers all players.",
+    bestFor:
+      "Players who want a mainstream sportsbook with attached casino products, clearer corporate disclosure on regulated mirrors, and familiar fiat payment menus where legally served.",
+    avoidFor:
+      "Crypto-only users, players in countries where Betway geo-blocks registration, and bonus hunters in regions that ban welcome promotions.",
+    payments:
+      "Payment menus depend on licence and country. Cards, e-wallets, and bank transfer may appear on approved domains; Indian UPI is not consistently advertised — confirm locally. See [India casino payments](/india-casino-payments), [UPI](/payment/upi), and [IMPS](/payment/imps) for South Asian context.",
+    crypto:
+      "Betway is not crypto-native. Unless your cashier lists crypto, assume fiat rails. Crypto users should compare [Stake](/blogs/review-stake) or [Cloudbet](/blogs/review-cloudbet).",
+    withdrawals:
+      "Withdrawals typically require KYC and may return to the deposit method where possible. Timing may vary from same-day e-wallets to several banking days. Read help articles on your mirror before depositing.",
+    kyc:
+      "Expect standard ID and address verification on regulated Betway entities. Source-of-funds questions can appear for larger withdrawals.",
+    bonusCaution:
+      "Betway sports and casino promotions differ by region; some countries restrict welcome offers. Wagering, expiry, and game weighting apply — read the promotion page after login, not billboard ads.",
+    mobile:
+      "Betway invests in mobile sports and casino UX on served markets. In-play betting can increase session length — use deposit limits.",
+    support:
+      "Help centres, chat, and phone support may be available depending on licence. Keep case IDs for withdrawal queries.",
+    southAsia:
+      "Betway marketing reaches South Asian audiences, but direct service inside India is legally sensitive and may be restricted. Diaspora players abroad may see different mirrors. Read [responsible gambling](/responsible-gambling) and compare [LeoVegas](/blogs/review-leovegas) or [Bet365](/blogs/review-bet365).",
+    pros: [
+      "Recognisable global sportsbook brand",
+      "Structured safer-gambling tooling on regulated mirrors",
+      "Casino plus sports crossover for served markets",
+      "Clearer licensing disclosure on major domains",
+    ],
+    cons: [
+      "Geo-restrictions for many South Asian sign-ups",
+      "Not ideal for crypto-first workflows",
+      "Bonuses may be limited or unavailable in some regions",
+      "KYC can delay first withdrawal",
+    ],
+    risks: [
+      "Registering on unofficial clone sites",
+      "Assuming sports availability implies legal local play",
+      "Mixing sports and casino spend without budgets",
+    ],
+    gamesDetail:
+      "Betway casino lobbies include slots, table games, and live dealer where licensed. Sports markets (football, cricket, tennis) often dominate the product. Casino bonus weighting may exclude live tables — read terms.",
+    alternatives:
+      "Compare [Bet365](/blogs/review-bet365) for similar sports depth, [LeoVegas](/blogs/review-leovegas) for mobile casino focus, or [BC.Game](/blogs/review-bc-game) for crypto. Use [/compare](/compare) and [/india-casino-payments](/india-casino-payments).",
+    faqs: [
+      {
+        question: "Does Betway accept UPI in India?",
+        answer:
+          "UPI availability is not consistent across Betway entities. Confirm deposit methods after login on the mirror that accepts your jurisdiction.",
+      },
+      {
+        question: "Is Betway better for sports or casino?",
+        answer:
+          "Betway historically leads with sportsbook UX; casino is a strong secondary product. Choose based on which product you will use most — bonus terms differ.",
+      },
+      {
+        question: "Can I use Betway with Bitcoin?",
+        answer:
+          "Unless explicitly listed in your cashier, assume fiat-only. See our Bitcoin casino guide for crypto-first operators.",
+      },
+      {
+        question: "Betway vs LeoVegas for mobile casino?",
+        answer:
+          "LeoVegas emphasises mobile casino polish; Betway emphasises sports crossover. Compare payment menus and geo-access on each review.",
+      },
+    ],
+    extraContext:
+      "Betway's multi-entity structure confuses players — footer licence text is the authoritative source for your account, not forum rumours.\n\n**Sports/casino wallet:** Combined balances can hide category losses. Track sports and casino separately.\n\n**Promotion eligibility:** Betway may hide casino welcome offers in regions with stricter advertising rules — absence of a banner does not mean no promotions exist; check the promotions tab after login.",
+    excerptEn:
+      "Editorial Betway review — sportsbook and casino notes, fiat payment context, geo-restrictions, and South Asia relevance.",
+    excerptHi:
+      "Betway संपादकीय समीक्षा — स्पोर्ट्सबुक, भुगतान और भू-प्रतिबंध नोट्स।",
+  },
 ];
 
 function buildPillarReviewEn(profile: PillarProfile): string {

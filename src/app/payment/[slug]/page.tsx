@@ -6,7 +6,7 @@ import {
   getPaymentSlugsForStaticParams,
 } from "@/data/programmatic";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { breadcrumbSchema } from "@/lib/seo/schema";
+import { buildProgrammaticPageJsonLd } from "@/lib/seo/programmatic-page-schema";
 import { siteConfig } from "@/config/site";
 
 interface PageProps {
@@ -40,20 +40,25 @@ export default async function PaymentProgrammaticPage({ params }: PageProps) {
     notFound();
   }
 
-  const jsonLd = breadcrumbSchema([
+  const pageUrl = `${siteConfig.url}/payment/${page.slug}`;
+  const jsonLd = buildProgrammaticPageJsonLd(page, pageUrl, [
     { name: "Home", url: siteConfig.url },
     { name: "Payments", url: `${siteConfig.url}/india-casino-payments` },
-    { name: page.h1, url: `${siteConfig.url}/payment/${page.slug}` },
+    { name: page.h1, url: pageUrl },
   ]);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {jsonLd.map((schema) => (
+        <script
+          key={schema["@type"] as string}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <ProgrammaticPageLayout
         page={page}
+        kicker="Payment Guide"
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Payments", href: "/india-casino-payments" },

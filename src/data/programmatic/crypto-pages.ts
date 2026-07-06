@@ -29,8 +29,16 @@ const cryptoPageTemplate = (
     },
     {
       heading: "Top Casinos Accepting Crypto",
-      body: "Stake, BC.Game, Cloudbet, Bitcasino, Rollbit, and FortuneJack consistently rank well for crypto users. Compare withdrawal limits, supported chains, and INR-friendly onboarding before you sign up.",
+      body: "Stake, BC.Game, Cloudbet, Rollbit, and FortuneJack are frequently compared for crypto users. Read expanded reviews for [Rollbit](/blogs/review-rollbit) and [Cloudbet](/blogs/review-cloudbet), or compare [UPI](/payment/upi) and [Paytm](/payment/paytm) if you need fiat context.",
     },
+  ],
+  relatedLinks: [
+    { href: "/payment/upi", label: "UPI guide" },
+    { href: "/payment/paytm", label: "Paytm guide" },
+    { href: "/crypto/usdt-casino", label: "USDT casinos" },
+    { href: "/blogs/review-rollbit", label: "Rollbit review" },
+    { href: "/blogs/review-cloudbet", label: "Cloudbet review" },
+    { href: "/india-casino-payments", label: "India payments hub" },
   ],
   indexable: true,
   contentQuality: "expanded",

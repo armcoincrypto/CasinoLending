@@ -5,6 +5,16 @@ export interface ProgrammaticSection {
   body: string;
 }
 
+export interface ProgrammaticFaq {
+  question: string;
+  answer: string;
+}
+
+export interface ProgrammaticRelatedLink {
+  href: string;
+  label: string;
+}
+
 export interface ProgrammaticPage {
   slug: string;
   title: string;
@@ -12,6 +22,8 @@ export interface ProgrammaticPage {
   h1: string;
   intro: string;
   sections: ProgrammaticSection[];
+  faqs?: ProgrammaticFaq[];
+  relatedLinks?: ProgrammaticRelatedLink[];
   indexable: boolean;
   contentQuality: ContentQuality;
   keywords: string[];

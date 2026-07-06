@@ -6,7 +6,7 @@ import {
   getCryptoSlugsForStaticParams,
 } from "@/data/programmatic";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { breadcrumbSchema } from "@/lib/seo/schema";
+import { buildProgrammaticPageJsonLd } from "@/lib/seo/programmatic-page-schema";
 import { siteConfig } from "@/config/site";
 
 interface PageProps {
@@ -40,20 +40,25 @@ export default async function CryptoProgrammaticPage({ params }: PageProps) {
     notFound();
   }
 
-  const jsonLd = breadcrumbSchema([
+  const pageUrl = `${siteConfig.url}/crypto/${page.slug}`;
+  const jsonLd = buildProgrammaticPageJsonLd(page, pageUrl, [
     { name: "Home", url: siteConfig.url },
-    { name: "Crypto Casinos", url: `${siteConfig.url}/crypto/${page.slug}` },
-    { name: page.h1, url: `${siteConfig.url}/crypto/${page.slug}` },
+    { name: "Crypto Casinos", url: `${siteConfig.url}/crypto/bitcoin-casino` },
+    { name: page.h1, url: pageUrl },
   ]);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {jsonLd.map((schema) => (
+        <script
+          key={schema["@type"] as string}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <ProgrammaticPageLayout
         page={page}
+        kicker="Crypto Guide"
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Crypto", href: "/crypto/usdt-casino" },

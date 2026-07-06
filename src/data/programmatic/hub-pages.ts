@@ -5,31 +5,100 @@ export const hubPages: ProgrammaticPage[] = [
     slug: "india-casino-payments",
     title: "India Casino Payment Methods Guide 2026",
     metaDescription:
-      "Complete guide to casino payment methods for Indian players — UPI, Paytm, IMPS, cards, and crypto. Compare speeds, limits, and safe deposit options.",
+      "Complete guide to casino payment methods for Indian players — UPI, Paytm, PhonePe, IMPS, cards, and crypto. Compare speeds, limits, security, and safe deposit options.",
     h1: "Casino Payment Methods for Indian Players",
     intro:
-      "Choosing the right deposit and withdrawal method is critical for Indian casino players. This hub compares UPI, wallets, bank transfers, cards, and cryptocurrency so you can pick fast, reliable options with minimal fees.",
+      "Choosing the right deposit and withdrawal method is critical for Indian casino players. This authority hub compares UPI, Paytm, PhonePe, IMPS, cards, and cryptocurrency — with honest notes on speed, limits, blocks, and what to verify before sending money. Payment availability can change; always confirm in the operator cashier after login.",
     sections: [
       {
-        heading: "UPI and IMPS",
-        body: "UPI remains the default for many Indian players when supported. IMPS works well for larger bank transfers. Confirm the casino displays a legitimate UPI ID and never pay unverified personal accounts.",
+        heading: "Overview of Casino Payments in India",
+        body: "Indian players typically balance three realities: familiar local rails (UPI, wallets, IMPS), bank and wallet restrictions on gambling merchants, and offshore operators that may prefer crypto. No single method works everywhere. CasinoPulse recommends reading operator withdrawal rules before your first deposit, starting with a small test amount, and keeping UTR or transaction references for every transfer.",
       },
       {
-        heading: "Wallets (Paytm, PhonePe)",
-        body: "Wallet availability varies by operator and merchant category. If your wallet blocks gambling, consider bank UPI or crypto alternatives documented in our payment guides.",
+        heading: "UPI Casino Deposits",
+        body: "UPI is the default starting point for many players. When supported, deposits may credit within minutes. Banks and NPCI policies can block gambling descriptors without warning. Read our dedicated [UPI casino guide](/payment/upi) for step-by-step flows, UTR troubleshooting, and withdrawal caveats. Not all casinos list UPI even when a payment partner could support it — check after login.",
       },
       {
-        heading: "Cryptocurrency",
-        body: "Bitcoin, USDT, and Ethereum offer borderless deposits when traditional rails fail. See our crypto casino guides for chain-specific tips and bonus comparisons.",
+        heading: "Paytm Casino Payments",
+        body: "Paytm is convenient but frequently restricts gambling merchants. Some casinos route Paytm indirectly through UPI aggregators. Verify statement descriptors and avoid agent deposits. Full context: [Paytm payment guide](/payment/paytm). If Paytm fails, compare [PhonePe](/payment/phonepe) or bank UPI before switching to crypto.",
       },
       {
-        heading: "Withdrawals",
-        body: "Prioritize casinos with published withdrawal times, clear KYC steps, and a track record of paying Indian players. Test with a small withdrawal before depositing large amounts.",
+        heading: "PhonePe Casino Payments",
+        body: "PhonePe uses UPI rails with its own risk filters — a decline on PhonePe does not always mean bank UPI will fail. See the [PhonePe casino guide](/payment/phonepe) for wallet-specific tips. Players should not share OTPs or pay unofficial QR codes from social media.",
       },
+      {
+        heading: "IMPS and Bank Transfer Options",
+        body: "IMPS suits larger transfers when UPI limits are low or wallet apps block you. Casinos may display beneficiary details via local partners — confirm inside the official cashier only. Our [IMPS guide](/payment/imps) explains references, timing, and why withdrawals may not return to the same Indian account.",
+      },
+      {
+        heading: "Crypto Alternatives for Casino Deposits",
+        body: "When Indian banking rails fail, Bitcoin and USDT are common fallbacks. Crypto removes some friction but adds wallet security and network selection risks (e.g. TRC-20 vs ERC-20 for USDT). Start with our [USDT casino guide](/crypto/usdt-casino) and [Bitcoin casino guide](/crypto/bitcoin-casino). Crypto-first reviews: [Stake](/blogs/review-stake) and [BC.Game](/blogs/review-bc-game).",
+      },
+      {
+        heading: "Deposit Speed Comparison",
+        body: "Typical experience (not guaranteed): UPI/PhonePe/Paytm — minutes when successful; IMPS — minutes between banks plus operator matching time; crypto — network dependent (minutes to an hour); cards — variable and often blocked for gambling. Maintenance windows and KYC status can delay any method.",
+      },
+      {
+        heading: "Withdrawal Expectations",
+        body: "Withdrawal options depend on operator policy — many sites accept UPI deposits but pay crypto withdrawals. KYC is commonly required before first cashout. Test small withdrawals early. Fiat-oriented brands such as [LeoVegas](/blogs/review-leovegas) or [Bet365](/blogs/review-bet365) may offer different rails on approved mirrors; diaspora players should verify legality separately.",
+      },
+      {
+        heading: "Security and Privacy Considerations",
+        body: "Use official apps, enable locks and 2FA, and never pay individuals claiming to be casino agents. Compare operators using our [review methodology](/how-we-review) and [comparison hub](/compare). CasinoPulse does not process payments or store player funds.",
+      },
+      {
+        heading: "Responsible Gambling Payment Controls",
+        body: "Payment friction can be a feature, not a bug — use deposit limits, cooling-off periods, and separate entertainment budgets. If gambling harms finances, stop and read [responsible gambling resources](/responsible-gambling). 18+ only.",
+      },
+      {
+        heading: "Recommended Internal Resources",
+        body: "Deep dives: [UPI](/payment/upi), [Paytm](/payment/paytm), [PhonePe](/payment/phonepe), [IMPS](/payment/imps), [USDT](/crypto/usdt-casino), [Bitcoin](/crypto/bitcoin-casino). Reviews with payment notes: [Stake](/blogs/review-stake), [BC.Game](/blogs/review-bc-game), [LeoVegas](/blogs/review-leovegas). Use [compare](/compare) to shortlist brands before depositing.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is the best payment method for Indian casino players?",
+        answer:
+          "There is no universal best method — it depends on which operator you choose and what your bank allows. UPI is familiar but often blocked; crypto works for many offshore brands but adds wallet risk. Confirm both deposit and withdrawal paths before funding an account.",
+      },
+      {
+        question: "Why do UPI casino deposits fail?",
+        answer:
+          "Common reasons include gambling merchant blocks, exceeded daily limits, gateway maintenance, or incorrect UPI IDs. Keep UTR references and contact support with screenshots.",
+      },
+      {
+        question: "Can I use Paytm and PhonePe interchangeably?",
+        answer:
+          "Not always. Both use UPI technology but apply different risk rules. A method that works in one app may fail in another for the same casino.",
+      },
+      {
+        question: "Are crypto casinos legal for Indian players?",
+        answer:
+          "Online casino legality varies by Indian state and access path. CasinoPulse does not provide legal advice. Crypto removes banking friction but does not remove legal or tax obligations.",
+      },
+      {
+        question: "How do I compare casinos for payments?",
+        answer:
+          "Read individual reviews, check the cashier after registration, and use our comparison hub. Prioritise operators that publish clear withdrawal steps and KYC requirements.",
+      },
+    ],
+    relatedLinks: [
+      { href: "/payment/upi", label: "UPI guide" },
+      { href: "/payment/paytm", label: "Paytm guide" },
+      { href: "/payment/phonepe", label: "PhonePe guide" },
+      { href: "/payment/imps", label: "IMPS guide" },
+      { href: "/crypto/usdt-casino", label: "USDT casinos" },
+      { href: "/crypto/bitcoin-casino", label: "Bitcoin casinos" },
+      { href: "/blogs/review-stake", label: "Stake review" },
+      { href: "/blogs/review-bc-game", label: "BC.Game review" },
+      { href: "/blogs/review-leovegas", label: "LeoVegas review" },
+      { href: "/compare", label: "Compare casinos" },
+      { href: "/how-we-review", label: "Review methodology" },
+      { href: "/responsible-gambling", label: "Responsible gambling" },
     ],
     indexable: true,
     contentQuality: "expanded",
-    keywords: ["India casino payments", "UPI casino", "Indian deposit methods"],
+    keywords: ["India casino payments", "UPI casino", "Indian deposit methods", "Paytm casino", "PhonePe casino"],
   },
   {
     slug: "compare",
@@ -44,10 +113,10 @@ export const hubPages: ProgrammaticPage[] = [
         heading: "How We Compare Casinos",
         body: "Our model weights licensing, payout reliability, bonus fairness, payment options for Indian players, mobile UX, and responsible gambling tools. Scores update when operators change terms or support quality shifts.",
       },
-      {
-        heading: "Quick Comparison Table",
-        body: "Stake and BC.Game lead for crypto users. Bet365 and LeoVegas excel for sports and live casino. Cloudbet and Bitcasino specialize in Bitcoin. Check individual reviews for wagering terms and regional availability.",
-      },
+    {
+      heading: "Quick Comparison Table",
+      body: "Stake and BC.Game lead for crypto users. Bet365 and LeoVegas excel for sports and live casino on served mirrors. Cloudbet and Rollbit specialise in Bitcoin and crypto sports crossover. Betway offers mainstream sportsbook depth where geo-access allows. Check individual reviews for wagering terms and regional availability.",
+    },
       {
         heading: "When to Avoid a Site",
         body: "Skip operators with unresolved withdrawal complaints, fake licensing claims, or pressure to deposit via unofficial agents. Our blacklist section flags brands with repeated Indian player issues.",

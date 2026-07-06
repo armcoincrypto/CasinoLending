@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import ProgrammaticPageLayout from "@/components/programmatic/ProgrammaticPageLayout";
 import { getHubPageBySlug } from "@/data/programmatic";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { breadcrumbSchema } from "@/lib/seo/schema";
+import { buildProgrammaticPageJsonLd } from "@/lib/seo/programmatic-page-schema";
 import { siteConfig } from "@/config/site";
 
 const SLUG = "india-casino-payments";
@@ -29,30 +29,27 @@ export default function IndiaCasinoPaymentsPage() {
     notFound();
   }
 
-  const jsonLd = breadcrumbSchema([
+  const pageUrl = `${siteConfig.url}/${page.slug}`;
+  const jsonLd = buildProgrammaticPageJsonLd(page, pageUrl, [
     { name: "Home", url: siteConfig.url },
-    { name: page.h1, url: `${siteConfig.url}/${page.slug}` },
+    { name: page.h1, url: pageUrl },
   ]);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {jsonLd.map((schema) => (
+        <script
+          key={schema["@type"] as string}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <ProgrammaticPageLayout
         page={page}
+        kicker="Payment Authority Hub"
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: page.h1, href: `/${page.slug}` },
-        ]}
-        relatedLinks={[
-          { href: "/payment/paytm", label: "Paytm payment guide" },
-          { href: "/crypto/usdt-casino", label: "USDT casinos" },
-          { href: "/crypto/bitcoin-casino", label: "Bitcoin casinos" },
-          { href: "/blogs/review-stake", label: "Stake review" },
-          { href: "/blogs/review-bc-game", label: "BC.Game review" },
-          { href: "/blogs/review-leovegas", label: "LeoVegas review" },
         ]}
       />
     </>

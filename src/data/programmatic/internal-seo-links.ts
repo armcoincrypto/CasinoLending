@@ -36,6 +36,33 @@ export const internalSeoLinks = [
     cta: "View payment guide",
   },
   {
+    href: "/payment/upi",
+    title: "UPI Casino Payment Guide",
+    description:
+      "How UPI casino deposits work for Indian players — speed, limits, security, and alternatives.",
+    category: "Payment Guides",
+    footerLabel: "UPI Payments",
+    cta: "View payment guide",
+  },
+  {
+    href: "/payment/phonepe",
+    title: "PhonePe Casino Payment Guide",
+    description:
+      "PhonePe casino deposits — availability, speed, security, and how it compares to UPI.",
+    category: "Payment Guides",
+    footerLabel: "PhonePe Payments",
+    cta: "View payment guide",
+  },
+  {
+    href: "/payment/imps",
+    title: "IMPS Casino Payment Guide",
+    description:
+      "IMPS bank transfers for casino deposits — timing, safety, and withdrawal expectations.",
+    category: "Payment Guides",
+    footerLabel: "IMPS Payments",
+    cta: "View payment guide",
+  },
+  {
     href: "/india-casino-payments",
     title: "India Casino Payment Methods",
     description:

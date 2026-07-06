@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import ProgrammaticPageLayout from "@/components/programmatic/ProgrammaticPageLayout";
 import { getHubPageBySlug } from "@/data/programmatic";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { breadcrumbSchema } from "@/lib/seo/schema";
+import { buildProgrammaticPageJsonLd } from "@/lib/seo/programmatic-page-schema";
 import { siteConfig } from "@/config/site";
 
 const SLUG = "compare";
@@ -29,19 +29,24 @@ export default function ComparePage() {
     notFound();
   }
 
-  const jsonLd = breadcrumbSchema([
+  const pageUrl = `${siteConfig.url}/${page.slug}`;
+  const jsonLd = buildProgrammaticPageJsonLd(page, pageUrl, [
     { name: "Home", url: siteConfig.url },
-    { name: page.h1, url: `${siteConfig.url}/${page.slug}` },
+    { name: page.h1, url: pageUrl },
   ]);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {jsonLd.map((schema) => (
+        <script
+          key={schema["@type"] as string}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <ProgrammaticPageLayout
         page={page}
+        kicker="Comparison Hub"
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: page.h1, href: `/${page.slug}` },
@@ -52,6 +57,11 @@ export default function ComparePage() {
           { href: "/blogs/review-roobet", label: "Roobet review" },
           { href: "/blogs/review-bet365", label: "Bet365 review" },
           { href: "/blogs/review-leovegas", label: "LeoVegas review" },
+          { href: "/blogs/review-rollbit", label: "Rollbit review" },
+          { href: "/blogs/review-cloudbet", label: "Cloudbet review" },
+          { href: "/blogs/review-betway", label: "Betway review" },
+          { href: "/india-casino-payments", label: "India payment hub" },
+          { href: "/payment/upi", label: "UPI guide" },
         ]}
       />
     </>
