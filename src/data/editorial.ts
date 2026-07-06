@@ -77,6 +77,31 @@ export const pillarReviewFreshness: Record<string, ContentFreshness> = {
     dateModified: "2026-07-06",
     lastReviewed: "2026-07-06",
   },
+  "avoid-1xbet": {
+    datePublished: "2026-01-25",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  "avoid-melbet": {
+    datePublished: "2026-01-25",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  "avoid-mostbet": {
+    datePublished: "2026-01-25",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  "avoid-parimatch": {
+    datePublished: "2026-01-25",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  "avoid-22bet": {
+    datePublished: "2026-01-25",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
 };
 
 export const cryptoGuideFreshness: Record<string, ContentFreshness> = {

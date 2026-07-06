@@ -38,6 +38,32 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
   };
 }
 
+export function collectionPageSchema(input: {
+  name: string;
+  description: string;
+  url: string;
+  dateModified?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: input.name,
+    description: input.description,
+    url: input.url,
+    ...(input.dateModified ? { dateModified: input.dateModified } : {}),
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+}
+
 export function webPageSchema(input: {
   name: string;
   description: string;

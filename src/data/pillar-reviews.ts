@@ -1,5 +1,15 @@
 type ReviewFaq = { question: string; answer: string };
 
+/** Reusable authority link snippets for pillar profile fields — add new reviews via profiles[] only. */
+export const PILLAR_AUTHORITY_SNIPPETS = {
+  payments:
+    "Regional context: [India casino payments](/india-casino-payments), [Bangladesh casino payments](/bangladesh-casino-payments), [UPI](/payment/upi), [PhonePe](/payment/phonepe), [bKash](/payment/bkash), [Nagad](/payment/nagad).",
+  crypto:
+    "Crypto guides: [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), [USDT](/crypto/usdt-casino).",
+  editorial:
+    "Methodology: [/how-we-review](/how-we-review) · Editorial team: [/author/casinopulse-editorial-team](/author/casinopulse-editorial-team).",
+} as const;
+
 type PillarProfile = {
   slug: string;
   name: string;
@@ -808,6 +818,396 @@ const profiles: PillarProfile[] = [
       "Editorial 888 Casino review — fiat payments, live dealer notes, geo-restrictions, and Bangladesh/India payment context.",
     excerptHi:
       "888 Casino संपादकीय समीक्षा — भुगतान, लाइव डीलर और भू-प्रतिबंध नोट्स।",
+  },
+  {
+    slug: "avoid-1xbet",
+    name: "1xBet",
+    rating: 2.7,
+    bonusLine: "Large headline promotions — wagering and regional eligibility vary sharply",
+    withdrawalLine: "Withdrawal timelines frequently reported as inconsistent — KYC queues common",
+    licenseNote:
+      "1xBet has operated through multiple offshore domains and licence claims over the years; regulatory status has been disputed in several markets and some country-level blocks have occurred. The exact entity and licence shown on your mirror may differ from what other players see. Players should verify footer licence links independently and treat licensing badges as a starting point only — not proof of dispute resolution in your jurisdiction.",
+    bestFor:
+      "Readers researching a high-traffic sportsbook brand before deciding whether to deposit at all. This pillar page suits players who want a structured checklist of licensing caveats, payment risks, and complaint themes — not a recommendation to sign up.",
+    avoidFor:
+      "Players seeking regulated fiat casinos with predictable KYC and withdrawal paths, users uncomfortable with mirror/domain confusion, and anyone who cannot tolerate withdrawal delay risk. Strongly consider alternatives on our [comparison hub](/compare) and [blacklist context](/blacklist) before funding.",
+    payments:
+      "1xBet marketing reaches South Asian audiences, but payment menus vary by mirror and country. UPI, wallet, and crypto options may appear through third-party aggregators — availability can change without notice. Indian readers should compare [UPI](/payment/upi), [PhonePe](/payment/phonepe), and [IMPS](/payment/imps). Bangladeshi readers should verify [bKash](/payment/bkash) and [Nagad](/payment/nagad) only inside the logged-in cashier. Regional context: [India casino payments](/india-casino-payments), [Bangladesh casino payments](/bangladesh-casino-payments), [UPI](/payment/upi), [PhonePe](/payment/phonepe), [bKash](/payment/bkash), [Nagad](/payment/nagad).",
+    crypto:
+      "Crypto deposits may be listed on some mirrors, but network support and KYC triggers vary. Wrong-chain transfers remain a common loss vector. Crypto guides: [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), [USDT](/crypto/usdt-casino). Compare [Stake](/blogs/review-stake) or [BC.Game](/blogs/review-bc-game) if you need a crypto-first workflow with clearer documentation.",
+    withdrawals:
+      "Forum and review-site themes often cite delayed withdrawals, repeated document requests, and account reviews after large wins — your experience may differ, but caution is warranted. Test small cashouts early, keep ticket IDs, and read withdrawal rules before depositing. Operator policies differ by mirror.",
+    kyc:
+      "Expect KYC before or after deposits depending on mirror. Source-of-funds and repeated document requests are commonly reported themes — submit files only through the official portal, never via social media agents.",
+    bonusCaution:
+      "1xBet promotions can advertise large percentages with strict wagering, short expiry, and max-bet rules during bonus play. Read the promotion page after login; headline numbers are not withdrawable cash guarantees. Opt out if terms are unclear.",
+    mobile:
+      "Mobile web and app availability varies by region — some jurisdictions block downloads. Test cashier access on mobile data and confirm you are on an official domain before entering credentials.",
+    support:
+      "Live chat may exist on some mirrors but response quality and escalation paths vary. Document every interaction for withdrawal disputes. Phishing support accounts are common for high-traffic brands — verify channels on the official site.",
+    southAsia:
+      "1xBet is frequently searched in India, Bangladesh, and Pakistan, but legal access is sensitive and may be blocked locally. Diaspora players abroad may see different mirrors. Compare [Bet365](/blogs/review-bet365) or [Melbet alternatives](/blogs/avoid-melbet) only after reading methodology — not as endorsements. Methodology: [/how-we-review](/how-we-review) · Editorial team: [/author/casinopulse-editorial-team](/author/casinopulse-editorial-team).",
+    pros: [
+      "Very broad sports and casino catalogue on served mirrors",
+      "High marketing visibility — useful as a research subject for comparison shoppers",
+      "Multiple payment rails may appear including crypto on some domains",
+      "Mobile product depth where access is permitted",
+    ],
+    cons: [
+      "Licensing and domain confusion across mirrors",
+      "Frequent player complaint themes around withdrawals and KYC",
+      "Bonus terms can be aggressive for casual players",
+      "Geo-blocks and clone-site phishing risk",
+    ],
+    risks: [
+      "Depositing via unofficial Telegram or WhatsApp agents",
+      "Chasing losses across sports and casino wallets on one account",
+      "Assuming marketing availability equals legal local play",
+    ],
+    gamesDetail:
+      "1xBet typically lists extensive sports markets (football, cricket, tennis) plus casino slots, live dealer, and instant games depending on mirror. Provider filters change — verify inside the logged-in lobby. Sportsbook and casino bonuses may carry different wagering rules.",
+    alternatives:
+      "For regulated-leaning fiat options where legally served, compare [Bet365](/blogs/review-bet365), [Betway](/blogs/review-betway), or [LeoVegas](/blogs/review-leovegas). For crypto-first UX compare [Stake](/blogs/review-stake) and [BC.Game](/blogs/review-bc-game). Use [/compare](/compare) and read [/how-we-review](/how-we-review) before switching.",
+    faqs: [
+      {
+        question: "Is 1xBet safe for Indian players?",
+        answer:
+          "CasinoPulse scores 1xBet below our pillar threshold for safety consistency. Licensing, mirror confusion, and withdrawal complaint themes warrant extra caution. We do not provide legal advice — verify local rules and read responsible gambling resources before any deposit.",
+      },
+      {
+        question: "Does 1xBet accept UPI or bKash?",
+        answer:
+          "Some mirrors may list local wallets via aggregators, but support is inconsistent and can change. Confirm only inside the logged-in cashier — never pay personal wallet numbers from social media agents.",
+      },
+      {
+        question: "Why is 1xBet on a caution-style review URL?",
+        answer:
+          "High-search brands with recurring complaint themes receive pillar-depth caution editorials so readers get structured risk context. The URL path does not change our scoring methodology.",
+      },
+      {
+        question: "What should I verify before using 1xBet?",
+        answer:
+          "Official domain SSL, footer licence text, withdrawal methods, bonus wagering rules, and KYC steps. Compare at least two alternatives on our comparison hub before funding.",
+      },
+    ],
+    extraContext:
+      "1xBet's brand visibility attracts clone phishing sites — bookmark one official domain and avoid search-ad mirrors.\n\n**Sports vs casino bankroll:** Combined wallets can hide losses — set cross-product limits.\n\n**Cricket in-play volume:** Major tournaments increase session length — use deposit caps and reality checks.",
+    excerptEn:
+      "Editorial 1xBet pillar review — licensing caveats, withdrawal complaint themes, South Asia payment context, and safer alternatives.",
+    excerptHi:
+      "1xBet संपादकीय समीक्षा — लाइसेंसिंग, निकासी जोखिम और भुगतान संदर्भ।",
+  },
+  {
+    slug: "avoid-melbet",
+    name: "Melbet",
+    rating: 3.1,
+    bonusLine: "Regional welcome packages — strict wagering commonly applies",
+    withdrawalLine: "Withdrawal speed varies — first cashout often triggers extended KYC",
+    licenseNote:
+      "Melbet is widely described as an offshore operator associated with Curacao-style licensing on certain domains. Regulatory treatment differs by country and mirrors change. Verify the licence footer for your specific domain and search regulator registers when available. Licensing does not guarantee payout speed or local legal permission to play.",
+    bestFor:
+      "Players comparing Melbet against other Eastern European–style sportsbooks who want a structured editorial checklist before testing a small deposit on a served mirror — not users seeking top-tier regulatory clarity.",
+    avoidFor:
+      "Players who need transparent, fast fiat withdrawals without KYC friction, crypto-only users who dislike mirror hunting, and readers uncomfortable with recurring forum complaints about verification loops.",
+    payments:
+      "Melbet targets emerging markets including South Asia. UPI-style rails, wallets, cards, and crypto may appear depending on mirror — confirm after login. Regional context: [India casino payments](/india-casino-payments), [Bangladesh casino payments](/bangladesh-casino-payments), [UPI](/payment/upi), [PhonePe](/payment/phonepe), [bKash](/payment/bkash), [Nagad](/payment/nagad). Compare [Bet365](/blogs/review-bet365) for fiat-heavy sports where legally served.",
+    crypto:
+      "Bitcoin and USDT may be listed on some Melbet mirrors; chain support varies. Crypto guides: [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), [USDT](/crypto/usdt-casino). Test with minimal amounts and verify addresses inside the cashier only.",
+    withdrawals:
+      "Player forums often mention KYC loops and delayed first withdrawals — timing may improve for verified accounts but is not guaranteed. Read withdrawal minimums and fees before depositing.",
+    kyc:
+      "Identity and address verification commonly appear before first withdrawal. Keep copies of submitted documents and ticket IDs if verification repeats.",
+    bonusCaution:
+      "Sports and casino bonuses may carry high wagering multiples and short expiry. Max bet during bonus play can void winnings — read terms on the promotions tab, not billboard ads.",
+    mobile:
+      "Melbet pushes mobile web and app installs in several regions; availability may be blocked in app stores. Test cricket in-play stability on mobile data before larger deposits.",
+    support:
+      "Chat and email may be available; quality varies by language and time zone. Escalate withdrawal issues with timestamps and transaction references.",
+    southAsia:
+      "Melbet marketing appears in Indian and Bangladeshi search results, but local legality remains sensitive. Compare [1xBet caution review](/blogs/avoid-1xbet), [22Bet](/blogs/avoid-22bet), and [Bet365](/blogs/review-bet365) after reading [how we review](/how-we-review).",
+    pros: [
+      "Broad sportsbook including cricket markets on served mirrors",
+      "Casino and live dealer attach for crossover players",
+      "Multiple deposit rails may appear including crypto",
+      "Competitive promotional visibility in emerging markets",
+    ],
+    cons: [
+      "Offshore licensing requires extra player due diligence",
+      "Withdrawal and KYC complaint themes recur in forums",
+      "Mirror and domain confusion risk",
+      "Bonus terms can be tight for casual players",
+    ],
+    risks: [
+      "Registering on unofficial clone domains",
+      "Claiming sports bonuses without reading casino weighting",
+      "Increasing deposits after cricket in-play losses",
+    ],
+    gamesDetail:
+      "Melbet combines sports betting (football, cricket, tennis) with slots, live casino, and instant games on many mirrors. Casino contribution to sports bonuses may be reduced — read promotion weighting tables.",
+    alternatives:
+      "Compare [Parimatch](/blogs/avoid-parimatch), [Mostbet](/blogs/avoid-mostbet), or regulated-leaning [Betway](/blogs/review-betway) where served. Crypto users: [Stake](/blogs/review-stake). Use [/compare](/compare).",
+    faqs: [
+      {
+        question: "Is Melbet the same as 1xBet?",
+        answer:
+          "They are separate brands but occupy a similar offshore sportsbook niche. Compare licensing footers, payment menus, and our caution reviews for each before depositing.",
+      },
+      {
+        question: "Does Melbet accept UPI?",
+        answer:
+          "UPI may appear on some mirrors via partners — not guaranteed. Verify in the cashier and avoid unofficial agent deposits.",
+      },
+      {
+        question: "Is Melbet good for cricket betting?",
+        answer:
+          "Cricket markets may be deep on served mirrors, but legal access and withdrawal reliability remain player responsibilities to verify. Use deposit limits regardless of sport.",
+      },
+      {
+        question: "What Melbet issues do players report?",
+        answer:
+          "Common themes include KYC delays and withdrawal timing concerns. Experiences vary — test small cashouts early if you choose to play.",
+      },
+    ],
+    extraContext:
+      "Melbet's similarity to other Eastern European sportsbooks means players often confuse bonus rules across brands — read Melbet-specific terms only.\n\n**Cricket live betting:** Odds swings can encourage impulsive in-play deposits — pre-set loss caps.\n\n**Casino crossover:** Slot play during sports breaks can erode bankroll separately from sports P/L — track both.",
+    excerptEn:
+      "Editorial Melbet pillar review — sportsbook notes, KYC and withdrawal themes, and South Asia payment context.",
+    excerptHi:
+      "Melbet संपादकीय समीक्षा — स्पोर्ट्सबुक, KYC और भुगतान नोट्स।",
+  },
+  {
+    slug: "avoid-mostbet",
+    name: "Mostbet",
+    rating: 2.9,
+    bonusLine: "Aggressive welcome marketing — wagering and expiry require careful reading",
+    withdrawalLine: "Withdrawal delays commonly reported — especially around first KYC",
+    licenseNote:
+      "Mostbet operates as an offshore sportsbook and casino brand with licensing claims that vary by domain. Some markets have restricted access. Treat footer licence badges as pointers only — verify entity names, restricted-country lists, and terms on the mirror you actually use.",
+    bestFor:
+      "Researchers comparing high-visibility Curacao-style sportsbooks who need a structured risk checklist — not players seeking the highest safety score in our model.",
+    avoidFor:
+      "Users who cannot tolerate withdrawal uncertainty, players wanting UKGC/MGA-level disclosure, and anyone persuaded solely by large welcome bonus billboards without reading terms.",
+    payments:
+      "Mostbet may list cards, e-wallets, crypto, and region-specific rails on certain mirrors. South Asian wallets may route through aggregators with intermittent blocks. Regional context: [India casino payments](/india-casino-payments), [Bangladesh casino payments](/bangladesh-casino-payments), [UPI](/payment/upi), [PhonePe](/payment/phonepe), [bKash](/payment/bkash), [Nagad](/payment/nagad).",
+    crypto:
+      "Crypto may be available on some accounts; confirm supported coins and networks in the cashier. Crypto guides: [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), [USDT](/crypto/usdt-casino).",
+    withdrawals:
+      "Forum themes often highlight slow first withdrawals and document re-requests. Keep PDFs of terms at deposit time and log support cases. Operator policies differ — do not assume instant marketing copy.",
+    kyc:
+      "KYC commonly triggers before first withdrawal. Avoid sending identity documents through social media — use the official verification flow only.",
+    bonusCaution:
+      "Mostbet promotions can combine sports and casino offers with strict wagering. Excluded games and max bet rules may void bonus winnings — read the promotion page after login.",
+    mobile:
+      "Mobile web is typical; app availability varies. Test live dealer and sports layouts on your device before funding.",
+    support:
+      "Support channels may include chat; response times vary. For payment tracing, collect UTRs, crypto tx hashes, or card references.",
+    southAsia:
+      "Mostbet appears in South Asian affiliate marketing but legal status is jurisdiction-specific. Compare [1xBet](/blogs/avoid-1xbet), [Melbet](/blogs/avoid-melbet), and [Bet365](/blogs/review-bet365). Read [responsible gambling](/responsible-gambling).",
+    pros: [
+      "Combined sportsbook and casino product on one account",
+      "Promotional visibility in emerging markets",
+      "Broad game catalogue on served mirrors",
+      "Crypto may be available where fiat fails",
+    ],
+    cons: [
+      "Below-average safety score in our weighted model",
+      "Withdrawal complaint themes warrant caution",
+      "Bonus terms can be restrictive",
+      "Mirror phishing and geo-block confusion",
+    ],
+    risks: [
+      "Depositing to chase welcome bonus without reading wagering",
+      "Using VPNs to bypass blocks — may violate terms",
+      "Mixing sports losses with casino chase play",
+    ],
+    gamesDetail:
+      "Mostbet lists sports markets, slots, live casino, and crash-style instant games on many mirrors. Instant games can increase session speed — set time limits. Provider availability changes by region.",
+    alternatives:
+      "See [22Bet](/blogs/avoid-22bet), [Parimatch](/blogs/avoid-parimatch), [BC.Game](/blogs/review-bc-game) for crypto, or [LeoVegas](/blogs/review-leovegas) for mobile casino focus where served. [/compare](/compare).",
+    faqs: [
+      {
+        question: "Is Mostbet legit?",
+        answer:
+          "Mostbet is a known offshore brand, but our editorial score reflects recurring complaint themes and licensing caveats. Legitimacy for your situation depends on mirror, jurisdiction, and risk tolerance — we do not guarantee payouts.",
+      },
+      {
+        question: "Does Mostbet support bKash or Nagad?",
+        answer:
+          "MFS support is not consistently documented. Bangladeshi players should verify only in the logged-in cashier.",
+      },
+      {
+        question: "Why is Mostbet rated below 3/5?",
+        answer:
+          "Our model weights complaints, bonus fairness signals, and licensing clarity. Mostbet scores lower than pillar brands like Stake or Bet365 — compare scores on our methodology page.",
+      },
+      {
+        question: "What should I do before a first deposit?",
+        answer:
+          "Verify domain authenticity, read withdrawal and bonus terms, test minimum deposit, and compare two alternatives from our comparison hub.",
+      },
+    ],
+    extraContext:
+      "Mostbet's instant-game lobby can feel faster than traditional slots — that speed can increase loss rate if limits are not set.\n\n**Affiliate hype:** Influencer promos may omit wagering traps — read primary terms only.\n\n**Document retention:** Save KYC submission timestamps if verification repeats.",
+    excerptEn:
+      "Editorial Mostbet pillar review — sportsbook and casino notes, withdrawal themes, and payment context for South Asian readers.",
+    excerptHi:
+      "Mostbet संपादकीय समीक्षा — निकासी जोखिम और भुगतान संदर्भ।",
+  },
+  {
+    slug: "avoid-parimatch",
+    name: "Parimatch",
+    rating: 2.7,
+    bonusLine: "Regional sports and casino promos — terms vary by mirror",
+    withdrawalLine: "Withdrawal timing inconsistent in player reports — verify before large deposits",
+    licenseNote:
+      "Parimatch has operated under various corporate entities and licences over time, including Curacao-style and region-specific registrations depending on domain. Indian and other markets have seen regulatory actions against related brands in the past — players should verify current footer disclosures and independent news before depositing.",
+    bestFor:
+      "Readers evaluating a legacy CIS-rooted sportsbook brand who want editorial depth on licensing history cues and payment risks — not beginners seeking maximum regulatory comfort.",
+    avoidFor:
+      "Players who need simple, predictable cashouts, users uncomfortable with brand/regulator news headlines, and anyone relying on agent-based local deposits.",
+    payments:
+      "Parimatch payment menus differ by mirror. Cards, e-wallets, and crypto may appear; South Asian local rails may be intermittent. Regional context: [India casino payments](/india-casino-payments), [Bangladesh casino payments](/bangladesh-casino-payments), [UPI](/payment/upi), [PhonePe](/payment/phonepe), [bKash](/payment/bkash), [Nagad](/payment/nagad).",
+    crypto:
+      "Crypto deposits may exist on some domains — confirm networks in the cashier. Crypto guides: [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), [USDT](/crypto/usdt-casino).",
+    withdrawals:
+      "Plan for KYC before cashout. Player forums sometimes report delays — document tickets and read current withdrawal policies on your mirror.",
+    kyc:
+      "Standard ID verification expected; additional checks may apply to larger withdrawals. Use official portals only.",
+    bonusCaution:
+      "Sports acca boosts and casino welcome offers may carry separate wagering rules. Read promotion-specific terms — game weighting can exclude live tables.",
+    mobile:
+      "Parimatch historically invested in mobile sports UX; test live betting and casino lobby on your network before depositing.",
+    support:
+      "Help centres and chat may be available depending on domain. Keep case references for payment disputes.",
+    southAsia:
+      "Parimatch brand recognition exists in South Asia, but regulatory sensitivity is high in some markets. Compare [Bet365](/blogs/review-bet365), [1xBet](/blogs/avoid-1xbet), and [888 Casino](/blogs/review-888-casino). Methodology: [/how-we-review](/how-we-review) · Editorial team: [/author/casinopulse-editorial-team](/author/casinopulse-editorial-team).",
+    pros: [
+      "Established sportsbook brand identity in several regions",
+      "Casino and live dealer crossover",
+      "Cricket and football depth where served",
+      "Multiple payment rails may be listed",
+    ],
+    cons: [
+      "Regulatory headline risk varies by jurisdiction",
+      "Below-average editorial safety score",
+      "Withdrawal complaint themes in forums",
+      "Bonus complexity across sports and casino",
+    ],
+    risks: [
+      "Ignoring regional legal restrictions",
+      "Agent-based deposit scams using Parimatch branding",
+      "Assuming historical brand reputation equals current mirror safety",
+    ],
+    gamesDetail:
+      "Parimatch offers sports betting plus slots, live casino, and virtuals on many mirrors. Live betting latency matters for in-play cricket — test on your connection.",
+    alternatives:
+      "Consider [Betway](/blogs/review-betway), [LeoVegas](/blogs/review-leovegas), or crypto [Cloudbet](/blogs/review-cloudbet) depending on workflow. Caution peers: [Mostbet](/blogs/avoid-mostbet), [22Bet](/blogs/avoid-22bet). [/compare](/compare).",
+    faqs: [
+      {
+        question: "Is Parimatch available in India?",
+        answer:
+          "Access and legality vary. CasinoPulse does not provide legal advice. Verify local rules and operator geo-restrictions before attempting to register.",
+      },
+      {
+        question: "Does Parimatch accept UPI?",
+        answer:
+          "UPI may appear on some mirrors via partners — confirm in the cashier. Avoid unofficial agent deposits.",
+      },
+      {
+        question: "How does Parimatch compare to Bet365?",
+        answer:
+          "Bet365 typically scores higher in our model for disclosure and tooling on regulated mirrors, but geo-access differs. Compare both reviews and payment menus.",
+      },
+      {
+        question: "Why read a caution pillar on Parimatch?",
+        answer:
+          "High search volume plus mixed complaint themes warrant depth without thin content. Pillar format adds FAQ, trust metadata, and structured risks.",
+      },
+    ],
+    extraContext:
+      "Regulatory news cycles can change access overnight — check operator status before depositing during headline periods.\n\n**Sports acca marketing:** Multi-leg boosts increase variance — budget accordingly.\n\n**Casino tab isolation:** Track sports and casino spend separately.",
+    excerptEn:
+      "Editorial Parimatch pillar review — sportsbook history cues, payment notes, and South Asia regulatory context.",
+    excerptHi:
+      "Parimatch संपादकीय समीक्षा — स्पोर्ट्सबुक और भुगतान नोट्स।",
+  },
+  {
+    slug: "avoid-22bet",
+    name: "22Bet",
+    rating: 2.5,
+    bonusLine: "Welcome offers advertised widely — wagering multiples often high",
+    withdrawalLine: "Withdrawal delays frequently discussed in player forums — not guaranteed fast",
+    licenseNote:
+      "22Bet is commonly described as an offshore sportsbook and casino with Curacao-style licensing on certain domains. Mirror proliferation and domain changes have confused players in the past. Verify footer licence links and restricted countries on the exact URL you use — licensing claims are not payout guarantees.",
+    bestFor:
+      "Comparison shoppers evaluating another Eastern European–style sportsbook with broad market coverage — only after reading withdrawal and bonus risk sections.",
+    avoidFor:
+      "Players needing the highest editorial safety scores, users frustrated by KYC loops, and anyone depositing without reading withdrawal methods first.",
+    payments:
+      "22Bet may list cards, e-wallets, crypto, and local methods on some mirrors. South Asian rails can be blocked intermittently. Regional context: [India casino payments](/india-casino-payments), [Bangladesh casino payments](/bangladesh-casino-payments), [UPI](/payment/upi), [PhonePe](/payment/phonepe), [bKash](/payment/bkash), [Nagad](/payment/nagad).",
+    crypto:
+      "Crypto may be supported on certain accounts — verify coin, chain, and minimums. Crypto guides: [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), [USDT](/crypto/usdt-casino).",
+    withdrawals:
+      "Treat first withdrawal as a test. Forums often mention delays and verification repeats — keep screenshots and support transcripts.",
+    kyc:
+      "Expect document uploads before cashout. Do not respond to KYC requests from unsolicited email — use on-site verification only.",
+    bonusCaution:
+      "22Bet welcome packages may apply separately to sports and casino with high wagering. Low max-bet during bonus play is a common voiding trigger — read terms carefully.",
+    mobile:
+      "Mobile browser access is typical; test cricket markets and casino search on your device.",
+    support:
+      "Chat may be available; language support varies. Escalate with transaction references.",
+    southAsia:
+      "22Bet ranks among frequently compared offshore books in South Asia. Read [Melbet](/blogs/avoid-melbet), [1xBet](/blogs/avoid-1xbet), and [Bet365](/blogs/review-bet365) for contrast. [Responsible gambling](/responsible-gambling).",
+    pros: [
+      "Very wide sports market coverage on served mirrors",
+      "Casino and live dealer attach",
+      "Crypto may help when fiat rails fail",
+      "Low minimum deposits sometimes advertised",
+    ],
+    cons: [
+      "Lowest editorial score among this caution batch",
+      "Withdrawal complaint themes common in forums",
+      "Bonus terms often strict",
+      "Domain/mirror confusion and phishing clones",
+    ],
+    risks: [
+      "Chasing welcome bonuses across multiple offshore books",
+      "Depositing via unofficial payment agents",
+      "Increasing stakes after sports near-misses",
+    ],
+    gamesDetail:
+      "22Bet covers sports, slots, live casino, and virtual sports. Virtual sports can run faster than real fixtures — set session timers.",
+    alternatives:
+      "Compare [Parimatch](/blogs/avoid-parimatch), [Mostbet](/blogs/avoid-mostbet), [Stake](/blogs/review-stake) for crypto, or [PokerStars Casino](/blogs/review-pokerstars-casino) for poker crossover where served. [/compare](/compare).",
+    faqs: [
+      {
+        question: "Is 22Bet the lowest-scored pillar caution review?",
+        answer:
+          "Among the five expanded caution pillars (1xBet, Melbet, Mostbet, Parimatch, 22Bet), 22Bet has the lowest editorial rating in our database. Compare scores using our methodology page.",
+      },
+      {
+        question: "Does 22Bet accept PhonePe or UPI?",
+        answer:
+          "Local wallet support may appear on some mirrors — verify in the cashier. Blocks are common; have a backup method in mind.",
+      },
+      {
+        question: "Should I use 22Bet for cricket?",
+        answer:
+          "Cricket markets may be available, but our editorial score prioritises safety and withdrawal reliability over market breadth. Consider higher-scored alternatives where legally served.",
+      },
+      {
+        question: "What is the safest first step if I still choose 22Bet?",
+        answer:
+          "Verify the official domain, deposit the minimum, read bonus opt-in rules, and attempt a small withdrawal test after KYC if policy allows.",
+      },
+    ],
+    extraContext:
+      "22Bet's wide market tree can overwhelm new bettors — start with one sport and fixed stake sizes.\n\n**Virtual sports loop:** Rapid virtual fixtures can feel like 'always on' betting — schedule breaks.\n\n**Clone domains:** High SEO competition around 22Bet keywords — type URLs manually or use bookmarks.",
+    excerptEn:
+      "Editorial 22Bet pillar review — sportsbook coverage, withdrawal themes, and South Asia payment cautions.",
+    excerptHi:
+      "22Bet संपादकीय समीक्षा — निकासी और भुगतान संदर्भ।",
   },
 ];
 
