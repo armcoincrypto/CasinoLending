@@ -41,7 +41,9 @@ export function buildProgrammaticSitemapRoutes(): MetadataRoute.Sitemap {
 export function buildBlogSitemapRoutes(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
 
-  return blogPosts.map((post) => ({
+  return blogPosts
+    .filter((post) => post.indexable !== false)
+    .map((post) => ({
     url: `${base}/blogs/${post.slug}`,
     lastModified: new Date(post.publishedAt),
     changeFrequency: "weekly" as const,

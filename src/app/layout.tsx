@@ -20,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = buildPageMetadata({
-  title: siteConfig.name,
+  title: "Casino Reviews, Payment Guides & Responsible Gambling Resources",
   description: siteConfig.description,
   path: "/",
 });

@@ -46,6 +46,14 @@ export default function IndiaCasinoPaymentsPage() {
           { name: "Home", href: "/" },
           { name: page.h1, href: `/${page.slug}` },
         ]}
+        relatedLinks={[
+          { href: "/payment/paytm", label: "Paytm payment guide" },
+          { href: "/crypto/usdt-casino", label: "USDT casinos" },
+          { href: "/crypto/bitcoin-casino", label: "Bitcoin casinos" },
+          { href: "/blogs/review-stake", label: "Stake review" },
+          { href: "/blogs/review-bc-game", label: "BC.Game review" },
+          { href: "/blogs/review-leovegas", label: "LeoVegas review" },
+        ]}
       />
     </>
   );

@@ -4,11 +4,13 @@ import type { ProgrammaticPage } from "@/types/programmatic";
 interface ProgrammaticPageLayoutProps {
   page: ProgrammaticPage;
   breadcrumbs: { name: string; href: string }[];
+  relatedLinks?: { href: string; label: string }[];
 }
 
 export default function ProgrammaticPageLayout({
   page,
   breadcrumbs,
+  relatedLinks,
 }: ProgrammaticPageLayoutProps) {
   return (
     <div className="min-h-screen bg-navy-950">
@@ -37,6 +39,23 @@ export default function ProgrammaticPageLayout({
         </div>
 
         <div className="mt-12 rounded-xl border border-white/10 bg-white/5 p-6">
+          {relatedLinks && relatedLinks.length > 0 && (
+            <div className="mb-6 border-b border-white/10 pb-6">
+              <h2 className="font-display text-lg font-semibold text-white">Related guides</h2>
+              <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                {relatedLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="font-medium text-gold-400 hover:text-gold-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <p className="text-sm text-slate-400">
             18+ only. Gambling involves risk. Verify local laws and operator terms before depositing.
             See our{" "}

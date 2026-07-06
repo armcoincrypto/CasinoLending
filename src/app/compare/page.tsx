@@ -46,6 +46,13 @@ export default function ComparePage() {
           { name: "Home", href: "/" },
           { name: page.h1, href: `/${page.slug}` },
         ]}
+        relatedLinks={[
+          { href: "/blogs/review-stake", label: "Stake review" },
+          { href: "/blogs/review-bc-game", label: "BC.Game review" },
+          { href: "/blogs/review-roobet", label: "Roobet review" },
+          { href: "/blogs/review-bet365", label: "Bet365 review" },
+          { href: "/blogs/review-leovegas", label: "LeoVegas review" },
+        ]}
       />
     </>
   );

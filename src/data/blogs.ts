@@ -216,6 +216,7 @@ const dailyBlogs: BlogPost[] = [
     publishedAt: new Date(2026, 4, 20).toISOString(),
     author: "CasinoPulse Editorial",
     readTime: 5,
+    indexable: false,
   },
   {
     slug: "best-upi-casinos-indian-players",
@@ -235,6 +236,7 @@ const dailyBlogs: BlogPost[] = [
     publishedAt: new Date(2026, 4, 19).toISOString(),
     author: "CasinoPulse Editorial",
     readTime: 4,
+    indexable: false,
   },
   {
     slug: "cricket-betting-guide-ipl-2026",
@@ -254,6 +256,7 @@ const dailyBlogs: BlogPost[] = [
     publishedAt: new Date(2026, 4, 18).toISOString(),
     author: "CasinoPulse Editorial",
     readTime: 7,
+    indexable: false,
   },
 ];
 

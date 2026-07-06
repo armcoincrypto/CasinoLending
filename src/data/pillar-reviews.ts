@@ -561,3 +561,9 @@ export function getPillarReviewFaqs(slug: string): ReviewFaq[] {
   const profile = profiles.find((p) => p.slug === slug);
   return profile?.faqs ?? [];
 }
+
+export const PILLAR_REVIEW_SLUGS = new Set(profiles.map((p) => p.slug));
+
+export function isPillarReviewSlug(slug: string): boolean {
+  return PILLAR_REVIEW_SLUGS.has(slug);
+}

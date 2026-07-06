@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getBlogBySlug, blogPosts } from "@/data/blogs";
 import { getCasinoByBlogSlug } from "@/data/casinos";
 import BlogContent from "@/components/BlogContent";
-import { getPillarReviewFaqs } from "@/data/pillar-reviews";
+import { getPillarReviewFaqs, isPillarReviewSlug } from "@/data/pillar-reviews";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbSchema, faqPageSchema, reviewSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/config/site";
@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: post.title.en,
     description: post.excerpt.en,
     path: `/blogs/${post.slug}`,
+    noIndex: post.indexable === false,
   });
 }
 
@@ -47,7 +48,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
   const pageUrl = `${siteConfig.url}/blogs/${post.slug}`;
 
   const reviewJsonLd =
-    isCasinoReview && casino
+    isCasinoReview && casino && isPillarReviewSlug(slug)
       ? reviewSchema({
           name: casino.name,
           rating: casino.rating,

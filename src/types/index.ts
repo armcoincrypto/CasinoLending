@@ -36,6 +36,8 @@ export interface BlogPost {
   publishedAt: string;
   author: string;
   readTime: number;
+  /** When false, excluded from sitemap and marked noindex. Defaults to true. */
+  indexable?: boolean;
 }
 
 export interface NewsArticle {
