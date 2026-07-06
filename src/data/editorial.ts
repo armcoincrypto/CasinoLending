@@ -67,6 +67,16 @@ export const pillarReviewFreshness: Record<string, ContentFreshness> = {
     dateModified: "2026-07-06",
     lastReviewed: "2026-07-06",
   },
+  "review-pokerstars-casino": {
+    datePublished: "2026-01-20",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  "review-888-casino": {
+    datePublished: "2026-01-20",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
 };
 
 export const cryptoGuideFreshness: Record<string, ContentFreshness> = {
@@ -91,8 +101,26 @@ export function getPillarReviewFreshness(slug: string): ContentFreshness | undef
   return pillarReviewFreshness[slug];
 }
 
-export function getCryptoGuideFreshness(slug: string): ContentFreshness | undefined {
-  return cryptoGuideFreshness[slug];
+export const bangladeshGuideFreshness: Record<string, ContentFreshness> = {
+  "bangladesh-casino-payments": {
+    datePublished: "2026-06-01",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  bkash: {
+    datePublished: "2026-06-05",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  nagad: {
+    datePublished: "2026-06-07",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+};
+
+export function getBangladeshGuideFreshness(slug: string): ContentFreshness | undefined {
+  return bangladeshGuideFreshness[slug];
 }
 
 export const authorPageSections = [

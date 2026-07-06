@@ -74,8 +74,9 @@ export const paymentMethodsReviewed = [
   { name: "USDT", href: "/crypto/usdt-casino" },
   { name: "Paytm", href: "/payment/paytm" },
   { name: "UPI", href: "/india-casino-payments" },
-  { name: "bKash", href: "/india-casino-payments" },
-  { name: "Nagad", href: "/india-casino-payments" },
+  { name: "bKash", href: "/payment/bkash" },
+  { name: "Nagad", href: "/payment/nagad" },
+  { name: "Bangladesh payments", href: "/bangladesh-casino-payments" },
   { name: "JazzCash", href: "/india-casino-payments" },
 ] as const;
 

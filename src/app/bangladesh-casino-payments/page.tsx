@@ -6,7 +6,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { buildProgrammaticPageJsonLd } from "@/lib/seo/programmatic-page-schema";
 import { siteConfig } from "@/config/site";
 
-const SLUG = "compare";
+const SLUG = "bangladesh-casino-payments";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = getHubPageBySlug(SLUG);
@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default function ComparePage() {
+export default function BangladeshCasinoPaymentsPage() {
   const page = getHubPageBySlug(SLUG);
 
   if (!page || !page.indexable || page.contentQuality !== "expanded") {
@@ -46,30 +46,10 @@ export default function ComparePage() {
       ))}
       <ProgrammaticPageLayout
         page={page}
-        kicker="Comparison Hub"
+        kicker="Bangladesh Payment Hub"
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: page.h1, href: `/${page.slug}` },
-        ]}
-        relatedLinks={[
-          { href: "/blogs/review-stake", label: "Stake review" },
-          { href: "/blogs/review-bc-game", label: "BC.Game review" },
-          { href: "/blogs/review-roobet", label: "Roobet review" },
-          { href: "/blogs/review-bet365", label: "Bet365 review" },
-          { href: "/blogs/review-leovegas", label: "LeoVegas review" },
-          { href: "/blogs/review-rollbit", label: "Rollbit review" },
-          { href: "/blogs/review-cloudbet", label: "Cloudbet review" },
-          { href: "/blogs/review-betway", label: "Betway review" },
-          { href: "/blogs/review-pokerstars-casino", label: "PokerStars review" },
-          { href: "/blogs/review-888-casino", label: "888 Casino review" },
-          { href: "/bangladesh-casino-payments", label: "Bangladesh payment hub" },
-          { href: "/payment/bkash", label: "bKash guide" },
-          { href: "/payment/nagad", label: "Nagad guide" },
-          { href: "/india-casino-payments", label: "India payment hub" },
-          { href: "/payment/upi", label: "UPI guide" },
-          { href: "/crypto/bitcoin-casino", label: "Bitcoin guide" },
-          { href: "/crypto/ethereum-casino", label: "Ethereum guide" },
-          { href: "/crypto/usdt-casino", label: "USDT guide" },
         ]}
       />
     </>

@@ -72,6 +72,33 @@ export const internalSeoLinks = [
     cta: "View payment guide",
   },
   {
+    href: "/bangladesh-casino-payments",
+    title: "Bangladesh Casino Payment Methods",
+    description:
+      "Compare bKash, Nagad, bank transfer, and crypto options for Bangladeshi casino players.",
+    category: "Payment Guides",
+    footerLabel: "Bangladesh Payments",
+    cta: "View payment guide",
+  },
+  {
+    href: "/payment/bkash",
+    title: "bKash Casino Payment Guide",
+    description:
+      "How bKash casino deposits may work — speed, security, limits, and alternatives for Bangladeshi players.",
+    category: "Payment Guides",
+    footerLabel: "bKash Payments",
+    cta: "View payment guide",
+  },
+  {
+    href: "/payment/nagad",
+    title: "Nagad Casino Payment Guide",
+    description:
+      "Nagad casino deposits — wallet flow, security, withdrawal notes, and honest alternatives.",
+    category: "Payment Guides",
+    footerLabel: "Nagad Payments",
+    cta: "View payment guide",
+  },
+  {
     href: "/compare",
     title: "Compare Online Casinos",
     description:

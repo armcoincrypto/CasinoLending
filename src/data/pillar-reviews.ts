@@ -653,6 +653,162 @@ const profiles: PillarProfile[] = [
     excerptHi:
       "Betway संपादकीय समीक्षा — स्पोर्ट्सबुक, भुगतान और भू-प्रतिबंध नोट्स।",
   },
+  {
+    slug: "review-pokerstars-casino",
+    name: "PokerStars Casino",
+    rating: 4.6,
+    bonusLine: "Regional casino and poker promotions — wagering and eligibility vary by mirror",
+    withdrawalLine: "Fiat and e-wallet withdrawals on served mirrors — timing varies with KYC and method",
+    licenseNote:
+      "PokerStars is associated with established regulated entities in multiple jurisdictions (including UKGC and MGA licences on certain domains). The exact regulator depends on the mirror you access. PokerStars Casino is a product layer on the broader PokerStars ecosystem — verify footer licence text for your country before depositing.",
+    bestFor:
+      "Players who want a poker-first brand with attached casino slots and live dealer products, clearer corporate disclosure on regulated mirrors, and familiar fiat payment menus where legally served. Suitable for users who value poker tournament liquidity over pure crypto speed.",
+    avoidFor:
+      "Crypto-only users who refuse fiat KYC, players in countries where PokerStars geo-blocks registration, and bonus hunters in regions that restrict welcome promotions. Not ideal if you need bKash or Nagad as primary rails without verifying cashier support.",
+    payments:
+      "Payment menus depend on licence and country. Cards, e-wallets, and bank transfer may appear on approved domains. Bangladeshi players should check whether [bKash](/payment/bkash) or [Nagad](/payment/nagad) appear via partners — availability is inconsistent. Indian players may compare [UPI](/payment/upi) and [IMPS](/payment/imps) on served mirrors. See [Bangladesh casino payments](/bangladesh-casino-payments) and [India casino payments](/india-casino-payments) for regional context.",
+    crypto:
+      "PokerStars is not crypto-native on most mirrors. Unless your cashier explicitly lists Bitcoin or stablecoins, assume fiat rails. Crypto users should compare [Stake](/blogs/review-stake), [BC.Game](/blogs/review-bc-game), or read our [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), and [USDT](/crypto/usdt-casino) guides.",
+    withdrawals:
+      "Withdrawals typically require KYC and may return to the deposit method where possible. Timing may vary from same-day e-wallets to several banking days. PokerStars may review poker and casino activity together — document support tickets if cashouts stall.",
+    kyc:
+      "Expect standard ID and address verification on regulated PokerStars entities. Source-of-funds questions can appear for larger withdrawals or unusual deposit patterns. Poker identity verification may already exist if you hold a poker account.",
+    bonusCaution:
+      "PokerStars casino and poker promotions differ by region; some countries restrict welcome offers. Wagering, game weighting, and max bet during bonus play apply — read the promotion page after login. Poker rake and casino bonus bankrolls should be tracked separately.",
+    mobile:
+      "PokerStars invests in mobile poker and casino UX on served markets. Test lobby search, live dealer streams on mobile data, and cashier access from the game window before larger deposits.",
+    support:
+      "Help centres, chat, and email support may be available depending on licence. Keep case IDs for withdrawal and verification queries. PokerStars' scale can mean templated first responses — escalate with transaction references.",
+    southAsia:
+      "PokerStars marketing reaches South Asian audiences, but direct service inside Bangladesh or India is legally sensitive and may be restricted. Diaspora players abroad may see different mirrors with broader payment menus. Compare [888 Casino](/blogs/review-888-casino), [Bet365](/blogs/review-bet365), and [LeoVegas](/blogs/review-leovegas). Read [responsible gambling](/responsible-gambling) before playing.",
+    pros: [
+      "Globally recognised poker brand with deep tournament liquidity",
+      "Casino product layered on trusted poker infrastructure on served mirrors",
+      "Structured safer-gambling tooling on regulated domains",
+      "Clearer licensing disclosure on major PokerStars entities",
+    ],
+    cons: [
+      "Geo-restrictions for many South Asian sign-ups",
+      "Not ideal for crypto-first or MFS-primary workflows without verification",
+      "Casino bonuses may be secondary to poker promotions",
+      "KYC can delay first withdrawal",
+    ],
+    risks: [
+      "Registering on unofficial clone sites mimicking PokerStars",
+      "Mixing poker downswings with casino chase play",
+      "Assuming poker account verification covers all casino jurisdictions",
+    ],
+    gamesDetail:
+      "PokerStars Casino typically includes slots from major providers, table games, and live dealer lobbies where licensed. The poker ecosystem remains the headline — cash games, tournaments, and Spin & Go-style formats dominate brand identity. Casino bonus weighting may exclude live tables — read terms. Open provider filters after login rather than trusting outdated lists.",
+    alternatives:
+      "For fiat casino focus compare [888 Casino](/blogs/review-888-casino) or [LeoVegas](/blogs/review-leovegas). For crypto compare [Stake](/blogs/review-stake) or [BC.Game](/blogs/review-bc-game). Use [/compare](/compare) and [/how-we-review](/how-we-review) before switching.",
+    faqs: [
+      {
+        question: "Is PokerStars Casino separate from PokerStars Poker?",
+        answer:
+          "They share an account on most mirrors but bonuses and wagering may differ between poker and casino products. Read promotion terms for each vertical.",
+      },
+      {
+        question: "Does PokerStars accept bKash or Nagad?",
+        answer:
+          "MFS support is not consistently advertised. Bangladeshi players should confirm deposit methods after login on the mirror that accepts their jurisdiction.",
+      },
+      {
+        question: "Is PokerStars better for poker or casino?",
+        answer:
+          "PokerStars leads with poker liquidity and tournament schedules; casino is a strong secondary product. Choose based on which product you will use most.",
+      },
+      {
+        question: "Can I use PokerStars with Bitcoin?",
+        answer:
+          "Unless explicitly listed in your cashier, assume fiat-only. See our crypto casino guides for Bitcoin-first operators.",
+      },
+    ],
+    extraContext:
+      "PokerStars' multi-jurisdiction structure confuses players — footer licence text is authoritative for your account, not forum rumours.\n\n**Poker vs casino bankroll:** Combined wallets can hide category losses. Track poker and casino separately and set cross-product limits.\n\n**Tournament variance:** Deep MTT schedules can encourage long sessions — use reality checks and deposit caps.",
+    excerptEn:
+      "Editorial PokerStars Casino review — poker ecosystem, fiat payments, geo-restrictions, and South Asia relevance for casino players.",
+    excerptHi:
+      "PokerStars Casino संपादकीय समीक्षा — पोकर इकोसिस्टम, भुगतान और भू-प्रतिबंध नोट्स।",
+  },
+  {
+    slug: "review-888-casino",
+    name: "888 Casino",
+    rating: 4.5,
+    bonusLine: "Regional welcome packages — terms, wagering, and availability vary by market",
+    withdrawalLine: "Fiat withdrawals on served mirrors — e-wallets may be faster than bank transfer",
+    licenseNote:
+      "888 Holdings operates through multiple regulated entities (including UKGC and Gibraltar licences on certain domains). The exact regulator depends on the mirror you access. 888 Casino is a long-standing brand — verify footer licence links and restricted-country lists before depositing.",
+    bestFor:
+      "Players who want an established fiat casino with slots, live dealer, and occasional poker crossover on served mirrors. Suitable for users who prefer corporate disclosure and familiar card or e-wallet cashiers where legally available.",
+    avoidFor:
+      "Crypto-only users, players in countries where 888 geo-blocks registration, and users who require bKash or Nagad without confirming cashier support. Not ideal for players seeking anonymous crypto workflows.",
+    payments:
+      "Payment menus depend on licence and country. Cards, PayPal-style e-wallets, and bank transfer may appear on approved domains. Bangladeshi players should verify [bKash](/payment/bkash) and [Nagad](/payment/nagad) via the logged-in cashier — marketing does not guarantee MFS support. Indian context: [UPI](/payment/upi), [IMPS](/payment/imps), and [India payments hub](/india-casino-payments). See also [Bangladesh casino payments](/bangladesh-casino-payments).",
+    crypto:
+      "888 Casino is not crypto-native on most mirrors. Unless your cashier lists crypto, assume fiat rails. Compare [Stake](/blogs/review-stake), [Cloudbet](/blogs/review-cloudbet), or our [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), and [USDT](/crypto/usdt-casino) guides for crypto-first paths.",
+    withdrawals:
+      "Withdrawals typically require KYC and may return to the deposit method where possible. Timing may vary from same-day e-wallets to several banking days. First cashouts can trigger extra verification — submit documents through the official portal only.",
+    kyc:
+      "Expect standard ID and address verification on regulated 888 entities. Larger withdrawals may trigger source-of-funds questions. Phishing emails requesting KYC are common — check sender domains carefully.",
+    bonusCaution:
+      "888 welcome packages differ by region; some countries restrict or modify promotions. Wagering multiples, excluded games, and max bet during bonus play can void winnings. Read the promotion page after login — billboard percentages are not withdrawable cash guarantees.",
+    mobile:
+      "888 invests in mobile casino UX on served markets including slots and live dealer streams. Test search, cashier, and chat from mobile data before depositing larger amounts.",
+    support:
+      "Help centres and chat may be available depending on licence. Keep case IDs for withdrawal queries. Response quality may vary by time zone.",
+    southAsia:
+      "888 marketing reaches South Asian audiences, but direct service inside Bangladesh or India is legally sensitive and may be restricted. Diaspora players abroad may see different mirrors. Compare [PokerStars Casino](/blogs/review-pokerstars-casino), [LeoVegas](/blogs/review-leovegas), and [Betway](/blogs/review-betway). Read [responsible gambling](/responsible-gambling) and use [/compare](/compare).",
+    pros: [
+      "Long-established casino brand with corporate disclosure on major domains",
+      "Broad slots and live dealer catalogue on served mirrors",
+      "Structured safer-gambling tooling where regulated",
+      "Familiar fiat payment menus on approved jurisdictions",
+    ],
+    cons: [
+      "Geo-restrictions for many South Asian sign-ups",
+      "Not ideal for crypto-first or unverified MFS workflows",
+      "Bonuses may be limited in some regions",
+      "KYC can delay first withdrawal",
+    ],
+    risks: [
+      "Registering on clone sites mimicking 888 branding",
+      "Claiming bonuses without reading wagering and game weighting",
+      "Assuming marketing availability equals local legal permission to play",
+    ],
+    gamesDetail:
+      "888 Casino typically lists slots from providers such as NetEnt, Pragmatic Play, and Evolution-powered live dealer tables where licensed. Exclusive 888-branded titles may appear in some regions. Poker and sports products can sit behind separate tabs with different bonus rules — open lobby filters after login.",
+    alternatives:
+      "Compare [PokerStars Casino](/blogs/review-pokerstars-casino) for poker crossover, [LeoVegas](/blogs/review-leovegas) for mobile casino polish, or [BC.Game](/blogs/review-bc-game) for crypto. Use [/compare](/compare) and [/how-we-review](/how-we-review).",
+    faqs: [
+      {
+        question: "Is 888 Casino the same as 888sport?",
+        answer:
+          "They are related brands under 888 Holdings but wallets and promotions may differ. Confirm which product you are funding before depositing.",
+      },
+      {
+        question: "Does 888 accept UPI or bKash?",
+        answer:
+          "Local wallet support is not consistent across 888 entities. Confirm deposit methods after login on the mirror that accepts your jurisdiction.",
+      },
+      {
+        question: "Is 888 Casino good for live dealer games?",
+        answer:
+          "888 typically offers live blackjack, roulette, and baccarat on served mirrors. Table availability and limits vary by region — check the live lobby after login.",
+      },
+      {
+        question: "888 Casino vs PokerStars for South Asian players?",
+        answer:
+          "PokerStars leads on poker liquidity; 888 leads on standalone casino UX for many fiat players. Compare payment menus and geo-access on each review before choosing.",
+      },
+    ],
+    extraContext:
+      "888's long history attracts clone phishing sites — bookmark official domains and verify SSL certificates.\n\n**Live dealer sessions:** Higher minimum bets can accelerate losses — set table-specific limits.\n\n**Promotion stacking:** Combining casino and sports offers may be restricted — read terms for each product.",
+    excerptEn:
+      "Editorial 888 Casino review — fiat payments, live dealer notes, geo-restrictions, and Bangladesh/India payment context.",
+    excerptHi:
+      "888 Casino संपादकीय समीक्षा — भुगतान, लाइव डीलर और भू-प्रतिबंध नोट्स।",
+  },
 ];
 
 function buildPillarReviewEn(profile: PillarProfile): string {

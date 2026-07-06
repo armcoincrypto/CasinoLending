@@ -9,6 +9,21 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { buildProgrammaticPageJsonLd } from "@/lib/seo/programmatic-page-schema";
 import { siteConfig } from "@/config/site";
 
+const BANGLADESH_PAYMENT_SLUGS = new Set(["bkash", "nagad"]);
+
+function getPaymentHubForSlug(slug: string) {
+  if (BANGLADESH_PAYMENT_SLUGS.has(slug)) {
+    return {
+      label: "Bangladesh Payments",
+      path: "/bangladesh-casino-payments",
+    };
+  }
+  return {
+    label: "Payments",
+    path: "/india-casino-payments",
+  };
+}
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -40,10 +55,11 @@ export default async function PaymentProgrammaticPage({ params }: PageProps) {
     notFound();
   }
 
+  const hub = getPaymentHubForSlug(slug);
   const pageUrl = `${siteConfig.url}/payment/${page.slug}`;
   const jsonLd = buildProgrammaticPageJsonLd(page, pageUrl, [
     { name: "Home", url: siteConfig.url },
-    { name: "Payments", url: `${siteConfig.url}/india-casino-payments` },
+    { name: hub.label, url: `${siteConfig.url}${hub.path}` },
     { name: page.h1, url: pageUrl },
   ]);
 
@@ -61,7 +77,7 @@ export default async function PaymentProgrammaticPage({ params }: PageProps) {
         kicker="Payment Guide"
         breadcrumbs={[
           { name: "Home", href: "/" },
-          { name: "Payments", href: "/india-casino-payments" },
+          { name: hub.label, href: hub.path },
           { name: page.h1, href: `/payment/${page.slug}` },
         ]}
       />

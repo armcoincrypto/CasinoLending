@@ -301,6 +301,174 @@ export const paymentPages: ProgrammaticPage[] = [
     contentQuality: "expanded",
     keywords: ["Paytm casino", "Paytm gambling India", "UPI casino", "Indian casino payments"],
   },
+  {
+    slug: "bkash",
+    title: "bKash Casino Deposits for Bangladeshi Players — Complete Guide",
+    metaDescription:
+      "How bKash casino deposits may work for Bangladeshi players: deposit flow, speed, security, withdrawal expectations, and honest alternatives when bKash is blocked.",
+    h1: "bKash Casino Payment Guide",
+    intro:
+      "bKash is Bangladesh's most widely used mobile financial service, but international casinos rarely accept it directly. This guide explains how bKash casino deposits may work through payment partners, what security checks matter, and when crypto or Nagad may be better fallbacks. Availability can change — verify in the logged-in cashier before sending money.",
+    sections: [
+      {
+        heading: "What Is bKash?",
+        body: "bKash is a mobile financial service (MFS) operated under Bangladesh Bank oversight, used for person-to-person transfers, merchant payments, and bill pay. Millions of Bangladeshi players already trust bKash for everyday money movement. Casino merchants are often restricted categories — your bKash app may decline gambling-related payments even when a casino marketing page claims support.",
+      },
+      {
+        heading: "How bKash Casino Deposits May Work",
+        body: "When supported, flows typically look like: select bKash or a local wallet option in the casino cashier, enter deposit amount, receive a merchant number or payment link from the official cashier (not Telegram agents), approve in the bKash app with PIN/biometric, and wait for balance credit. Some operators route bKash through third-party aggregators — the merchant name on your statement may not match the casino brand. Never pay personal bKash numbers shared in Facebook groups claiming to be casino support.",
+      },
+      {
+        heading: "Deposit Times and Limits",
+        body: "Successful bKash deposits often credit within minutes when gateways are healthy. Delays happen during maintenance, KYC queues, or when your daily MFS limit is reached. bKash tier limits depend on account verification — plan deposits within your approved ceiling. Start with the casino minimum to test the full flow before larger transfers.",
+      },
+      {
+        heading: "Withdrawal Expectations",
+        body: "Many offshore casinos cannot return winnings to bKash even if they accepted bKash-style deposits via partners. Withdrawals may route through crypto, e-wallets, or bank transfer only. Read withdrawal methods before the first deposit. KYC is commonly required before first cashout — have NID and address proof ready if requested.",
+      },
+      {
+        heading: "Security and Privacy",
+        body: "Enable app lock and transaction PIN on bKash. Never share OTPs with casino chat agents. Use official bKash app only — clone apps are a fraud vector. CasinoPulse does not process payments. If money left your bKash wallet but casino balance did not update, save transaction IDs and contact both bKash support and casino support with timestamps.",
+      },
+      {
+        heading: "Pros and Cons of bKash for Casino Play",
+        body: "Pros: familiar UX for Bangladeshi players, fast settlements when gateways work, no crypto wallet required. Cons: merchant blocks common, inconsistent casino support, possible agent scams, withdrawals may not mirror deposits. bKash is practical when verified in the cashier — not a universal guarantee.",
+      },
+      {
+        heading: "Alternatives When bKash Fails",
+        body: "Compare [Nagad](/payment/nagad) (separate MFS with different risk rules), [USDT](/crypto/usdt-casino), or [Bitcoin](/crypto/bitcoin-casino) where the operator supports them. Fiat-friendly reviews: [PokerStars Casino](/blogs/review-pokerstars-casino), [888 Casino](/blogs/review-888-casino). Crypto-first: [Stake](/blogs/review-stake), [BC.Game](/blogs/review-bc-game). Full context: [Bangladesh casino payments hub](/bangladesh-casino-payments).",
+      },
+      {
+        heading: "Responsible Gambling Reminder",
+        body: "Wallet convenience can increase spend velocity. Set entertainment budgets before depositing. If gambling harms finances, stop and read [responsible gambling resources](/responsible-gambling). 18+ only. Online casino access involves regulatory risk in Bangladesh — verify local rules independently.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do all online casinos accept bKash?",
+        answer:
+          "No. Support depends on the operator, payment aggregator, and bKash risk policies. Always confirm in the logged-in cashier — marketing pages are not proof of availability.",
+      },
+      {
+        question: "Is bKash safe for casino deposits?",
+        answer:
+          "bKash itself is a regulated MFS, but casino merchants are often restricted. Safety depends on using official cashier instructions, avoiding Telegram agents, and choosing operators with clear KYC and withdrawal policies.",
+      },
+      {
+        question: "Can I withdraw casino winnings to bKash?",
+        answer:
+          "Sometimes through partners, but not always. Many casinos accept wallet deposits yet pay withdrawals via crypto or other methods. Read withdrawal rules before depositing.",
+      },
+      {
+        question: "What if bKash declines my casino payment?",
+        answer:
+          "Try Nagad if listed, compare crypto options, or choose a different operator. Declines often reflect merchant category blocks rather than insufficient balance.",
+      },
+      {
+        question: "Should I use bKash or USDT for Bangladesh casino play?",
+        answer:
+          "Depends on what your chosen operator supports. bKash is familiar but frequently blocked; USDT may work when MFS fails but adds wallet and network selection risks. Compare both in our Bangladesh payments hub.",
+      },
+    ],
+    relatedLinks: [
+      { href: "/bangladesh-casino-payments", label: "Bangladesh payment hub" },
+      { href: "/payment/nagad", label: "Nagad guide" },
+      { href: "/crypto/usdt-casino", label: "USDT casinos" },
+      { href: "/crypto/bitcoin-casino", label: "Bitcoin casinos" },
+      { href: "/blogs/review-stake", label: "Stake review" },
+      { href: "/blogs/review-bc-game", label: "BC.Game review" },
+      { href: "/compare", label: "Compare casinos" },
+      ...paymentRelatedDefaults,
+    ],
+    datePublished: "2026-06-05",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+    indexable: true,
+    contentQuality: "expanded",
+    keywords: ["bKash casino", "bKash gambling Bangladesh", "Bangladesh casino deposits", "MFS casino"],
+  },
+  {
+    slug: "nagad",
+    title: "Nagad Casino Deposits for Bangladeshi Players — Complete Guide",
+    metaDescription:
+      "How Nagad casino deposits may work for Bangladeshi players: wallet flow, speed, security, withdrawal notes, and alternatives when Nagad is unavailable.",
+    h1: "Nagad Casino Payment Guide",
+    intro:
+      "Nagad is a government-linked digital financial service widely used in Bangladesh. Casino support is inconsistent — some operators route Nagad through payment partners while others block MFS entirely. This guide covers deposit flows, security hygiene, and fallbacks. Players should verify availability in the official cashier after login.",
+    sections: [
+      {
+        heading: "What Is Nagad?",
+        body: "Nagad is a mobile financial service linked to Bangladesh Post Office infrastructure, offering wallet transfers, merchant payments, and cash-in/cash-out via agents. It competes with bKash for everyday payments. Casino merchants are high-risk categories — Nagad may decline gambling-related transactions even when a casino lists Nagad on a marketing page.",
+      },
+      {
+        heading: "Nagad Casino Deposit Flow",
+        body: "When available, typical steps: choose Nagad or local wallet in the casino cashier, enter amount, copy merchant instructions displayed inside the logged-in account, approve payment in the Nagad app, and wait for confirmation. Aggregator descriptors on your Nagad statement may differ from the casino name. Avoid unofficial agents on social media — legitimate operators never ask for OTPs or PINs in chat.",
+      },
+      {
+        heading: "Withdrawal Considerations",
+        body: "Withdrawal paths may not mirror Nagad deposits. Offshore casinos often pay via crypto, e-wallets, or international bank transfer after KYC. Test a small withdrawal early if policy allows. Operator policies differ — read terms before funding. Compare brands on our [comparison hub](/compare).",
+      },
+      {
+        heading: "Security and Fraud Prevention",
+        body: "Lock your Nagad app with PIN or biometric authentication. Verify merchant names before confirming. Phishing pages mimicking casino cashiers are common — bookmark official casino domains. CasinoPulse does not handle payments. Report suspicious agent requests to Nagad support and avoid sharing NID photos in unverified chats.",
+      },
+      {
+        heading: "Pros and Cons of Nagad for Casino Play",
+        body: "Pros: familiar for Bangladeshi users, fast when gateways work, agent cash-in network for funding wallets. Cons: gambling merchant blocks, separate availability from bKash, agent scam risk, withdrawal limitations. A Nagad decline does not mean bKash will work for the same operator — test each method independently.",
+      },
+      {
+        heading: "Alternatives When Nagad Is Unavailable",
+        body: "Try [bKash](/payment/bkash) if listed separately, [USDT](/crypto/usdt-casino), or [Bitcoin](/crypto/bitcoin-casino). Reviews with payment notes: [Stake](/blogs/review-stake), [BC.Game](/blogs/review-bc-game), [PokerStars](/blogs/review-pokerstars-casino), [888 Casino](/blogs/review-888-casino). See [Bangladesh casino payments](/bangladesh-casino-payments) for full comparison.",
+      },
+      {
+        heading: "Responsible Gambling",
+        body: "Digital wallets make repeat deposits easy — set session timers and loss limits before playing. If gambling affects work, family, or savings, pause and use [responsible gambling resources](/responsible-gambling). 18+ only.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is Nagad the same as bKash for casinos?",
+        answer:
+          "No. They are separate MFS apps with different risk engines. A method working in bKash may fail in Nagad for the same casino, and vice versa.",
+      },
+      {
+        question: "Can Bangladeshi players use Nagad at crypto casinos?",
+        answer:
+          "Crypto casinos typically focus on USDT or BTC rather than Nagad. Some hybrid operators may list local wallets via partners — confirm in the cashier after login.",
+      },
+      {
+        question: "Why does Nagad block my casino deposit?",
+        answer:
+          "MFS providers often restrict gambling merchant categories. Blocks can be intermittent depending on the payment aggregator and transaction pattern.",
+      },
+      {
+        question: "How fast are Nagad casino deposits?",
+        answer:
+          "When gateways work, credits often appear within minutes. Maintenance, KYC, or aggregator downtime can delay settlement — this is editorial guidance, not an operator SLA.",
+      },
+      {
+        question: "What should I verify before using Nagad?",
+        answer:
+          "Confirm official casino domain, Nagad merchant details inside the cashier, withdrawal methods, and KYC requirements. Never pay personal Nagad numbers from Telegram groups.",
+      },
+    ],
+    relatedLinks: [
+      { href: "/bangladesh-casino-payments", label: "Bangladesh payment hub" },
+      { href: "/payment/bkash", label: "bKash guide" },
+      { href: "/crypto/usdt-casino", label: "USDT casinos" },
+      { href: "/crypto/bitcoin-casino", label: "Bitcoin casinos" },
+      { href: "/blogs/review-stake", label: "Stake review" },
+      { href: "/blogs/review-bc-game", label: "BC.Game review" },
+      { href: "/compare", label: "Compare casinos" },
+      ...paymentRelatedDefaults,
+    ],
+    datePublished: "2026-06-07",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+    indexable: true,
+    contentQuality: "expanded",
+    keywords: ["Nagad casino", "Nagad gambling Bangladesh", "Bangladesh wallet casino", "MFS deposits"],
+  },
 ];
 
 export function getPaymentPageBySlug(slug: string): ProgrammaticPage | undefined {
