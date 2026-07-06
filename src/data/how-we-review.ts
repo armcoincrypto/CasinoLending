@@ -77,7 +77,9 @@ export const paymentMethodsReviewed = [
   { name: "bKash", href: "/payment/bkash" },
   { name: "Nagad", href: "/payment/nagad" },
   { name: "Bangladesh payments", href: "/bangladesh-casino-payments" },
-  { name: "JazzCash", href: "/india-casino-payments" },
+  { name: "Pakistan payments", href: "/pakistan-casino-payments" },
+  { name: "JazzCash", href: "/payment/jazzcash" },
+  { name: "Easypaisa", href: "/payment/easypaisa" },
 ] as const;
 
 export const paymentReviewFactors = [

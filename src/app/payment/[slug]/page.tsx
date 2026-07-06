@@ -10,12 +10,19 @@ import { buildProgrammaticPageJsonLd } from "@/lib/seo/programmatic-page-schema"
 import { siteConfig } from "@/config/site";
 
 const BANGLADESH_PAYMENT_SLUGS = new Set(["bkash", "nagad"]);
+const PAKISTAN_PAYMENT_SLUGS = new Set(["jazzcash", "easypaisa"]);
 
 function getPaymentHubForSlug(slug: string) {
   if (BANGLADESH_PAYMENT_SLUGS.has(slug)) {
     return {
       label: "Bangladesh Payments",
       path: "/bangladesh-casino-payments",
+    };
+  }
+  if (PAKISTAN_PAYMENT_SLUGS.has(slug)) {
+    return {
+      label: "Pakistan Payments",
+      path: "/pakistan-casino-payments",
     };
   }
   return {

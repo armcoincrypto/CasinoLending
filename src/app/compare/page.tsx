@@ -62,6 +62,9 @@ export default function ComparePage() {
           { href: "/blogs/review-betway", label: "Betway review" },
           { href: "/blogs/review-pokerstars-casino", label: "PokerStars review" },
           { href: "/blogs/review-888-casino", label: "888 Casino review" },
+          { href: "/pakistan-casino-payments", label: "Pakistan payment hub" },
+          { href: "/payment/jazzcash", label: "JazzCash guide" },
+          { href: "/payment/easypaisa", label: "Easypaisa guide" },
           { href: "/bangladesh-casino-payments", label: "Bangladesh payment hub" },
           { href: "/payment/bkash", label: "bKash guide" },
           { href: "/payment/nagad", label: "Nagad guide" },
@@ -70,6 +73,11 @@ export default function ComparePage() {
           { href: "/crypto/bitcoin-casino", label: "Bitcoin guide" },
           { href: "/crypto/ethereum-casino", label: "Ethereum guide" },
           { href: "/crypto/usdt-casino", label: "USDT guide" },
+          { href: "/blogs/avoid-betwinner", label: "Betwinner review" },
+          { href: "/blogs/review-pin-up-casino", label: "Pin-Up review" },
+          { href: "/blacklist", label: "Editorial blacklist" },
+          { href: "/how-we-review", label: "Review methodology" },
+          { href: "/responsible-gambling", label: "Responsible gambling" },
         ]}
       />
     </>

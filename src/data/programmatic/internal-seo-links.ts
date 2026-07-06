@@ -99,6 +99,33 @@ export const internalSeoLinks = [
     cta: "View payment guide",
   },
   {
+    href: "/pakistan-casino-payments",
+    title: "Pakistan Casino Payment Methods",
+    description:
+      "Compare JazzCash, Easypaisa, bank transfer, and crypto options for Pakistani casino players.",
+    category: "Payment Guides",
+    footerLabel: "Pakistan Payments",
+    cta: "View payment guide",
+  },
+  {
+    href: "/payment/jazzcash",
+    title: "JazzCash Casino Payment Guide",
+    description:
+      "How JazzCash casino deposits may work — speed, security, limits, and alternatives for Pakistani players.",
+    category: "Payment Guides",
+    footerLabel: "JazzCash Payments",
+    cta: "View payment guide",
+  },
+  {
+    href: "/payment/easypaisa",
+    title: "Easypaisa Casino Payment Guide",
+    description:
+      "Easypaisa casino deposits — wallet flow, security, withdrawal notes, and honest alternatives.",
+    category: "Payment Guides",
+    footerLabel: "Easypaisa Payments",
+    cta: "View payment guide",
+  },
+  {
     href: "/compare",
     title: "Compare Online Casinos",
     description:

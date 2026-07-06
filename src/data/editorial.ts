@@ -102,6 +102,31 @@ export const pillarReviewFreshness: Record<string, ContentFreshness> = {
     dateModified: "2026-07-06",
     lastReviewed: "2026-07-06",
   },
+  "avoid-betwinner": {
+    datePublished: "2026-01-28",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  "avoid-vave": {
+    datePublished: "2026-01-28",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  "avoid-wild-casino": {
+    datePublished: "2026-01-28",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  "avoid-bovada": {
+    datePublished: "2026-01-28",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  "review-pin-up-casino": {
+    datePublished: "2026-01-28",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
 };
 
 export const cryptoGuideFreshness: Record<string, ContentFreshness> = {
@@ -139,6 +164,21 @@ export const bangladeshGuideFreshness: Record<string, ContentFreshness> = {
   },
   nagad: {
     datePublished: "2026-06-07",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  "pakistan-casino-payments": {
+    datePublished: "2026-06-10",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  jazzcash: {
+    datePublished: "2026-06-12",
+    dateModified: "2026-07-06",
+    lastReviewed: "2026-07-06",
+  },
+  easypaisa: {
+    datePublished: "2026-06-14",
     dateModified: "2026-07-06",
     lastReviewed: "2026-07-06",
   },

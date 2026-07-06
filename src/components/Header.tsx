@@ -6,14 +6,12 @@ import { useState } from "react";
 import { useLocale } from "@/context/LocaleContext";
 import { useTranslation } from "@/lib/useTranslation";
 import LanguageSwitcher from "./LanguageSwitcher";
+import HeaderGuidesDropdown from "./HeaderGuidesDropdown";
 
 const navItems = [
   { href: "/casinos", key: "navCasinos" as const },
-  { href: "/news", key: "navNews" as const },
   { href: "/blogs", key: "navBlogs" as const },
-  { href: "/india-casino-payments", key: "navGuides" as const },
   { href: "/compare", key: "navCompare" as const },
-  { href: "/#bonus-tracker", key: "navBonuses" as const },
   { href: "/blacklist", key: "navSafety" as const },
   { href: "/contact", key: "navContact" as const },
 ];
@@ -38,7 +36,21 @@ export default function Header() {
         </Link>
 
         <div className="hidden items-center gap-5 lg:flex">
-          {navItems.map((item) => (
+          {navItems.slice(0, 2).map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`text-sm font-medium transition-colors hover:text-gold-400 ${
+                pathname.startsWith(item.href.replace(/#.*$/, ""))
+                  ? "text-gold-400"
+                  : "text-slate-400"
+              }`}
+            >
+              {t(item.key)}
+            </Link>
+          ))}
+          <HeaderGuidesDropdown />
+          {navItems.slice(2).map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -74,7 +86,59 @@ export default function Header() {
 
       {mobileOpen && (
         <div className="border-t border-white/10 bg-navy-950 px-4 py-4 lg:hidden">
-          {navItems.map((item) => (
+          {navItems.slice(0, 2).map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setMobileOpen(false)}
+              className={`block py-2 text-sm font-medium ${
+                pathname.startsWith(item.href.replace(/#.*$/, ""))
+                  ? "text-gold-400"
+                  : "text-slate-400"
+              }`}
+            >
+              {t(item.key)}
+            </Link>
+          ))}
+          <p className="mt-3 text-[10px] font-bold uppercase tracking-wider text-slate-600">
+            Guides
+          </p>
+          <Link
+            href="/india-casino-payments"
+            onClick={() => setMobileOpen(false)}
+            className="block py-2 pl-2 text-sm text-slate-400"
+          >
+            India Payments
+          </Link>
+          <Link
+            href="/bangladesh-casino-payments"
+            onClick={() => setMobileOpen(false)}
+            className="block py-2 pl-2 text-sm text-slate-400"
+          >
+            Bangladesh Payments
+          </Link>
+          <Link
+            href="/pakistan-casino-payments"
+            onClick={() => setMobileOpen(false)}
+            className="block py-2 pl-2 text-sm text-slate-400"
+          >
+            Pakistan Payments
+          </Link>
+          <Link
+            href="/payment/jazzcash"
+            onClick={() => setMobileOpen(false)}
+            className="block py-2 pl-2 text-sm text-slate-400"
+          >
+            JazzCash
+          </Link>
+          <Link
+            href="/payment/easypaisa"
+            onClick={() => setMobileOpen(false)}
+            className="block py-2 pl-2 text-sm text-slate-400"
+          >
+            Easypaisa
+          </Link>
+          {navItems.slice(2).map((item) => (
             <Link
               key={item.href}
               href={item.href}

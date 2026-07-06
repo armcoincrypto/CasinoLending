@@ -7,7 +7,8 @@ export const blacklistedCasinos: BlacklistedCasino[] = [
     slug: "mostbet",
     risks: ["delayed-payouts", "unresolved-complaints"],
     complaintCount: 847,
-    summary: "Multiple unresolved withdrawal complaints over 30+ days reported across forums.",
+    summary:
+      "Public player reports frequently cite withdrawal delays beyond 30 days — editorial risk indicator, not a verified legal finding.",
     reportedAt: new Date(2026, 4, 20).toISOString(),
     severity: "critical",
   },
@@ -17,7 +18,8 @@ export const blacklistedCasinos: BlacklistedCasino[] = [
     slug: "melbet",
     risks: ["suspicious-behavior", "delayed-payouts"],
     complaintCount: 612,
-    summary: "Pattern of account restrictions after large wins without transparent explanation.",
+    summary:
+      "Reported pattern of account restrictions after large wins without transparent explanation in public player feedback.",
     reportedAt: new Date(2026, 4, 18).toISOString(),
     severity: "high",
   },
@@ -25,9 +27,10 @@ export const blacklistedCasinos: BlacklistedCasino[] = [
     id: "bl-3",
     name: "Fairspin",
     slug: "fairspin",
-    risks: ["fake-license", "scam-reports"],
+    risks: ["fake-license", "user-reported-concerns"],
     complaintCount: 423,
-    summary: "License claims disputed; players report inability to verify regulatory status.",
+    summary:
+      "License claims disputed in public player reports; players report difficulty verifying regulatory status independently.",
     reportedAt: new Date(2026, 4, 15).toISOString(),
     severity: "critical",
   },
@@ -37,7 +40,8 @@ export const blacklistedCasinos: BlacklistedCasino[] = [
     slug: "vave",
     risks: ["unresolved-complaints", "suspicious-behavior"],
     complaintCount: 389,
-    summary: "Sudden TOS changes affecting bonus withdrawals; elevated complaint velocity.",
+    summary:
+      "Reported concerns about sudden terms changes affecting bonus withdrawals; elevated complaint velocity in forums.",
     reportedAt: new Date(2026, 4, 12).toISOString(),
     severity: "high",
   },

@@ -4,11 +4,12 @@ import GlassCard from "@/components/ui/GlassCard";
 import NeonBadge from "@/components/ui/NeonBadge";
 
 export const BLACKLIST_RISK_LABELS: Record<string, string> = {
-  "delayed-payouts": "Delayed Payouts",
-  "fake-license": "License Concerns",
-  "scam-reports": "Scam Reports",
-  "suspicious-behavior": "Suspicious Behavior",
-  "unresolved-complaints": "Unresolved Complaints",
+  "delayed-payouts": "Delayed Payouts (Reported)",
+  "fake-license": "License Concerns (Reported)",
+  "user-reported-concerns": "User-Reported Concerns",
+  "scam-reports": "User-Reported Concerns",
+  "suspicious-behavior": "Risk Indicators (Reported)",
+  "unresolved-complaints": "Unresolved Complaints (Reported)",
 };
 
 function formatReviewDate(iso: string): string {

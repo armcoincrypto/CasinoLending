@@ -3,7 +3,7 @@ type ReviewFaq = { question: string; answer: string };
 /** Reusable authority link snippets for pillar profile fields — add new reviews via profiles[] only. */
 export const PILLAR_AUTHORITY_SNIPPETS = {
   payments:
-    "Regional context: [India casino payments](/india-casino-payments), [Bangladesh casino payments](/bangladesh-casino-payments), [UPI](/payment/upi), [PhonePe](/payment/phonepe), [bKash](/payment/bkash), [Nagad](/payment/nagad).",
+    "Regional context: [India casino payments](/india-casino-payments), [Bangladesh casino payments](/bangladesh-casino-payments), [Pakistan casino payments](/pakistan-casino-payments), [UPI](/payment/upi), [PhonePe](/payment/phonepe), [bKash](/payment/bkash), [Nagad](/payment/nagad), [JazzCash](/payment/jazzcash), [Easypaisa](/payment/easypaisa).",
   crypto:
     "Crypto guides: [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), [USDT](/crypto/usdt-casino).",
   editorial:
@@ -1208,6 +1208,393 @@ const profiles: PillarProfile[] = [
       "Editorial 22Bet pillar review — sportsbook coverage, withdrawal themes, and South Asia payment cautions.",
     excerptHi:
       "22Bet संपादकीय समीक्षा — निकासी और भुगतान संदर्भ।",
+  },
+  {
+    slug: "avoid-betwinner",
+    name: "Betwinner",
+    rating: 2.9,
+    bonusLine: "Large sports and casino promotions — wagering and regional eligibility vary",
+    withdrawalLine: "Withdrawal timing frequently reported as inconsistent — KYC queues common",
+    licenseNote:
+      "Betwinner operates as an offshore sportsbook and casino brand with Curacao-style licensing claims on certain domains. Mirror proliferation and geo-restrictions are common. Verify footer licence text and restricted-country lists on the exact URL you use — licensing badges are not payout guarantees.",
+    bestFor:
+      "Researchers comparing high-traffic Eastern European–style sportsbooks who want structured editorial depth on payment and complaint themes before any test deposit.",
+    avoidFor:
+      "Players needing predictable fiat withdrawals, users uncomfortable with mirror confusion, and anyone relying on JazzCash or Easypaisa without verifying cashier support first.",
+    payments:
+      "Betwinner marketing reaches South Asian audiences. JazzCash and Easypaisa may appear via aggregators on some mirrors — availability can change. Pakistani context: [Pakistan casino payments](/pakistan-casino-payments), [JazzCash](/payment/jazzcash), [Easypaisa](/payment/easypaisa). India/Bangladesh: [UPI](/payment/upi), [bKash](/payment/bkash), [Nagad](/payment/nagad). Regional context: [India casino payments](/india-casino-payments), [Bangladesh casino payments](/bangladesh-casino-payments), [Pakistan casino payments](/pakistan-casino-payments), [UPI](/payment/upi), [PhonePe](/payment/phonepe), [bKash](/payment/bkash), [Nagad](/payment/nagad), [JazzCash](/payment/jazzcash), [Easypaisa](/payment/easypaisa).",
+    crypto:
+      "Crypto may be listed on some mirrors. Crypto guides: [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), [USDT](/crypto/usdt-casino). Compare [Stake](/blogs/review-stake) for crypto-first UX.",
+    withdrawals:
+      "Forum themes often cite delayed first withdrawals and document re-requests. Test small cashouts early. Operator policies differ — never treat instant marketing as contractual.",
+    kyc:
+      "Expect ID verification before meaningful withdrawals. Submit documents only through official portals.",
+    bonusCaution:
+      "Betwinner promotions can carry high wagering and short expiry. Read promotion pages after login — headline percentages are not withdrawable cash.",
+    mobile:
+      "Mobile web and app availability varies by region. Test cricket in-play and casino lobby on your device before funding.",
+    support:
+      "Chat may exist on some mirrors; quality varies. Document ticket IDs for withdrawal disputes.",
+    southAsia:
+      "Betwinner appears in Pakistani, Indian, and Bangladeshi search results — legal access is jurisdiction-specific. Compare [1xBet](/blogs/avoid-1xbet), [Pin-Up](/blogs/review-pin-up-casino), [Bet365](/blogs/review-bet365). Methodology: [/how-we-review](/how-we-review) · Editorial team: [/author/casinopulse-editorial-team](/author/casinopulse-editorial-team).",
+    pros: [
+      "Broad sports and casino catalogue on served mirrors",
+      "Cricket and football market depth where accessible",
+      "Multiple payment rails may appear including crypto",
+      "High visibility for comparison shoppers",
+    ],
+    cons: [
+      "Below-average editorial safety score",
+      "Withdrawal complaint themes in public reports",
+      "Mirror and phishing clone risk",
+      "Bonus terms can be restrictive",
+    ],
+    risks: [
+      "Depositing via unofficial JazzCash or Easypaisa agents",
+      "Chasing sports losses with casino play on one wallet",
+      "Assuming marketing promos equal withdrawable cash",
+    ],
+    gamesDetail:
+      "Betwinner combines sports betting with slots, live casino, and instant games on many mirrors. Sports and casino bonuses may carry different wagering — read terms per product.",
+    alternatives:
+      "Compare [Melbet](/blogs/avoid-melbet), [22Bet](/blogs/avoid-22bet), [Stake](/blogs/review-stake), or [Bet365](/blogs/review-bet365). [/compare](/compare).",
+    faqs: [
+      {
+        question: "Does Betwinner accept JazzCash in Pakistan?",
+        answer:
+          "JazzCash may appear on some mirrors via partners — not guaranteed. Confirm only in the logged-in cashier after login.",
+      },
+      {
+        question: "Is Betwinner on the CasinoPulse blacklist?",
+        answer:
+          "Betwinner is not on our short editorial blacklist list but scores below pillar safety leaders. Read this caution pillar and compare alternatives.",
+      },
+      {
+        question: "Betwinner vs 1xBet?",
+        answer:
+          "Both occupy similar offshore sportsbook niches with licensing caveats. Compare individual payment menus and our caution reviews before depositing.",
+      },
+      {
+        question: "What should I verify first?",
+        answer:
+          "Official domain, withdrawal methods, bonus wagering, and KYC steps. Test minimum deposit and small withdrawal if policy allows.",
+      },
+    ],
+    extraContext:
+      "Betwinner's cricket marketing spikes during IPL — set deposit caps before tournaments.\n\n**Agent deposits:** Never use WhatsApp JazzCash agents — use cashier instructions only.\n\n**Mirror bookmarks:** Save one official URL to avoid search-ad clones.",
+    excerptEn:
+      "Editorial Betwinner pillar review — Pakistan JazzCash context, withdrawal themes, and South Asia payment cautions.",
+    excerptHi:
+      "Betwinner संपादकीय समीक्षा — भुगतान और निकासी संदर्भ।",
+  },
+  {
+    slug: "avoid-vave",
+    name: "Vave",
+    rating: 2.5,
+    bonusLine: "Crypto-oriented promotions — terms can change with little notice per player reports",
+    withdrawalLine: "Withdrawal and bonus disputes commonly discussed in forums — timing not guaranteed",
+    licenseNote:
+      "Vave is described as an offshore crypto casino and sportsbook with Curacao-style licensing on certain domains. Terms changes affecting bonuses have been a reported concern — verify footer licence links and current TOS before depositing.",
+    bestFor:
+      "Readers researching a crypto-visible brand listed on our editorial blacklist who want pillar-depth context on reported risk indicators — not a deposit recommendation.",
+    avoidFor:
+      "Players who need stable bonus rules, predictable KYC paths, and minimal terms-change risk. Also listed on our [editorial blacklist](/blacklist) for reported concerns.",
+    payments:
+      "Vave is crypto-first on most setups. Pakistani players blocked on JazzCash may still need crypto literacy. Pakistan: [Pakistan casino payments](/pakistan-casino-payments), [JazzCash](/payment/jazzcash), [Easypaisa](/payment/easypaisa). Regional context: [India casino payments](/india-casino-payments), [Bangladesh casino payments](/bangladesh-casino-payments), [Pakistan casino payments](/pakistan-casino-payments), [UPI](/payment/upi), [bKash](/payment/bkash), [Nagad](/payment/nagad), [JazzCash](/payment/jazzcash), [Easypaisa](/payment/easypaisa).",
+    crypto:
+      "Crypto guides: [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), [USDT](/crypto/usdt-casino). Wrong-chain transfers remain a loss vector — verify networks in the cashier.",
+    withdrawals:
+      "Public player reports mention bonus-related withdrawal friction after terms updates — experiences vary. Screenshot TOS at deposit time and test small cashouts early.",
+    kyc:
+      "KYC may trigger before withdrawal even when marketing suggests crypto anonymity.",
+    bonusCaution:
+      "Sudden TOS changes affecting bonus withdrawals are a reported theme — read current promotion and general terms together. Opt out if unclear.",
+    mobile:
+      "Mobile crypto casino UX is typical — test wallet connect and cashier on your device.",
+    support:
+      "Support quality varies. Keep ticket IDs and on-chain transaction references for disputes.",
+    southAsia:
+      "Vave appears in South Asian crypto casino discussions when local wallets fail — legal status remains jurisdiction-specific. Blacklist context: [/blacklist](/blacklist). Compare [Stake](/blogs/review-stake) or [BC.Game](/blogs/review-bc-game).",
+    pros: [
+      "Crypto-native cashier familiar to wallet users",
+      "Sports and casino crossover on served mirrors",
+      "Visible in crypto casino comparison searches",
+    ],
+    cons: [
+      "Editorial blacklist listing for reported concerns",
+      "Lowest-tier editorial score in this expansion batch",
+      "Terms-change complaint themes in forums",
+      "Offshore licensing requires extra diligence",
+    ],
+    risks: [
+      "Claiming bonuses without reading post-change terms",
+      "Sending crypto on unsupported chains",
+      "Ignoring blacklist editorial context",
+    ],
+    gamesDetail:
+      "Vave lists crypto slots, live dealer, and sports markets depending on mirror. Instant games can accelerate sessions — set timers.",
+    alternatives:
+      "Prefer [Stake](/blogs/review-stake), [Rollbit](/blogs/review-rollbit), or [Cloudbet](/blogs/review-cloudbet) for crypto depth. [/compare](/compare).",
+    faqs: [
+      {
+        question: "Why is Vave on the CasinoPulse blacklist?",
+        answer:
+          "Our editorial blacklist cites reported concerns including terms changes affecting bonus withdrawals. This pillar expands context — not a legal finding.",
+      },
+      {
+        question: "Is Vave better than Stake for crypto?",
+        answer:
+          "Stake scores higher in our editorial model for overall signals. Compare reviews and cashier policies before choosing.",
+      },
+      {
+        question: "Can Pakistani players use JazzCash at Vave?",
+        answer:
+          "Vave is primarily crypto — assume BTC/USDT unless cashier lists local wallets. Read Pakistan payment guides first.",
+      },
+      {
+        question: "Should I deposit at Vave?",
+        answer:
+          "CasinoPulse scores Vave low and lists reported concerns. If you still proceed, verify domain, read terms, and test minimal deposits only.",
+      },
+    ],
+    extraContext:
+      "Vave's blacklist entry reflects editorial risk assessment at review time — not a court judgment.\n\n**TOS screenshots:** Save bonus terms PDFs when opting in.\n\n**Crypto hygiene:** Bookmark official domain; avoid Telegram mirror links.",
+    excerptEn:
+      "Editorial Vave pillar review — blacklist context, crypto payments, and reported terms-change concerns.",
+    excerptHi:
+      "Vave संपादकीय समीक्षा — क्रिप्टो और जोखिम संकेतक।",
+  },
+  {
+    slug: "avoid-wild-casino",
+    name: "Wild Casino",
+    rating: 2.9,
+    bonusLine: "US-facing style promotions — wagering multiples often high for offshore access",
+    withdrawalLine: "Withdrawal delays reported in forums — KYC and method matching vary",
+    licenseNote:
+      "Wild Casino is marketed as an offshore casino accepting various payment rails including crypto. Licensing claims should be verified on the footer of the domain you use. Offshore access from South Asia may violate local terms or laws — players should verify independently.",
+    bestFor:
+      "Diaspora or regional players researching a US-marketed offshore casino brand who want structured payment and risk notes before any deposit.",
+    avoidFor:
+      "Players expecting regulated consumer protection, fast fiat withdrawals to South Asian wallets without verification, and users uncomfortable with offshore terms.",
+    payments:
+      "Wild Casino may list cards, crypto, and e-wallets on some setups — JazzCash and Easypaisa are not standard rails. Pakistan: [Pakistan casino payments](/pakistan-casino-payments), [JazzCash](/payment/jazzcash), [Easypaisa](/payment/easypaisa). India/Bangladesh fallbacks: [UPI](/payment/upi), [bKash](/payment/bkash). Regional context: [India casino payments](/india-casino-payments), [Bangladesh casino payments](/bangladesh-casino-payments), [Pakistan casino payments](/pakistan-casino-payments), [UPI](/payment/upi), [bKash](/payment/bkash), [Nagad](/payment/nagad), [JazzCash](/payment/jazzcash), [Easypaisa](/payment/easypaisa).",
+    crypto:
+      "Crypto guides: [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), [USDT](/crypto/usdt-casino). May be the practical path when local wallets fail.",
+    withdrawals:
+      "Player reports sometimes mention verification loops and method restrictions — test early cashouts where allowed.",
+    kyc:
+      "Expect KYC before withdrawal. Match payment method names to ID where required.",
+    bonusCaution:
+      "Large welcome percentages may carry steep wagering — read max bet and excluded games rules.",
+    mobile:
+      "Mobile browser play is typical — test live dealer streams on your connection.",
+    support:
+      "Email and chat may be available; document cases for payment tracing.",
+    southAsia:
+      "Wild Casino is not tailored to Pakistan/India/Bangladesh wallets — crypto may be the fallback. Compare [Bovada](/blogs/avoid-bovada) and [Ignition](/blogs/review-ignition-casino) cautiously. [/responsible-gambling](/responsible-gambling).",
+    pros: [
+      "Slot and live dealer focus for offshore players",
+      "Crypto deposits may work when fiat blocked",
+      "Familiar US-market style UX for diaspora",
+    ],
+    cons: [
+      "Below-average editorial safety score",
+      "Limited South Asian wallet support",
+      "Withdrawal complaint themes in forums",
+      "Offshore terms enforcement uncertainty",
+    ],
+    risks: [
+      "Playing from jurisdictions where access violates terms",
+      "Bonus chasing without reading wagering",
+      "Using unofficial payment agents",
+    ],
+    gamesDetail:
+      "Wild Casino emphasises slots and live dealer tables. Table minimums can run higher than micro-stakes players expect — check limits before joining live lobbies.",
+    alternatives:
+      "Compare [Bovada](/blogs/avoid-bovada), [Stake](/blogs/review-stake), [LeoVegas](/blogs/review-leovegas) where served. [/compare](/compare).",
+    faqs: [
+      {
+        question: "Can Indian or Pakistani players use Wild Casino?",
+        answer:
+          "Geo-access and legality vary. CasinoPulse does not provide legal advice — verify local rules and operator restricted-country lists.",
+      },
+      {
+        question: "Does Wild Casino accept JazzCash?",
+        answer:
+          "JazzCash is not a standard Wild Casino rail — assume crypto or cards unless cashier lists otherwise.",
+      },
+      {
+        question: "Is Wild Casino related to Bovada?",
+        answer:
+          "They are separate brands in the offshore US-casino niche — compare each review independently.",
+      },
+      {
+        question: "What is the safest first step?",
+        answer:
+          "Verify official domain, read withdrawal and bonus terms, deposit minimum only, and attempt small withdrawal test after KYC if allowed.",
+      },
+    ],
+    extraContext:
+      "US-facing offshore brands confuse diaspora players on tax and legal obligations — seek independent advice.\n\n**Live dealer bankroll:** Higher table mins can accelerate losses — set caps.\n\n**Crypto fallback:** If using USDT, confirm TRC-20 vs ERC-20 in cashier.",
+    excerptEn:
+      "Editorial Wild Casino pillar review — offshore access notes, crypto fallbacks, and South Asia payment context.",
+    excerptHi:
+      "Wild Casino संपादकीय समीक्षा — भुगतान और जोखिम नोट्स।",
+  },
+  {
+    slug: "avoid-bovada",
+    name: "Bovada",
+    rating: 2.5,
+    bonusLine: "US-market welcome offers — offshore terms and wagering vary",
+    withdrawalLine: "Withdrawal timing reported as inconsistent for non-US payment paths",
+    licenseNote:
+      "Bovada is a long-running US-facing offshore sportsbook and casino brand operating outside many regulated US state frameworks. Licensing and entity disclosure differ from regulated domestic operators. South Asian players accessing Bovada may violate local laws and operator terms — verify independently.",
+    bestFor:
+      "Researchers comparing US-diaspora offshore brands who need editorial depth on access risk, crypto paths, and complaint themes — not players seeking top safety scores.",
+    avoidFor:
+      "Players in South Asia who need JazzCash, Easypaisa, UPI, or predictable local withdrawals. Also avoid if you cannot tolerate offshore dispute uncertainty.",
+    payments:
+      "Bovada historically focuses on US payment rails and crypto — not JazzCash or Easypaisa. Pakistani readers: [Pakistan casino payments](/pakistan-casino-payments), [JazzCash](/payment/jazzcash). Crypto guides: [Bitcoin](/crypto/bitcoin-casino), [USDT](/crypto/usdt-casino). Regional context: [India casino payments](/india-casino-payments), [Bangladesh casino payments](/bangladesh-casino-payments), [Pakistan casino payments](/pakistan-casino-payments), [UPI](/payment/upi), [bKash](/payment/bkash), [Nagad](/payment/nagad), [JazzCash](/payment/jazzcash), [Easypaisa](/payment/easypaisa).",
+    crypto:
+      "Crypto guides: [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), [USDT](/crypto/usdt-casino). Often the practical deposit path for non-US users when permitted.",
+    withdrawals:
+      "Forum reports mention delays and verification for international users — timing may vary widely. Test small cashouts and read current withdrawal policies.",
+    kyc:
+      "KYC commonly required. Submit documents through official channels only.",
+    bonusCaution:
+      "Sports and casino bonuses may carry separate rules — read both before opt-in.",
+    mobile:
+      "Mobile sports and casino UX is a brand strength for served users — test on your network if access is permitted.",
+    support:
+      "Support channels exist but escalation paths may be limited for offshore disputes.",
+    southAsia:
+      "Bovada is not designed for Pakistan/India/Bangladesh payment ecosystems. Diaspora US access differs from local South Asian play — check laws. Compare [Wild Casino](/blogs/avoid-wild-casino), [Bet365](/blogs/review-bet365). [/editorial-team](/editorial-team).",
+    pros: [
+      "Established US-facing offshore brand identity",
+      "Sportsbook and poker crossover familiarity",
+      "Crypto may work when fiat paths unavailable",
+    ],
+    cons: [
+      "Low editorial safety score for South Asian workflows",
+      "No meaningful JazzCash/UPI/bKash support",
+      "Offshore dispute uncertainty",
+      "Geo and terms risk for non-US players",
+    ],
+    risks: [
+      "Accessing from prohibited countries via VPN",
+      "Assuming diaspora marketing equals local legality",
+      "Mixing poker, sports, and casino bankrolls without limits",
+    ],
+    gamesDetail:
+      "Bovada offers sports, poker, and casino verticals. Wallet interaction between products can hide losses — track each separately.",
+    alternatives:
+      "For South Asia payments compare [Stake](/blogs/review-stake), [Bet365](/blogs/review-bet365), [Pin-Up](/blogs/review-pin-up-casino). [/compare](/compare).",
+    faqs: [
+      {
+        question: "Is Bovada legal in Pakistan or India?",
+        answer:
+          "CasinoPulse does not provide legal advice. Bovada targets US-facing offshore users — local access may be restricted or legally sensitive.",
+      },
+      {
+        question: "Does Bovada accept JazzCash?",
+        answer:
+          "No — JazzCash is not a standard Bovada rail. See Pakistan payment guides for wallet-capable operators (availability varies).",
+      },
+      {
+        question: "Bovada vs Wild Casino?",
+        answer:
+          "Both are US-offshore niche brands with similar editorial caution scores. Compare payment menus and our reviews before choosing.",
+      },
+      {
+        question: "Why is Bovada rated 2.5/5?",
+        answer:
+          "Our model weights South Asian payment fit, complaint themes, and licensing clarity — Bovada scores low for regional wallet workflows.",
+      },
+    ],
+    extraContext:
+      "Bovada poker reputation differs from casino UX — bonus rules vary by vertical.\n\n**VPN warning:** Terms violations can freeze balances.\n\n**Crypto deposits:** Confirm BTC vs USDT preference in cashier before sending.",
+    excerptEn:
+      "Editorial Bovada pillar review — US-offshore context, crypto paths, and South Asia access cautions.",
+    excerptHi:
+      "Bovada संपादकीय समीक्षा — भुगतान और पहुंच संदर्भ।",
+  },
+  {
+    slug: "review-pin-up-casino",
+    name: "Pin-Up Casino",
+    rating: 3.9,
+    bonusLine: "Regional welcome packages — wagering and game weighting vary by mirror",
+    withdrawalLine: "Withdrawal timing varies with KYC and payment method — not guaranteed fast",
+    licenseNote:
+      "Pin-Up operates as an international casino and sportsbook brand with offshore licensing claims on certain domains. Regulatory treatment differs by country. Verify footer licence links and restricted-country lists before registering.",
+    bestFor:
+      "Players comparing mid-tier international casinos with sports crossover who want editorial depth on Pakistan wallet context and crypto fallbacks — verify every detail in the cashier before depositing.",
+    avoidFor:
+      "Players needing top-tier regulatory clarity, guaranteed JazzCash withdrawals, or the highest editorial safety scores without independent verification.",
+    payments:
+      "Pin-Up may list cards, e-wallets, crypto, and regional wallets via partners on some mirrors. Pakistani players should verify [JazzCash](/payment/jazzcash) and [Easypaisa](/payment/easypaisa) inside the cashier. India/Bangladesh: [UPI](/payment/upi), [bKash](/payment/bkash), [Nagad](/payment/nagad). Regional context: [India casino payments](/india-casino-payments), [Bangladesh casino payments](/bangladesh-casino-payments), [Pakistan casino payments](/pakistan-casino-payments), [UPI](/payment/upi), [bKash](/payment/bkash), [Nagad](/payment/nagad), [JazzCash](/payment/jazzcash), [Easypaisa](/payment/easypaisa).",
+    crypto:
+      "Crypto guides: [Bitcoin](/crypto/bitcoin-casino), [Ethereum](/crypto/ethereum-casino), [USDT](/crypto/usdt-casino). Compare [Stake](/blogs/review-stake) for crypto-first polish.",
+    withdrawals:
+      "First cashouts may trigger KYC. Player reports vary on timing — test small withdrawals early and read current policies.",
+    kyc:
+      "Standard ID and address verification expected before larger withdrawals.",
+    bonusCaution:
+      "Pin-Up promotions can combine sports and casino offers — read wagering, max bet, and excluded games per promotion.",
+    mobile:
+      "Pin-Up invests in mobile UX in several markets — test search, cashier, and live streams on mobile data.",
+    support:
+      "Chat and help centre may be available depending on mirror. Keep ticket references for payment tracing.",
+    southAsia:
+      "Pin-Up marketing reaches South Asian audiences including Pakistan. Legal access is sensitive — verify local rules. Compare [Betwinner](/blogs/avoid-betwinner), [888 Casino](/blogs/review-888-casino). [/how-we-review](/how-we-review).",
+    pros: [
+      "Recognisable international casino and sports brand",
+      "Mid-tier editorial score among ranked operators",
+      "Multiple payment rails may appear including crypto",
+      "Mobile-friendly lobby on served mirrors",
+    ],
+    cons: [
+      "Offshore licensing requires player due diligence",
+      "Wallet support inconsistent across regions",
+      "Bonus terms need careful reading",
+      "Not a top-tier safety score",
+    ],
+    risks: [
+      "Registering on unofficial mirror domains",
+      "Assuming billboard bonuses equal cash",
+      "Depositing via social media payment agents",
+    ],
+    gamesDetail:
+      "Pin-Up lists slots, live dealer, and sports betting depending on region. Live betting can lengthen sessions — use deposit limits.",
+    alternatives:
+      "Compare [Betwinner](/blogs/avoid-betwinner), [LeoVegas](/blogs/review-leovegas), [BC.Game](/blogs/review-bc-game). [/compare](/compare).",
+    faqs: [
+      {
+        question: "Does Pin-Up accept JazzCash in Pakistan?",
+        answer:
+          "JazzCash may appear via partners on some mirrors — confirm in the logged-in cashier. Never use unofficial agents.",
+      },
+      {
+        question: "Is Pin-Up better than Betwinner?",
+        answer:
+          "Pin-Up scores higher in our editorial model but both require cashier verification. Compare payment menus and reviews.",
+      },
+      {
+        question: "Does Pin-Up support UPI for India?",
+        answer:
+          "UPI availability is inconsistent — verify after login on the mirror that accepts your jurisdiction.",
+      },
+      {
+        question: "Is Pin-Up a pillar review?",
+        answer:
+          "Yes — this page meets CasinoPulse pillar depth with trust block and FAQ. Scores are editorial estimates only.",
+      },
+    ],
+    extraContext:
+      "Pin-Up's sports/casino wallet can hide category losses — track separately.\n\n**Cricket promos:** Tournament marketing increases session length — set caps.\n\n**Mirror hygiene:** Verify SSL and official social links before KYC upload.",
+    excerptEn:
+      "Editorial Pin-Up Casino pillar review — Pakistan wallet context, sports crossover, and payment notes for South Asian players.",
+    excerptHi:
+      "Pin-Up Casino संपादकीय समीक्षा — भुगतान और स्पोर्ट्स नोट्स।",
   },
 ];
 

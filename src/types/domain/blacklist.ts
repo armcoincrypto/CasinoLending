@@ -2,6 +2,7 @@ export type BlacklistRisk =
   | "delayed-payouts"
   | "fake-license"
   | "scam-reports"
+  | "user-reported-concerns"
   | "suspicious-behavior"
   | "unresolved-complaints";
 

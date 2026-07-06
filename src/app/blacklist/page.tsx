@@ -5,17 +5,11 @@ import { blacklistedCasinos } from "@/data/blacklist";
 import {
   BLACKLIST_PATH,
   RESPONSIBLE_GAMBLING_PATH,
-  blacklistFaqs,
   blacklistMeta,
 } from "@/data/legal";
 import { HOW_WE_REVIEW_PATH } from "@/data/how-we-review";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import {
-  breadcrumbSchema,
-  faqPageSchema,
-  itemListSchema,
-  webPageSchema,
-} from "@/lib/seo/schema";
+import { breadcrumbSchema, webPageSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -23,6 +17,12 @@ export const metadata: Metadata = buildPageMetadata({
   description: blacklistMeta.description,
   path: BLACKLIST_PATH,
 });
+
+const EDITORIAL_DISCLAIMER =
+  "CasinoPulse editorial risk assessments are based on publicly visible player reports, operator terms, and our review framework. They are not legal findings, regulator orders, or proof of misconduct.";
+
+const CORRECTIONS_NOTICE =
+  "If you represent an operator or believe an item is outdated, contact CasinoPulse with verifiable sources for review.";
 
 export default function BlacklistPage() {
   const pageUrl = `${siteConfig.url}${BLACKLIST_PATH}`;
@@ -37,17 +37,6 @@ export default function BlacklistPage() {
       { name: "Home", url: siteConfig.url },
       { name: "Casino Blacklist", url: pageUrl },
     ]),
-    itemListSchema({
-      name: "CasinoPulse Editorial Blacklist",
-      description: blacklistMeta.description,
-      url: pageUrl,
-      items: blacklistedCasinos.map((casino) => ({
-        name: casino.name,
-        url: `${siteConfig.url}/blogs/avoid-${casino.slug}`,
-        description: casino.summary,
-      })),
-    }),
-    faqPageSchema([...blacklistFaqs]),
   ];
 
   return (
@@ -73,7 +62,18 @@ export default function BlacklistPage() {
           <h1 className="font-display text-3xl font-bold text-white sm:text-4xl">
             Casino Blacklist — Editorial Risk Assessments
           </h1>
-          <p className="mt-4 text-lg leading-relaxed text-slate-300">
+
+          <div className="mt-6 rounded-xl border border-amber-500/20 bg-amber-500/5 p-5">
+            <p className="text-sm leading-relaxed text-slate-300">{EDITORIAL_DISCLAIMER}</p>
+            <p className="mt-3 text-sm leading-relaxed text-slate-400">{CORRECTIONS_NOTICE}</p>
+            <p className="mt-3 text-sm">
+              <Link href="/contact" className="font-medium text-gold-400 hover:text-gold-300">
+                Contact CasinoPulse for corrections →
+              </Link>
+            </p>
+          </div>
+
+          <p className="mt-6 text-lg leading-relaxed text-slate-300">
             This page lists CasinoPulse editorial risk assessments for online casinos with
             frequently reported concerns and risk indicators. These are not legal findings,
             regulator orders, or verified accusations of fraud. Players should review operator
@@ -91,7 +91,9 @@ export default function BlacklistPage() {
             .
           </p>
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <p className="mt-6 text-xs text-slate-600">{CORRECTIONS_NOTICE}</p>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
             {blacklistedCasinos.map((casino) => (
               <BlacklistCard key={casino.id} casino={casino} showEditorialNote />
             ))}
@@ -102,8 +104,12 @@ export default function BlacklistPage() {
             <p className="mt-3 text-sm leading-relaxed text-slate-400">
               CasinoPulse editorial risk assessments summarise reported concerns and risk
               indicators from public player feedback and our review process. We do not state
-              unverified accusations as facts. If you believe information is outdated, contact us
-              with sources for correction.
+              unverified accusations as facts. Listings reflect editorial judgment at review time
+              and may change when new evidence is provided.{" "}
+              <Link href="/contact" className="text-gold-400 hover:text-gold-300">
+                Request a correction
+              </Link>
+              .
             </p>
           </section>
         </div>
