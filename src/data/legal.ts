@@ -353,6 +353,9 @@ export const cookiePolicy: Record<"en" | "hi", LegalDocument> = {
 };
 
 export const ABOUT_PATH = "/about";
+export const EDITORIAL_POLICY_PATH = "/editorial-policy";
+export const EDITORIAL_TEAM_PATH = "/editorial-team";
+export const TERMS_PATH = "/terms";
 export const RESPONSIBLE_GAMBLING_PATH = "/responsible-gambling";
 export const BLACKLIST_PATH = "/blacklist";
 
@@ -452,6 +455,13 @@ export const aboutPage: Record<"en" | "hi", LegalDocument> = {
         title: "Contact & Updates",
         paragraphs: [
           "Questions about our editorial standards or corrections can be sent through our Contact page. Review and blacklist entries are updated when operator terms, payment options, or reported concern patterns change.",
+        ],
+      },
+      {
+        title: "Corrections & Fact-Checking",
+        paragraphs: [
+          "CasinoPulse prioritises accuracy in payment guides, licensing notes, and risk assessments. When readers report material errors — such as outdated payment rails, incorrect regulator references, or misleading bonus summaries — we investigate and publish corrections on the affected page.",
+          "We do not claim to independently verify every operator promotion or payout in real time. Bonus examples on the homepage are illustrative only until line-verified against operator terms pages. See our Editorial Policy for full standards.",
         ],
       },
     ],
@@ -568,6 +578,228 @@ export const responsibleGamblingPage: Record<"en" | "hi", LegalDocument> = {
         title: "मदद लें",
         paragraphs: [
           "यदि जुआ हानि पहुंचा रहा है, तो खेलना बंद करें और BeGambleAware.org या राष्ट्रीय हेल्पलाइन से संपर्क करें।",
+        ],
+      },
+    ],
+  },
+};
+
+export const editorialPolicyMeta = {
+  title: "Editorial Policy",
+  description:
+    "CasinoPulse editorial policy — independence standards, fact-checking, corrections, affiliate disclosure, and how we assess casino reviews and risk lists.",
+};
+
+export const editorialPolicyPage: Record<"en" | "hi", LegalDocument> = {
+  en: {
+    title: "Editorial Policy",
+    lastUpdated,
+    intro:
+      "This Editorial Policy explains how CasinoPulse researches, writes, updates, and corrects casino reviews, payment guides, news explainers, and editorial risk assessments. Our goal is useful, honest information for South Asian and crypto casino audiences — not operator marketing.",
+    sections: [
+      {
+        title: "Editorial Independence",
+        paragraphs: [
+          "Ratings, blacklist placements, and review conclusions are editorial decisions based on our published methodology. Operators cannot pay for higher scores, favourable wording, or removal from risk lists.",
+          "Affiliate commissions may apply when readers use outbound links. Commercial relationships do not determine scores, ranking order, or whether we document reported concerns.",
+        ],
+      },
+      {
+        title: "Research Standards",
+        paragraphs: [
+          "We gather information from operator websites, terms pages, help centres, licensing footers, and publicly reported player feedback. We prioritise primary sources over forum rumours.",
+          "When automated fetches fail (geo-blocks, bot protection, or SPA-only pages), we document the limitation rather than inventing bonus values or payout timelines.",
+        ],
+      },
+      {
+        title: "Fact-Checking & Updates",
+        paragraphs: [
+          "High-traffic reviews and payment guides are refreshed when payment menus, licensing footers, or complaint patterns change materially.",
+          "Bonus examples on the homepage remain illustrative until independently verified with source URLs, terms URLs, and review timestamps. We do not mark offers as verified without that evidence.",
+        ],
+      },
+      {
+        title: "Corrections",
+        paragraphs: [
+          "If you believe a page contains a material factual error, contact us with the page URL, the incorrect statement, and supporting evidence. We aim to acknowledge correction requests within a reasonable timeframe and update affected pages when verified.",
+          "Minor wording improvements that do not change factual meaning may be edited without a formal correction notice.",
+        ],
+      },
+      {
+        title: "What We Do Not Publish",
+        paragraphs: [
+          "We do not publish guaranteed-win language, fake licensing claims, unverified no-deposit offers, or endorsements that imply regulatory approval in jurisdictions where play is restricted.",
+          "News briefs marked as non-indexed are short orientation notes — not full investigative reports.",
+        ],
+      },
+      {
+        title: "Related Policies",
+        paragraphs: [
+          "See also: How We Review Online Casinos, About CasinoPulse, Responsible Gambling, Privacy Policy, and Terms of Use.",
+        ],
+      },
+    ],
+  },
+  hi: {
+    title: "संपादकीय नीति",
+    lastUpdated,
+    intro:
+      "यह नीति बताती है कि CasinoPulse समीक्षाएं, गाइड और जोखिम मूल्यांकन कैसे लिखता और अपडेट करता है।",
+    sections: [
+      {
+        title: "संपादकीय स्वतंत्रता",
+        paragraphs: [
+          "रेटिंग और ब्लैकलिस्ट निर्णय methodology पर आधारित हैं। ऑपरेटर बेहतर स्कोर नहीं खरीद सकते।",
+        ],
+      },
+      {
+        title: "तथ्य-जांच और सुधार",
+        paragraphs: [
+          "भौतिक त्रुटियों की रिपोर्ट पर हम पृष्ठ अपडेट करते हैं। बोनस उदाहरण सत्यापित होने तक केवल चित्रणात्मक हैं।",
+        ],
+      },
+    ],
+  },
+};
+
+export const termsMeta = {
+  title: "Terms of Use",
+  description:
+    "Terms of Use for CasinoPulse — site usage rules, disclaimers, affiliate links, age restrictions, and limitation of liability.",
+};
+
+export const termsOfUsePage: Record<"en" | "hi", LegalDocument> = {
+  en: {
+    title: "Terms of Use",
+    lastUpdated,
+    intro:
+      'By accessing CasinoPulse ("the Site"), you agree to these Terms of Use. If you do not agree, please do not use the Site.',
+    sections: [
+      {
+        title: "1. Informational Purpose Only",
+        paragraphs: [
+          "CasinoPulse publishes editorial casino reviews, guides, news explainers, and risk assessments for informational purposes. Content is not legal, financial, medical, or gambling advice.",
+          "You are solely responsible for verifying operator terms, licensing, payment availability, and local laws before gambling.",
+        ],
+      },
+      {
+        title: "2. Age Restriction",
+        paragraphs: [
+          "The Site is intended for adults aged 18 or older, or the legal gambling age in your jurisdiction, whichever is higher. Do not use the Site if you are underage.",
+        ],
+      },
+      {
+        title: "3. Affiliate Links",
+        paragraphs: [
+          "Some links to third-party casino operators are affiliate links. We may earn a commission if you register or deposit through those links, at no extra cost to you. Affiliate relationships do not change our editorial scoring.",
+        ],
+      },
+      {
+        title: "4. Third-Party Operators",
+        paragraphs: [
+          "We do not operate casinos, process payments, or resolve player disputes. Your relationship with any linked operator is governed by that operator's terms and policies.",
+        ],
+      },
+      {
+        title: "5. Accuracy & Availability",
+        paragraphs: [
+          "We strive for accuracy but do not warrant that content is complete, current, or error-free. Operator bonuses, payment methods, and licensing can change without notice.",
+        ],
+      },
+      {
+        title: "6. Limitation of Liability",
+        paragraphs: [
+          "To the fullest extent permitted by law, CasinoPulse is not liable for losses arising from gambling, reliance on Site content, third-party operator actions, or technical interruptions.",
+        ],
+      },
+      {
+        title: "7. Intellectual Property",
+        paragraphs: [
+          "Site content, branding, and layout are protected by applicable intellectual property laws. You may not scrape, republish, or commercially reuse substantial portions without permission.",
+        ],
+      },
+      {
+        title: "8. Changes",
+        paragraphs: [
+          'We may update these Terms from time to time. Continued use after changes constitutes acceptance. The "Last updated" date reflects the latest revision.',
+        ],
+      },
+      {
+        title: "9. Contact",
+        paragraphs: ["Questions about these Terms may be sent through our Contact page."],
+      },
+    ],
+  },
+  hi: {
+    title: "उपयोग की शर्तें",
+    lastUpdated,
+    intro: "CasinoPulse का उपयोग करके आप इन शर्तों से सहमत होते हैं।",
+    sections: [
+      {
+        title: "1. केवल सूचनात्मक",
+        paragraphs: ["सामग्री कानूनी या वित्तीय सलाह नहीं है। जुआ से पहले स्थानीय नियम सत्यापित करें।"],
+      },
+      {
+        title: "2. केवल 18+",
+        paragraphs: ["साइट केवल वयस्कों के लिए है।"],
+      },
+    ],
+  },
+};
+
+export const editorialTeamMeta = {
+  title: "Editorial Team",
+  description:
+    "Meet the CasinoPulse editorial team — how we assign reviews, maintain methodology standards, and handle corrections for South Asia casino coverage.",
+};
+
+export const editorialTeamPage: Record<"en" | "hi", LegalDocument> = {
+  en: {
+    title: "Editorial Team",
+    lastUpdated,
+    intro:
+      "CasinoPulse is produced by a small editorial research team focused on South Asia and crypto casino topics. We publish under the collective byline CasinoPulse Editorial unless a specific author is credited.",
+    sections: [
+      {
+        title: "How We Work",
+        paragraphs: [
+          "Reviews and guides are assigned based on reader demand, payment-topic gaps, and operators with frequent South Asian player questions. Each pillar review follows our weighted scoring model and includes licensing caveats, payment notes, and responsible gambling reminders.",
+        ],
+      },
+      {
+        title: "Roles",
+        paragraphs: ["Our editorial workflow typically includes:"],
+        list: [
+          "Research — operator terms, licensing footers, payment menus, and complaint themes.",
+          "Payments & crypto editing — UPI, wallet, and on-chain deposit context for South Asia.",
+          "Risk & blacklist review — documented reported concerns, not unverified rumours.",
+          "SEO & indexation hygiene — thin pages noindexed; verified structure for indexable guides.",
+        ],
+      },
+      {
+        title: "Corrections & Reader Contact",
+        paragraphs: [
+          "Report factual errors or outdated payment information through the Contact page. Include URLs and evidence where possible.",
+          "We do not provide personalised gambling advice, legal opinions, or dispute mediation with operators.",
+        ],
+      },
+      {
+        title: "Independence Reminder",
+        paragraphs: [
+          "Affiliate links may fund site operations but do not buy review scores. See Editorial Policy and How We Review for full standards.",
+        ],
+      },
+    ],
+  },
+  hi: {
+    title: "संपादकीय टीम",
+    lastUpdated,
+    intro: "CasinoPulse एक छोटी संपादकीय टीम द्वारा दक्षिण एशिया और क्रिप्टो कैसीनो विषयों पर प्रकाशित होता है।",
+    sections: [
+      {
+        title: "हम कैसे काम करते हैं",
+        paragraphs: [
+          "समीक्षाएं methodology और पाठक प्राथमिकताओं के अनुसार तैयार की जाती हैं। त्रुटि रिपोर्ट संपर्क पृष्ठ के माध्यम से भेजें।",
         ],
       },
     ],

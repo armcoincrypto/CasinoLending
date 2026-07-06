@@ -22,6 +22,9 @@ export default function Footer() {
 
   const legalLinks = [
     { href: "/privacy", label: t("navPrivacy") },
+    { href: "/terms", label: "Terms of Use" },
+    { href: "/editorial-policy", label: "Editorial Policy" },
+    { href: "/editorial-team", label: "Editorial Team" },
     { href: "/cookies", label: t("navCookies") },
     { href: "/responsible-gambling", label: t("footerResponsible") },
   ];

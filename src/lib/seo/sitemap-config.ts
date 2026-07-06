@@ -13,10 +13,13 @@ export function buildStaticSitemapRoutes(): MetadataRoute.Sitemap {
     { url: `${base}/news`, lastModified: new Date(), changeFrequency: "daily", priority: 0.9 },
     { url: `${base}/blogs`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.85 },
     { url: `${base}/how-we-review`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/editorial-policy`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/editorial-team`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.75 },
     { url: `${base}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blacklist`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.85 },
     { url: `${base}/responsible-gambling`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.75 },
     { url: `${base}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/terms`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.35 },
     { url: `${base}/privacy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/cookies`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
   ];

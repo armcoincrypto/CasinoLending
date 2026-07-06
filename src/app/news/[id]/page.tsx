@@ -40,20 +40,27 @@ export default async function NewsDetailPage({ params }: PageProps) {
   }
 
   const pageUrl = `${siteConfig.url}/news/${id}`;
-  const jsonLd = [
-    articleSchema({
-      title: article.title.en,
-      description: article.excerpt.en,
-      url: pageUrl,
-      datePublished: article.publishedAt,
-      author: article.source,
-    }),
+  const jsonLd = [];
+
+  if (article.indexable !== false) {
+    jsonLd.push(
+      articleSchema({
+        title: article.title.en,
+        description: article.excerpt.en,
+        url: pageUrl,
+        datePublished: article.publishedAt,
+        author: article.source,
+      })
+    );
+  }
+
+  jsonLd.push(
     breadcrumbSchema([
       { name: "Home", url: siteConfig.url },
       { name: "News", url: `${siteConfig.url}/news` },
       { name: article.title.en, url: pageUrl },
-    ]),
-  ];
+    ])
+  );
 
   return (
     <>

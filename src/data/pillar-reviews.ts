@@ -1,3 +1,5 @@
+type ReviewFaq = { question: string; answer: string };
+
 type PillarProfile = {
   slug: string;
   name: string;
@@ -15,6 +17,9 @@ type PillarProfile = {
   mobile: string;
   support: string;
   southAsia: string;
+  gamesDetail: string;
+  alternatives: string;
+  faqs: ReviewFaq[];
   pros: string[];
   cons: string[];
   risks: string[];
@@ -70,7 +75,33 @@ const profiles: PillarProfile[] = [
       "Assuming crypto anonymity removes all verification steps",
     ],
     extraContext:
-      "Stake’s sportsbook and casino wallets may interact on one account depending on region. Sports losing streaks sometimes push players toward casino chase play — set a cross-product loss limit before the first wager.",
+      "Stake's sportsbook and casino wallets may interact on one account depending on region. Sports losing streaks sometimes push players toward casino chase play — set a cross-product loss limit before the first wager.\n\n**Provably fair titles:** Some Stake original games advertise provably fair mechanics. That refers to cryptographic verification of game outcomes — not a guarantee of profit or legal approval in your country. Still read house edge and session limits.\n\n**VIP programmes:** High-volume players may see personalised limits or faster support — benefits vary and are not contractual. Do not increase deposits solely to chase tier status.",
+    gamesDetail:
+      "Stake typically lists thousands of slots from providers such as Pragmatic Play, Hacksaw Gaming, and NoLimit City, plus Stake Originals (dice, limbo, plinko-style games) and a sportsbook in supported regions. Live dealer lobbies may include blackjack, roulette, and baccarat depending on your mirror. Provider filters change — open the lobby after login rather than trusting outdated lists.",
+    alternatives:
+      "If Stake's crypto-only cashier does not fit your workflow, compare [BC.Game](/blogs/review-bc-game) for gamified crypto rewards, [Roobet](/blogs/review-roobet) for fast mini-games, or [LeoVegas](/blogs/review-leovegas) if you need fiat-first mobile UX where legally available. Use our [comparison hub](/compare) and [USDT guide](/crypto/usdt-casino) before switching brands.",
+    faqs: [
+      {
+        question: "Is Stake legal for Indian players?",
+        answer:
+          "Online casino legality varies by Indian state and by whether you access the site from India or abroad. CasinoPulse does not provide legal advice. Stake is an offshore operator — verify local rules and read our responsible gambling resources before depositing.",
+      },
+      {
+        question: "Does Stake accept UPI or Paytm?",
+        answer:
+          "Stake is primarily crypto-first. UPI and Paytm are not standard Stake deposit rails in most setups. Indian players often use crypto or compare fiat-friendly brands in our India payments guide.",
+      },
+      {
+        question: "How long do Stake crypto withdrawals take?",
+        answer:
+          "Timing may vary with KYC status, internal review, and blockchain congestion. Stake does not guarantee instant cashouts — test with a small withdrawal after verification.",
+      },
+      {
+        question: "What should I verify before depositing at Stake?",
+        answer:
+          "Confirm the official domain, supported coin networks, bonus wagering rules, and KYC triggers. Never send crypto to addresses shared in unofficial Telegram groups.",
+      },
+    ],
     excerptEn:
       "Editorial Stake review for South Asia players — crypto support, withdrawal notes, licensing context, and risk cautions. Terms may vary by region.",
     excerptHi:
@@ -120,6 +151,32 @@ const profiles: PillarProfile[] = [
       "Over-depositing to unlock tiered bonuses",
       "Misreading task-based wagering requirements",
       "Phishing sites impersonating BC.Game — verify URL",
+    ],
+    gamesDetail:
+      "BC.Game aggregates a large slot catalogue, BC Originals, live casino tables, and sports betting in supported regions. You may see providers such as Evolution, Pragmatic Play, and Hacksaw depending on mirror and account status. Task-based missions sometimes promote specific games — treat them as optional side activities, not requirements.",
+    alternatives:
+      "Players wanting a simpler crypto lobby may prefer [Stake](/blogs/review-stake). Those focused on crash-style speed should read [Roobet](/blogs/review-roobet). Fiat-first users abroad may compare [Bet365](/blogs/review-bet365) or [LeoVegas](/blogs/review-leovegas) where legally served. See [blacklist](/blacklist) entries before trying unknown mirrors.",
+    faqs: [
+      {
+        question: "Is BC.Game safe for Bangladeshi crypto users?",
+        answer:
+          "Safety depends on your risk tolerance, KYC readiness, and whether you verify the official domain. BC.Game is offshore — we document payment and bonus risks but do not guarantee payouts. Compare our methodology scores and start with small test deposits.",
+      },
+      {
+        question: "Why are BC.Game bonuses confusing?",
+        answer:
+          "BC.Game layers welcome packages, rakeback, and task rewards with separate rules. Read each promotion independently and calculate wagering before opting in.",
+      },
+      {
+        question: "Which networks does BC.Game support for USDT?",
+        answer:
+          "Supported chains can change. Open the cashier, copy the deposit address, and match the exact network (TRC-20, ERC-20, etc.) before sending funds.",
+      },
+      {
+        question: "How does BC.Game compare to Stake?",
+        answer:
+          "Both are crypto-first with large game libraries. BC.Game emphasises gamified missions; Stake emphasises originals and sports crossover. Compare cashiers, KYC friction, and bonus complexity on each review.",
+      },
     ],
     extraContext:
       "BC.Game’s task-based rewards can encourage frequent logins. Treat missions as optional — completing them is never required to enjoy the core casino product. If missions push you above your planned session length, disable notifications and stick to a fixed bankroll. Seasonal tournaments may require opt-in — screenshot rules before joining. If a mission conflicts with responsible limits you set, skip it entirely.\n\n**Withdrawal caution:** First crypto cashouts often trigger manual review even when marketing suggests instant processing. If your balance is large relative to deposit history, expect additional questions about source of funds. Avoid splitting withdrawals across many small requests in one day — some risk systems flag that pattern.\n\n**South Asia note:** Players in India and Bangladesh who deposit via P2P USDT should keep exchange receipts. If KYC is requested mid-withdrawal, missing payment trail documentation can delay approval for weeks.",
@@ -172,6 +229,32 @@ const profiles: PillarProfile[] = [
       "Chasing losses on high-frequency games",
       "Depositing without verifying official domain",
       "Ignoring KYC until a large balance is stuck",
+    ],
+    gamesDetail:
+      "Roobet is known for crash games, Roobet originals, slots from mainstream studios, and a sportsbook tab in supported regions. High-frequency games can encourage longer sessions than planned — set timers. House edges on proprietary games differ from branded slots; read in-game info panels.",
+    alternatives:
+      "For broader crypto slot catalogues, see [BC.Game](/blogs/review-bc-game) or [Stake](/blogs/review-stake). If you need regulated fiat tooling, [Bet365](/blogs/review-bet365) may fit diaspora players on approved mirrors — confirm legality first. Our [responsible gambling guide](/responsible-gambling) applies regardless of brand.",
+    faqs: [
+      {
+        question: "Are Roobet crash games fair?",
+        answer:
+          "Roobet markets provably fair mechanics on some originals, but fairness verification does not remove house edge or loss risk. Treat fast games as high-variance entertainment with strict limits.",
+      },
+      {
+        question: "Does Roobet require KYC?",
+        answer:
+          "KYC may be light at signup but requested before larger withdrawals or if risk systems flag activity. Have government ID ready and submit only through the official portal.",
+      },
+      {
+        question: "Is Roobet available in India?",
+        answer:
+          "Availability and legality vary. Access from restricted jurisdictions can violate terms and freeze balances. Verify country rules — VPN circumvention is risky.",
+      },
+      {
+        question: "What are safer habits on Roobet?",
+        answer:
+          "Set deposit and loss limits, avoid chasing crash multipliers, verify the official URL, and withdraw test amounts early after KYC.",
+      },
     ],
     extraContext:
       "Roobet’s brand visibility on streaming platforms does not replace due diligence. Streamers may use sponsored codes with terms you never see on screen. Always read the promotion page yourself and compare house edges on original games versus mainstream slots.\n\n**KYC expectations:** Roobet may allow small deposits with minimal verification, then request full ID before releasing larger withdrawals. Do not treat early play as proof that cashouts will stay friction-free — policies can tighten after wins accumulate. Submit documents promptly through the official portal only.\n\n**Who should avoid it (extra):** If you struggle with impulse control on fast-loop games, Roobet’s crash and mini-game lobby can accelerate losses compared with slower slot sessions. Consider operators with stronger deposit-limit defaults or skip entirely.",
@@ -226,7 +309,33 @@ const profiles: PillarProfile[] = [
       "Mixing sports and casino bankrolls without limits",
     ],
     extraContext:
-      "Bet365’s strength is breadth — sports, in-play, casino, and poker may share one wallet on some mirrors. That convenience can blur spend categories. Consider separate mental budgets for sports bets and casino spins, even if the balance is combined.",
+      "Bet365's strength is breadth — sports, in-play, casino, and poker may share one wallet on some mirrors. That convenience can blur spend categories. Consider separate mental budgets for sports bets and casino spins, even if the balance is combined.\n\n**Mirror discipline:** Always register through the licensed domain shown for your country. Clone sites collect deposits without honouring withdrawals — bookmark the official URL.\n\n**In-play risk:** Live betting during cricket or football can increase impulse wagers. Use deposit limits before kickoff.",
+    gamesDetail:
+      "Bet365 casino lobbies typically include slots, table games, live dealer studios, and poker where licensed. Sportsbook markets often dominate the product — cricket, football, and tennis are common. Casino game weighting in bonuses may exclude live tables; read promotion terms on your mirror.",
+    alternatives:
+      "Crypto-first South Asian players often compare [Stake](/blogs/review-stake) or [BC.Game](/blogs/review-bc-game). Mobile casino specialists may prefer [LeoVegas](/blogs/review-leovegas) where served. For payment context see [India casino payments](/india-casino-payments).",
+    faqs: [
+      {
+        question: "Can Indian residents legally use Bet365?",
+        answer:
+          "Rules vary by state and access path. CasinoPulse does not provide legal advice. Bet365 product availability inside India has been historically restricted — diaspora players abroad may see different mirrors. Verify locally before depositing.",
+      },
+      {
+        question: "Does Bet365 accept Bitcoin deposits?",
+        answer:
+          "Bet365 is not crypto-native. Unless your cashier explicitly lists crypto, assume fiat rails only. See our Bitcoin casino guide for crypto-first alternatives.",
+      },
+      {
+        question: "Why is Bet365 KYC strict?",
+        answer:
+          "Licensed operators face AML obligations. Expect ID, address proof, and possible source-of-funds questions on larger withdrawals.",
+      },
+      {
+        question: "Are Bet365 welcome bonuses available everywhere?",
+        answer:
+          "No. Some jurisdictions restrict or ban casino welcome offers. Read the promotion page after login — headline ads may not apply to your account.",
+      },
+    ],
     excerptEn:
       "Editorial Bet365 review — licensing notes by jurisdiction, payment and KYC expectations, and risk context for South Asian players abroad. Terms may vary.",
     excerptHi:
@@ -276,6 +385,32 @@ const profiles: PillarProfile[] = [
       "Using VPNs to bypass country blocks (account closure risk)",
       "Assuming mobile polish equals local legal approval",
       "Ignoring bonus max-withdrawal clauses",
+    ],
+    gamesDetail:
+      "LeoVegas highlights mobile slots, branded Megaways titles, and live dealer tables from partners such as Evolution and Pragmatic Play Live where licensed. Search and filter tools are tuned for phone screens. Live blackjack and roulette can extend sessions — use reality checks when offered.",
+    alternatives:
+      "Sports-heavy users may prefer [Bet365](/blogs/review-bet365) on approved mirrors. Crypto depositors should read [Stake](/blogs/review-stake) or [USDT casinos](/crypto/usdt-casino). Compare payment fit on [/compare](/compare) before registering.",
+    faqs: [
+      {
+        question: "Why is LeoVegas popular on mobile?",
+        answer:
+          "LeoVegas invested early in responsive casino UX — fast lobby loads, portrait live tables, and app-like navigation. Mobile polish does not imply legal approval in every country.",
+      },
+      {
+        question: "Does LeoVegas offer UPI for Indian players?",
+        answer:
+          "UPI availability is not consistent across LeoVegas entities. Confirm deposit methods after login — do not assume Indian rails because of marketing reach.",
+      },
+      {
+        question: "Can I use a VPN with LeoVegas?",
+        answer:
+          "VPN use to bypass geo-blocks often violates terms and can lead to account closure and balance holds. Play only where the operator legally accepts your jurisdiction.",
+      },
+      {
+        question: "How do LeoVegas free spins work?",
+        answer:
+          "Free-spin packages usually carry wagering, expiry, and max-win caps. Live games may contribute zero — read the promotion T&Cs on your licensed mirror.",
+      },
     ],
     extraContext:
       "LeoVegas has invested in safer-gambling messaging in EU markets — tool availability still depends on the licence attached to your account. Open account settings on day one and enable deposit limits even if you consider yourself a casual player. Live dealer tables can extend sessions — use reality checks where offered. If your mirror lacks Hindi support, confirm you understand English T&Cs before accepting bonuses.\n\n**Payment limitations:** UPI and Paytm are not consistently listed for South Asian registrations — do not assume local rails work because LeoVegas markets mobile UX globally. Confirm deposit methods after login; withdrawal routes may differ from deposit routes.\n\n**Bonus terms caution:** Free-spin bundles often cap maximum withdrawable winnings separately from deposit-match offers. Live dealer play may contribute zero toward wagering — read game weighting before accepting any package.",
@@ -346,8 +481,13 @@ ${profile.support}
 
 For payment tracing, prepare transaction IDs, timestamps, and wallet addresses. Escalate politely with screenshots; aggressive chargebacks without following operator process rarely help.
 
-## Games & Product Overview
+## Games & Software Providers
+${profile.gamesDetail}
+
 ${profile.name} typically offers slots, table games, and live dealer lobbies depending on region. Provider lists change — open the lobby filter after login to see what is actually available to your account. Sportsbook products may sit behind separate tabs with different bonus rules.
+
+## Alternatives to Consider
+${profile.alternatives}
 
 ## South Asia & India Relevance
 ${profile.southAsia}
@@ -375,6 +515,9 @@ We did not run independent payout tests, mystery-shop customer support, or legal
 
 ## Additional Context
 ${profile.extraContext}
+
+## Frequently Asked Questions
+${profile.faqs.map((faq) => `### ${faq.question}\n${faq.answer}`).join("\n\n")}
 
 ## Editorial Standards & Responsible Play
 Ratings follow our published [review methodology](/how-we-review). CasinoPulse may earn affiliate commissions when you use outbound links; commercial relationships do not buy higher scores. Gambling involves risk of loss — never borrow to play. If gambling harms finances or relationships, stop and seek help via [responsible gambling resources](/responsible-gambling). Check local laws — online casino access is restricted or grey in many South Asian jurisdictions. 18+ only.`;
@@ -409,7 +552,12 @@ export const pillarReviewOverrides: Record<
         en: profile.excerptEn,
         hi: profile.excerptHi,
       },
-      readTime: 14,
+      readTime: 16,
     },
   ])
 );
+
+export function getPillarReviewFaqs(slug: string): ReviewFaq[] {
+  const profile = profiles.find((p) => p.slug === slug);
+  return profile?.faqs ?? [];
+}

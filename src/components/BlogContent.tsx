@@ -91,7 +91,8 @@ export default function BlogContent({ post, casino, showMethodologyLink = false 
       {casino && casino.type === "good" && (
         <div className="mt-6 rounded-xl border border-green-200 bg-green-50 p-4 dark:border-green-900 dark:bg-green-900/20">
           <p className="text-sm text-green-800 dark:text-green-300">
-            Ready to play? Use our exclusive referral link for enhanced bonuses.
+            Ready to explore {casino.name}? Use our outbound link to visit the official operator site.
+            Promotions vary by region — verify terms on the operator page before depositing.
           </p>
           <Link href={`/go/${casino.slug}`} className="btn-primary mt-3 inline-flex text-sm">
             {t("playNow")} — {casino.name}

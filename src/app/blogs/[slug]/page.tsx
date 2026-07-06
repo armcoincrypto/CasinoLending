@@ -4,8 +4,9 @@ import { notFound } from "next/navigation";
 import { getBlogBySlug, blogPosts } from "@/data/blogs";
 import { getCasinoByBlogSlug } from "@/data/casinos";
 import BlogContent from "@/components/BlogContent";
+import { getPillarReviewFaqs } from "@/data/pillar-reviews";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { reviewSchema } from "@/lib/seo/schema";
+import { breadcrumbSchema, faqPageSchema, reviewSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/config/site";
 
 interface PageProps {
@@ -55,14 +56,26 @@ export default async function BlogDetailPage({ params }: PageProps) {
         })
       : null;
 
+  const pillarFaqs = getPillarReviewFaqs(slug);
+  const faqJsonLd = pillarFaqs.length > 0 ? faqPageSchema(pillarFaqs) : null;
+
+  const breadcrumbJsonLd = breadcrumbSchema([
+    { name: "Home", url: siteConfig.url },
+    { name: "Reviews", url: `${siteConfig.url}/blogs` },
+    { name: post.title.en, url: pageUrl },
+  ]);
+
+  const jsonLd = [reviewJsonLd, faqJsonLd, breadcrumbJsonLd].filter(Boolean);
+
   return (
     <div className="bg-gray-50 dark:bg-surface-dark">
-      {reviewJsonLd && (
+      {jsonLd.map((schema) => (
         <script
+          key={schema!["@type"]}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
-      )}
+      ))}
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
         <Link
           href="/blogs"

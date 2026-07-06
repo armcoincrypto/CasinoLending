@@ -6,22 +6,20 @@ import {
   ABOUT_PATH,
   EDITORIAL_POLICY_PATH,
   EDITORIAL_TEAM_PATH,
-  RESPONSIBLE_GAMBLING_PATH,
-  aboutPage,
+  editorialTeamPage,
 } from "@/data/legal";
 import { HOW_WE_REVIEW_PATH } from "@/data/how-we-review";
 
-export default function AboutPageClient() {
+export default function EditorialTeamClient() {
   const { locale } = useLocale();
 
   return (
     <LegalPage
-      document={aboutPage[locale]}
+      document={editorialTeamPage[locale]}
       relatedLinks={[
-        { href: HOW_WE_REVIEW_PATH, label: "How We Review Online Casinos" },
+        { href: ABOUT_PATH, label: "About CasinoPulse" },
+        { href: HOW_WE_REVIEW_PATH, label: "How We Review" },
         { href: EDITORIAL_POLICY_PATH, label: "Editorial Policy" },
-        { href: EDITORIAL_TEAM_PATH, label: "Editorial Team" },
-        { href: RESPONSIBLE_GAMBLING_PATH, label: "Responsible Gambling" },
       ]}
     />
   );
